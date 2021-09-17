@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome page</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            margin: 0;
+            background-color: whitesmoke;
+        }
+
+        .active {
+            background-color: #9FB8AD;
+            height: 60px;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: #4CAF50;
+        }
+
+        /* Green */
+        .button2 {
+            background-color: #008CBA;
+        }
+
+        /* Blue */
+    </style>
+</head>
+
+<body>
+
+    <h1>Mod loan's Assistant</h1>
+    <p>welcome for our website please choos what role you are :</p>
+
+        <button class="button button1" action="index.html" onclick="student()">For Student</button>
+        <button class="button button2" class="active" action="login.html" onclick="staff()">For Staff</button>
+
+    <script>
+        function student() {
+            window.location.replace('index.html');
+        }
+        function staff() {
+            window.location.replace('login.html');
+        }
+    </script>
+
+    <!-- Messenger ปลั๊กอินแชท Code -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v10.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- Your ปลั๊กอินแชท code -->
+    <div class="fb-customerchat" attribution="page_inbox" page_id="103484235166980">
+    </div>
+    <!-- Messenger ปลั๊กอินแชท Code -->
+
+</body>
+
+</html>

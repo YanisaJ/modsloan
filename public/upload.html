@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload file</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <p><a href="C:\Users\ice_f\Desktop\react-project\modloans\public\index.html">Back to Home page</a></p>
+  ---------------------------------------------------------------
+  <h2>Upload File here</h2>
+
+  <p>
+    <label for="topic">Topic name : </label><br>
+    <textarea id="topic" type="text" placeholder="" style="width : 25%" rows="1"></textarea><br>
+    <label for="description">Content : </label><br>
+    <textarea id="description" type="text" placeholder="ข้อความ" style="width : 25%" rows="4"></textarea><br>
+    <label for="namebox">File name : </label>
+    <input id="namebox" type="text" placeholder="File name" required><br>
+    You file upload <label id="upProgress"></label> %<br>
+    <button id="selectf">Select File</button>
+    <button id="upload">Upload File</button>
+  </p>
+  Pre-view Your file<br>
+  <div id="fileOldName"></div>
+  <br>
+  <img id="myFile" width="200px"><br>
+
+  ---------------------------------------------------------------
+  <p>
+    <label for="namebox2">Topic name for view : </label><br>
+    <input id="namebox2" type="text" placeholder="Insert Topic name" required>
+    <button id="view">View File</button><br>
+  <ul id="_view">
+  </ul>
+  </p>
+  ---------------------------------------------------------------
+  <p>
+    <label for="namebox3">Topic name for delete : </label><br>
+    <input id="namebox3" type="text" placeholder="Insert file name" required>
+    <button id="delete">Delete</button><br>
+  </p>
+  ---------------------------------------------------------------
+  <p>
+  <ol id='list_file'>
+  </ol>
+  </p>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+  <script src='https://www.gstatic.com/firebasejs/3.2.1/firebase.js'></script>
+  <script> //--------ConnectFirebase--------
+    var firebaseConfig = {
+      apiKey: "AIzaSyD_PU5bw4-vNEYL5ew7sow970gTu-ZtLG4",
+      authDomain: "modloans-f8d62.firebaseapp.com",
+      projectId: "modloans-f8d62",
+      storageBucket: "modloans-f8d62.appspot.com",
+      messagingSenderId: "398266070886",
+      appId: "1:398266070886:web:d684c75954cb090ae3faa7",
+      measurementId: "G-61MQ0SD6LJ",
+      databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    //--------------------------
+    var fileName, fileURL, fileDescription;
+    var files = [];
+    var reader = new FileReader();
+    //--------------------------
+    function parm() {
+      topicName = document.getElementById('topic').value;
+      fileName = document.getElementById('namebox').value;
+      fileDescription = document.getElementById('description').value;
+      topicName_view = document.getElementById('namebox2').value;
+      topicName_Del = document.getElementById('namebox3').value;
+    }
+
+    //---------------------------selectFile----------------------------
+    document.getElementById('selectf').onclick = function (e) {
+      var input = document.createElement('input');
+      input.type = 'file';
+      input.onchange = e => {
+        files = e.target.files;
+        reader = new FileReader();
+        reader.onload = function () {
+          document.getElementById('myFile').src = reader.result;
+          document.getElementById('fileOldName').innerHTML = '<b>Your file is : </b>' + files[0].name;
+        }
+        reader.readAsDataURL(files[0]);
+      }
+      input.click();
+    }
+
+    //-----------------uploadFile and createFileName------------------
+    document.getElementById('upload').onclick = function () {
+      parm();
+      if (fileName == "" || topicName == "") {
+        window.alert("Please enter Topic name and File name");
+        console.log("Please enter Topic name and File name");
+      } else {
+        console.log("Up loadfile. . .");
+        var uploadTask = firebase.storage().ref('Files/' + fileName).put(files[0]);
+
+        //---show % upload on log---
+        uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+          function (snapshot) {
+            var percent = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+            console.log(percent + "% done");
+            document.getElementById('upProgress').innerHTML = percent;
+          },
+          function (error) {
+            console.log('Error in saving file.');
+          },
+          function () {
+            uploadTask.snapshot.ref.getDownloadURL().then(function (URL) {
+              fileURL = URL;
+              var now = new Date().getTime();
+              // //**
+              // var data = {
+              //   TopicName: topicName,
+              //   NameFile: fileName,
+              //   LinkFile: fileURL,
+              //   Description: fileDescription
+              // };
+              // firebase.database().ref('Files/').push({
+              //   TopicName: topicName,
+              //   NameFile: fileName,
+              //   LinkFile: fileURL,
+              //   Description: fileDescription
+              // }).then(() => {
+              //   window.alert("Add file successfully.");
+              //   console.log('Add file successfully');
+              //   location.reload();
+              //**
+              firebase.database().ref('Files/' + now).set({
+                Date: now,
+                TopicName: topicName,
+                NameFile: fileName,
+                LinkFile: fileURL,
+                Description: fileDescription
+              }).then(() => {
+                window.alert("Add file successfully.");
+                console.log('Add file successfully');
+                location.reload();
+                // **
+              });
+            })
+            // .key;
+          });
+      }
+    }
+
+    //-----------------------------view-------------------------------
+    document.getElementById('view').onclick = function () {
+      parm();
+      if (topicName_view == "") {
+        window.alert("Please enter File name for view");
+        console.log("Please enter File name for view");
+      } else {
+        firebase.database().ref('Files/' + topicName_view).on('value', function (snapshot) {
+          var _li = document.createElement('li');
+          _li.innerHTML =
+            '<p>topic : ' + snapshot.val().TopicName + '<br>' +
+            'Content : ' + snapshot.val().Description + '<br>' +
+            'filename : ' + snapshot.val().NameFile + '<br>' +
+            'Link file : <a target = "_blank" href=' +
+            snapshot.val().linkFile + '>Click link here.<br></p>';
+          document.getElementById('_view').appendChild(_li);
+          console.log("View file");
+          console.log(snapshot.val().TopicName);
+        });
+      }
+    }
+    function passvalue(id) {
+      localStorage.setItem('VALUE', id);
+      console.log(id);
+      console.log("id");
+
+    }
+    //+----- view automatic -----+
+    database = firebase.database();
+    var Ref = database.ref('Files');
+    Ref.on('value', gotData);
+    function gotData(data) {
+      // console.log(data.val());
+      // var id = 1;
+      var Files = data.val();
+      var keys = Object.keys(Files);
+      // console.log(keys);
+      for (var i = 0; i < keys.length; i++) {
+        // id += 1;
+        var k = keys[i];
+        var id = Files[k].Date;
+        var topic = Files[k].TopicName;
+        var description = Files[k].Description;
+        var fileName = Files[k].NameFile;
+        var linkFile = Files[k].LinkFile;
+        console.log(topic, description, fileName);
+        var li = document.createElement('li');
+        //------viewContent-----
+        li.innerHTML =
+          '<p>topic : ' + topic + '<br>' +
+          'Content : ' + description + '<br>' +
+          'filename : ' + fileName + '<br>' +
+          // 'Link file : <a target = "_blank" href=' + linkFile + '>Click link here.<br></p>'
+          '<form action="viewContent.html"><button onclick="passvalue('+id+');">View</button></form>'
+          ;
+        document.getElementById('list_file').appendChild(li);
+      }
+    }
+    
+
+    //------------------------delete file------------------------------
+    document.getElementById('delete').onclick = function () {
+      parm();
+      if (topicName_Del == "") {
+        window.alert("Please enter File name for delete");
+        console.log("Please enter File name for delete");
+      } else {
+        firebase.database().ref('Files/' + topicName_Del).remove().then(() => {
+          console.log('Delete file successfully');
+          window.alert('Delete file successfully');
+          location.reload();
+        });
+      }
+    }
+
+  </script>
+</body>
+
+</html>
