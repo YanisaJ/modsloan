@@ -48,35 +48,12 @@
 
     <script>
         function student() {
-            window.location.replace('index.html');
+            window.location.replace('home.html');
         }
         function staff() {
             window.location.replace('login.html');
         }
     </script>
-
-    <!-- Messenger ปลั๊กอินแชท Code -->
-    <div id="fb-root"></div>
-    <script>
-        window.fbAsyncInit = function () {
-            FB.init({
-                xfbml: true,
-                version: 'v10.0'
-            });
-        };
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <!-- Your ปลั๊กอินแชท code -->
-    <div class="fb-customerchat" attribution="page_inbox" page_id="103484235166980">
-    </div>
-    <!-- Messenger ปลั๊กอินแชท Code -->
 
 </body>
 
