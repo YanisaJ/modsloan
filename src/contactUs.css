@@ -18,6 +18,7 @@ section{
 }
 
 .container {
+  display: grid;
   width: 90%;
   max-width: 500px;
   margin: 0 auto;
@@ -29,14 +30,14 @@ section{
 }
 
 .left-half {
-  background-color: #72ffa1;
+  background-color: #ffbd72;
   position: absolute;
   left: 0px;
   width: 50%;
 }
 
 .right-half {
-  background-color: #38f0a3;
+  background-color: #f038b9;
   position: absolute;
   right: 0px;
   width: 50%;
