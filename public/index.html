@@ -7,6 +7,14 @@
     <title>Welcome page</title>
     <link rel="stylesheet" href="">
     <style>
+        /* ///////////ICE/////////// */
+
+        div {
+            margin: 70px;
+        }
+
+        /* ///////////ICE/////////// */
+
         body {
             margin: 0;
             background-color: whitesmoke;
@@ -31,21 +39,25 @@
 
         .button1 {
             background-color: #4CAF50;
-        }/* Green */
+        }
+
+        /* Green */
         .button2 {
             background-color: #008CBA;
-        }/* Blue */
+        }
+
+        /* Blue */
     </style>
 </head>
 
 <body>
-
-    <h1>Mod loan's Assistant</h1>
-    <p>welcome for our website please choos what role you are :</p>
+    <div>
+        <h1>Mod loan's Assistant</h1>
+        <p>welcome for our website please choos what role you are :</p>
 
         <button class="button button1" action="index.html" onclick="student()">For Student</button>
         <button class="button button2" class="active" action="login.html" onclick="staff()">For Staff</button>
-
+    </div>
     <script>
         function student() {
             window.location.replace('home.html');
