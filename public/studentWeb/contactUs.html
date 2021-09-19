@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="utf-8" />
+  <title>Mod loan's assistant - Contact Us</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact us</title>
-  <link rel="stylesheet" href="/src/contactUs.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -56,17 +60,24 @@
       <a class="navbar-brand" action="index.html" onclick="home()">
         <img src="../img" width="75px" height="35px"></a>
       
-      <li><a class="contactUs.html" action="contactUs.html" onclick="contactUs()">Contact us</a></li>
+      <li><a class="active" action="contactUs.html" onclick="contactUs()">Contact us</a></li>
       <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
       <li><a action="news.html" onclick="news()">News</a></li>
       <li><a action="about.html" onclick="about()">About</a></li>
-      <li><a class="active" action="index.html" onclick="home()">Home</a></li>
+      <li><a action="index.html" onclick="home()">Home</a></li>
     </ul>
   </nav>
 
+ <!--Main content-->
+ <!-- <div class="jumbotron" style="padding-top:100px">
+  <div class="container">
+    <h1>News Page</h1>
+  </div>
+</div> -->
+
+
   <div class="container">
   <section>
-    <div class="container">
       <!--เข้าแก้ไขที่ https://formspree.io/forms/xyyloezb/integration-->
       <form action="https://formspree.io/f/xyyloezb" method="POST" id="my-form">
         <div class="form-group">
@@ -87,7 +98,6 @@
         </div>
         <button type="submit">Submit</button>
       </form>
-    </div>
     <div id="status"></div>
   </section>
   </div>
