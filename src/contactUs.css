@@ -1,4 +1,4 @@
-/* * {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -105,44 +105,5 @@ button[type="submit"]:hover {
     opacity: 0;
     pointer-events: none;
   }
-} */
-
-html, body, section, div {
-  height: 100vh;
 }
 
-body {
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 1.25rem;
-  line-height: 150%;
-  text-shadow: 0 2px 2px #b6701e;
-}
-
-article {
-  position: relative;
-  top: 50%;
-  text-align: center;
-  transform: translate(0, -50%);
-  padding: 1rem;
-}
-
-h1 {
-  font-size: 1.75rem;
-  margin: 0 0 0.75rem 0;
-}
-
-/* Pattern styles */
-.container {
-  display: grid;
-}
-
-.left-half {
-  background: #ff9e2c;
-  grid-column: 1;
-}
-
-.right-half {
-  background: #b6701e;
-  grid-column: 2;
-}
