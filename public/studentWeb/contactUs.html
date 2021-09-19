@@ -75,66 +75,10 @@
   </div>
 </div> -->
 
-
-  <div class="container-fluid" style="padding-top:80px">
-    <section>
-      <!--เข้าแก้ไขที่ https://formspree.io/forms/mrgrjabj/settings -->
-      <form action="https://formspree.io/f/mrgrjabj" method="POST" id="my-form">
-        <!-- <div class="form-group">
-          <label for="firstName"> First Name</label>
-          <input type="text" id="firstName" name="firstName" required>
-        </div>
-        <div class="form-group">
-          <label for="latsName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="massage">Massage</label>
-          <textarea name="massage" id="massage" cols="30" rows="10" required></textarea>
-        </div>
-        <button type="submit">Submit</button> -->
-
-        <div class="row">
-          <div class="form-group">
-            <div class="col-sm-1">
-              <label for="firstName"> First Name</label>
-            </div>
-            <div class="col-sm-4">
-              <input type="text" id="firstName" name="firstName" required>
-            </div><br><br>
-
-            <div class="col-sm-1">
-              <label for="latsName">Last Name</label>
-            </div>
-            <div class="col-sm-4">
-              <input type="text" id="lastName" name="lastName" required>
-            </div><br><br>
-
-            <div class="col-sm-1">
-              <label for="email">Email</label>
-            </div>
-            <div class="col-sm-4">
-              <input type="email" id="email" name="email" required>
-            </div><br><br>
-
-            <div class="col-sm-1">
-              <label for="massage">Massage</label>
-            </div>
-            <div class="col-sm-4">
-              <textarea name="massage" id="massage" cols="30" rows="10" required></textarea><br>
-              <button type="submit">Submit</button>
-            </div><br><br>
-          </div>
-      </form>
-      <div id="status"></div>
-    </section>
-  </div>
-  <div>
-    <section class="container">
+<div>
+  <!--เข้าแก้ไขที่ https://formspree.io/forms/mrgrjabj/settings -->
+  <section class="container">
+    <form action="https://formspree.io/f/mrgrjabj" method="POST" id="my-form">
       <div class="left-half">
         <article>
           <h1>Left Half</h1>
@@ -145,59 +89,81 @@
         <article>
           <h1>Right Half</h1>
           <p>If your knees aren't green by the end of the day, you ought to seriously re-examine your life.</p>
+          <div class="form-group">
+            <label for="firstName"> First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="latsName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="massage">Massage</label>
+            <textarea name="massage" id="massage" cols="30" rows="10" required></textarea>
+          </div>
+          <button type="submit">Submit</button>
+          <!-- </div> -->
         </article>
       </div>
-    </section>
+    </form>
+  </secion>
+    <div id="status"></div>
   </div>
 
-  <script>
-    function calendar() {
-      window.location.replace('/studentWeb/calendar.html');
-    }
-    function about() {
-      window.location.replace('/studentWeb/about.html');
-    }
-    function news() {
-      window.location.replace('/studentWeb/news.html');
-    }
-    function home() {
-      window.location.replace('/studentWeb/home.html');
-    }
-    //<!--Jay-->
-    function contactUs() {
-      window.location.replace('contactUs.html');
-    }
-  </script>
 
-  <!-- plugin messenger -->
-  <!-- Messenger ปลั๊กอินแชท Code -->
-  <div id="fb-root"></div>
 
-  <!-- Your ปลั๊กอินแชท code -->
-  <div id="fb-customer-chat" class="fb-customerchat">
-  </div>
+    <script>
+      function calendar() {
+        window.location.replace('/studentWeb/calendar.html');
+      }
+      function about() {
+        window.location.replace('/studentWeb/about.html');
+      }
+      function news() {
+        window.location.replace('/studentWeb/news.html');
+      }
+      function home() {
+        window.location.replace('/studentWeb/home.html');
+      }
+      //<!--Jay-->
+      function contactUs() {
+        window.location.replace('contactUs.html');
+      }
+    </script>
 
-  <script>
-    var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "103484235166980");
-    chatbox.setAttribute("attribution", "biz_inbox");
+    <!-- plugin messenger -->
+    <!-- Messenger ปลั๊กอินแชท Code -->
+    <div id="fb-root"></div>
 
-    window.fbAsyncInit = function () {
-      FB.init({
-        xfbml: true,
-        version: 'v12.0'
-      });
-    };
+    <!-- Your ปลั๊กอินแชท code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
 
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <!-- plugin messenger -->
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "103484235166980");
+      chatbox.setAttribute("attribution", "biz_inbox");
+
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: 'v12.0'
+        });
+      };
+
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- plugin messenger -->
 </body>
 
 </html>
