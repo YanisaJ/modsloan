@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Mod loan's assistant - Calendar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: whitesmoke;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #C5D7BD;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      font-size: 20px;
+    }
+
+    li {
+      float: right;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 15px 17px;
+      text-decoration: none;
+      height: 60px;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #adcca0;
+      height: 60px;
+    }
+
+    .active {
+      background-color: #9FB8AD;
+      height: 60px;
+    }
+  </style>
+</head>
+
+
+<body>
+    <script>
+        function homeStaff() {
+          window.location.replace('/staffWeb/homeStaff.html');
+        }
+        function newsStaff() {
+          window.location.replace('/staffWeb/newsStaff.html');
+        }
+        function mailBox() {
+          window.location.replace('/staffWen/mailBox.html');
+        }
+        function calendarManage() {
+          window.location.replace('/staffWeb/calendarManage.html');
+        }
+        function msManage() {
+          window.location.replace('/staffWeb/msManage.html');
+        }
+  
+    </script>
+  <nav class="navbar navbar-expand navbar-light" style="align-items:center;position: fixed; padding-right: 10px">
+    <ul>
+      <a class="navbar-brand" action="mailBox.html" onclick="homeStaff.html"><img src="/img/Mod.png" width="75px"
+        height="35px"></a>
+        <li><a action="msManage.html" onclick="msManage()">MS manage</a></li>
+        <li><a action="calendarManage.html" onclick="calendar()">Calendar manage</a></li>
+        <li><a action="newsStaff.html" onclick="newsStaff()">News</a></li>
+        <li><a class="active" action="mailbox.html" onclick="mailBox()">Mail box</a></li>
+        <li><a action="homeStaff.html" onclick="homeStaff()">Home</a></li>
+    </ul>
+  </nav>
+
+  <!--Main content-->
+  <div class="jumbotron" style="padding-top:100px">
+    <div class="container">
+      <h1>Hello</h1>
+    </div>
+  </div>
+
+</body>
+
+</html>

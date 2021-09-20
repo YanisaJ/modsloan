@@ -126,7 +126,7 @@ align-items: center;
     .container {
       border-radius: 5px;
       background-color: #f2f2f2;
-      padding: 80px;
+      padding: 60px;
       align-items: center;
     }
 
@@ -204,9 +204,11 @@ align-items: center;
       </li>
     </ul>
 
+
     <div class="container f1">
       <form action="">
         <div class="row">
+<div><h1>Upload content</h1></div>
           <div class="col-10">
             <label for="topic">Topic name</label>
           </div>
@@ -248,19 +250,7 @@ align-items: center;
         <button id="upload">Upload File</button>
       </div>
     </div>
-    
-    
-    --------------ยังไม่มีหน้าลง------------- Pre-view Your file<br>
-    <div id="fileOldName"></div>
-    <br>
-    <img id="myFile" width="200px"><br>
-    ---------------------------------------------------------------
-    <p>
-      <label for="namebox3">Topic name for delete : </label><br>
-      <input id="namebox3" type="text" placeholder="Insert file name" required>
-      <button id="delete">Delete</button><br>
-    </p>
-    ---------------------------------------------------------------
+
 
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
@@ -287,7 +277,6 @@ align-items: center;
         topicName = document.getElementById('topic').value;
         fileName = document.getElementById('namebox').value;
         fileDescription = document.getElementById('description').value;
-        //topicName_view = document.getElementById('namebox2').value;
         topicName_Del = document.getElementById('namebox3').value;
       }
 
@@ -331,23 +320,7 @@ align-items: center;
               uploadTask.snapshot.ref.getDownloadURL().then(function (URL) {
                 fileURL = URL;
                 var now = new Date().getTime();
-                // //**
-                // var data = {
-                //   TopicName: topicName,
-                //   NameFile: fileName,
-                //   LinkFile: fileURL,
-                //   Description: fileDescription
-                // };
-                // firebase.database().ref('Files/').push({
-                //   TopicName: topicName,
-                //   NameFile: fileName,
-                //   LinkFile: fileURL,
-                //   Description: fileDescription
-                // }).then(() => {
-                //   window.alert("Add file successfully.");
-                //   console.log('Add file successfully');
-                //   location.reload();
-                //**
+               
                 firebase.database().ref('Files/' + now).set({
                   Date: now,
                   TopicName: topicName,
@@ -358,89 +331,11 @@ align-items: center;
                   window.alert("Add file successfully.");
                   console.log('Add file successfully');
                   location.reload();
-                  // **
                 });
               })
-              // .key;
             });
         }
       }
-
-      // //-----------------------------view-------------------------------
-      // document.getElementById('view').onclick = function () {
-      //   parm();
-      //   if (topicName_view == "") {
-      //     window.alert("Please enter File name for view");
-      //     console.log("Please enter File name for view");
-      //   } else {
-      //     firebase.database().ref('Files/' + topicName_view).on('value', function (snapshot) {
-      //       var _li = document.createElement('li');
-      //       _li.innerHTML =
-      //         '<p>topic : ' + snapshot.val().TopicName + '<br>' +
-      //         'Content : ' + snapshot.val().Description + '<br>' +
-      //         'filename : ' + snapshot.val().NameFile + '<br>' +
-      //         'Link file : <a target = "_blank" href=' +
-      //         snapshot.val().linkFile + '>Click link here.<br></p>';
-      //       document.getElementById('_view').appendChild(_li);
-      //       console.log("View file");
-      //       console.log(snapshot.val().TopicName);
-      //     });
-      //   }
-      // }
-      // function passvalue(id) {
-      //   localStorage.setItem('VALUE', id);
-      //   console.log(id);
-      //   console.log("id");
-
-      // }
-      // //+----- view automatic -----+
-      // database = firebase.database();
-      // var Ref = database.ref('Files');
-      // Ref.on('value', gotData);
-      // function gotData(data) {
-      //   // console.log(data.val());
-      //   // var id = 1;
-      //   var Files = data.val();
-      //   var keys = Object.keys(Files);
-      //   // console.log(keys);
-      //   for (var i = 0; i < keys.length; i++) {
-      //     // id += 1;
-      //     var k = keys[i];
-      //     var id = Files[k].Date;
-      //     var topic = Files[k].TopicName;
-      //     var description = Files[k].Description;
-      //     var fileName = Files[k].NameFile;
-      //     var linkFile = Files[k].LinkFile;
-      //     console.log(topic, description, fileName);
-      //     var li = document.createElement('li');
-      //     //------viewContent-----
-      //     li.innerHTML =
-      //       '<p>topic : ' + topic + '<br>' +
-      //       'Content : ' + description + '<br>' +
-      //       'filename : ' + fileName + '<br>' +
-      //       // 'Link file : <a target = "_blank" href=' + linkFile + '>Click link here.<br></p>'
-      //       '<form action="viewContent.html"><button onclick="passvalue(' + id + ');">View</button></form>'
-      //       ;
-      //     document.getElementById('list_file').appendChild(li);
-      //   }
-      // }
-
-
-      // //------------------------delete file------------------------------
-      // document.getElementById('delete').onclick = function () {
-      //   parm();
-      //   if (topicName_Del == "") {
-      //     window.alert("Please enter File name for delete");
-      //     console.log("Please enter File name for delete");
-      //   } else {
-      //     firebase.database().ref('Files/' + topicName_Del).remove().then(() => {
-      //       console.log('Delete file successfully');
-      //       window.alert('Delete file successfully');
-      //       location.reload();
-      //     });
-      //   }
-      // }
-
     </script>
 </body>
 
