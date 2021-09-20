@@ -363,80 +363,80 @@ align-items: center;
         }
       }
 
-      //-----------------------------view-------------------------------
-      document.getElementById('view').onclick = function () {
-        parm();
-        if (topicName_view == "") {
-          window.alert("Please enter File name for view");
-          console.log("Please enter File name for view");
-        } else {
-          firebase.database().ref('Files/' + topicName_view).on('value', function (snapshot) {
-            var _li = document.createElement('li');
-            _li.innerHTML =
-              '<p>topic : ' + snapshot.val().TopicName + '<br>' +
-              'Content : ' + snapshot.val().Description + '<br>' +
-              'filename : ' + snapshot.val().NameFile + '<br>' +
-              'Link file : <a target = "_blank" href=' +
-              snapshot.val().linkFile + '>Click link here.<br></p>';
-            document.getElementById('_view').appendChild(_li);
-            console.log("View file");
-            console.log(snapshot.val().TopicName);
-          });
-        }
-      }
-      function passvalue(id) {
-        localStorage.setItem('VALUE', id);
-        console.log(id);
-        console.log("id");
+      // //-----------------------------view-------------------------------
+      // document.getElementById('view').onclick = function () {
+      //   parm();
+      //   if (topicName_view == "") {
+      //     window.alert("Please enter File name for view");
+      //     console.log("Please enter File name for view");
+      //   } else {
+      //     firebase.database().ref('Files/' + topicName_view).on('value', function (snapshot) {
+      //       var _li = document.createElement('li');
+      //       _li.innerHTML =
+      //         '<p>topic : ' + snapshot.val().TopicName + '<br>' +
+      //         'Content : ' + snapshot.val().Description + '<br>' +
+      //         'filename : ' + snapshot.val().NameFile + '<br>' +
+      //         'Link file : <a target = "_blank" href=' +
+      //         snapshot.val().linkFile + '>Click link here.<br></p>';
+      //       document.getElementById('_view').appendChild(_li);
+      //       console.log("View file");
+      //       console.log(snapshot.val().TopicName);
+      //     });
+      //   }
+      // }
+      // function passvalue(id) {
+      //   localStorage.setItem('VALUE', id);
+      //   console.log(id);
+      //   console.log("id");
 
-      }
-      //+----- view automatic -----+
-      database = firebase.database();
-      var Ref = database.ref('Files');
-      Ref.on('value', gotData);
-      function gotData(data) {
-        // console.log(data.val());
-        // var id = 1;
-        var Files = data.val();
-        var keys = Object.keys(Files);
-        // console.log(keys);
-        for (var i = 0; i < keys.length; i++) {
-          // id += 1;
-          var k = keys[i];
-          var id = Files[k].Date;
-          var topic = Files[k].TopicName;
-          var description = Files[k].Description;
-          var fileName = Files[k].NameFile;
-          var linkFile = Files[k].LinkFile;
-          console.log(topic, description, fileName);
-          var li = document.createElement('li');
-          //------viewContent-----
-          li.innerHTML =
-            '<p>topic : ' + topic + '<br>' +
-            'Content : ' + description + '<br>' +
-            'filename : ' + fileName + '<br>' +
-            // 'Link file : <a target = "_blank" href=' + linkFile + '>Click link here.<br></p>'
-            '<form action="viewContent.html"><button onclick="passvalue(' + id + ');">View</button></form>'
-            ;
-          document.getElementById('list_file').appendChild(li);
-        }
-      }
+      // }
+      // //+----- view automatic -----+
+      // database = firebase.database();
+      // var Ref = database.ref('Files');
+      // Ref.on('value', gotData);
+      // function gotData(data) {
+      //   // console.log(data.val());
+      //   // var id = 1;
+      //   var Files = data.val();
+      //   var keys = Object.keys(Files);
+      //   // console.log(keys);
+      //   for (var i = 0; i < keys.length; i++) {
+      //     // id += 1;
+      //     var k = keys[i];
+      //     var id = Files[k].Date;
+      //     var topic = Files[k].TopicName;
+      //     var description = Files[k].Description;
+      //     var fileName = Files[k].NameFile;
+      //     var linkFile = Files[k].LinkFile;
+      //     console.log(topic, description, fileName);
+      //     var li = document.createElement('li');
+      //     //------viewContent-----
+      //     li.innerHTML =
+      //       '<p>topic : ' + topic + '<br>' +
+      //       'Content : ' + description + '<br>' +
+      //       'filename : ' + fileName + '<br>' +
+      //       // 'Link file : <a target = "_blank" href=' + linkFile + '>Click link here.<br></p>'
+      //       '<form action="viewContent.html"><button onclick="passvalue(' + id + ');">View</button></form>'
+      //       ;
+      //     document.getElementById('list_file').appendChild(li);
+      //   }
+      // }
 
 
-      //------------------------delete file------------------------------
-      document.getElementById('delete').onclick = function () {
-        parm();
-        if (topicName_Del == "") {
-          window.alert("Please enter File name for delete");
-          console.log("Please enter File name for delete");
-        } else {
-          firebase.database().ref('Files/' + topicName_Del).remove().then(() => {
-            console.log('Delete file successfully');
-            window.alert('Delete file successfully');
-            location.reload();
-          });
-        }
-      }
+      // //------------------------delete file------------------------------
+      // document.getElementById('delete').onclick = function () {
+      //   parm();
+      //   if (topicName_Del == "") {
+      //     window.alert("Please enter File name for delete");
+      //     console.log("Please enter File name for delete");
+      //   } else {
+      //     firebase.database().ref('Files/' + topicName_Del).remove().then(() => {
+      //       console.log('Delete file successfully');
+      //       window.alert('Delete file successfully');
+      //       location.reload();
+      //     });
+      //   }
+      // }
 
     </script>
 </body>
