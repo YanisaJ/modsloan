@@ -159,6 +159,14 @@ align-items: center;
         margin-top: 0;
       }
     }
+
+
+
+    /*ice*/
+    button {
+      width: 100px;
+      margin-left: 62%;
+    }
   </style>
 </head>
 
@@ -227,11 +235,12 @@ align-items: center;
         <div class="row">
           <div class="col-10">
             <label for="file" button type="button" class="btn btn-default " id="selectf">upload file</label>
+            <div id="fileOldName"></div>
           </div>
         </div>
 
         <div class="row ">
-          <input type="submit" id="upload" value="Upload">
+          <button id="upload">Upload</button>
         </div>
       </form>
     </div>
