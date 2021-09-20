@@ -287,7 +287,7 @@ align-items: center;
         topicName = document.getElementById('topic').value;
         fileName = document.getElementById('namebox').value;
         fileDescription = document.getElementById('description').value;
-        topicName_view = document.getElementById('namebox2').value;
+        //topicName_view = document.getElementById('namebox2').value;
         topicName_Del = document.getElementById('namebox3').value;
       }
 
@@ -322,7 +322,7 @@ align-items: center;
             function (snapshot) {
               var percent = snapshot.bytesTransferred / snapshot.totalBytes * 100;
               console.log(percent + "% done");
-              document.getElementById('upProgress').innerHTML = 'Upload ' + percent + ' %';
+              //document.getElementById('upProgress').innerHTML = percent;
             },
             function (error) {
               console.log('Error in saving file.');
