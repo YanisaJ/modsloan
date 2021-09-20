@@ -172,29 +172,14 @@ align-items: center;
 
 <body>
   <script>
-    function test() {
-      window.location.replace('/upload.html');
-    }
-    function calendar() {
-      window.location.replace('/studentWeb/calendar.html');
-    }
-    function about() {
-      window.location.replace('/studentWeb/about.html');
-    }
-    function news() {
-      window.location.replace('/studentWeb/news.html');
-    }
     function home() {
-      window.location.replace('/studentWeb/home.html');
+      window.location.replace('/studentWeb/homeStaff.html');
     }
-    //<!--Jay-->
-    function contactUs() {
-      window.location.replace('/studentWeb/contactUs.html');
-    }
+
   </script>
   <nav class="navbar navbar-expand navbar-light f1" style="align-items:center;position: absolute; padding-right: 10px">
     <ul>
-      <a class="navbar-brand" action="index.html" onclick="home()"><img src="img/Mod.png" width="75px"
+      <a class="navbar-brand" action="upload.html" onclick="homeStaff"><img src="img/Mod.png" width="75px"
           height="35px"></a>
       <li>
         <!-- <button type="button" class="btn btn-default" >
@@ -277,7 +262,7 @@ align-items: center;
         topicName = document.getElementById('topic').value;
         fileName = document.getElementById('namebox').value;
         fileDescription = document.getElementById('description').value;
-        topicName_Del = document.getElementById('namebox3').value;
+        //topicName_Del = document.getElementById('namebox3').value;
       }
 
       //---------------------------selectFile----------------------------
@@ -288,7 +273,7 @@ align-items: center;
           files = e.target.files;
           reader = new FileReader();
           reader.onload = function () {
-            document.getElementById('myFile').src = reader.result;
+            //document.getElementById('myFile').src = reader.result;
             document.getElementById('fileOldName').innerHTML = '<b>Your file is : </b>' + files[0].name;
           }
           reader.readAsDataURL(files[0]);
