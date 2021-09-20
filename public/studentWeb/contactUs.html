@@ -68,19 +68,12 @@
     </ul>
   </nav>
 
-  <!--Main content-->
-  <!-- <div class="jumbotron" style="padding-top:100px">
-  <div class="container">
-    <h1>News Page</h1>
-  </div>
-</div> -->
-
-
+<!--old-->
   <div class="container-fluid" style="padding-top:80px">
     <section>
       <!--เข้าแก้ไขที่ https://formspree.io/forms/xyyloezb/integration-->
-      <form action="https://formspree.io/f/xyyloezb" method="POST" id="my-form">
-        <!-- <div class="form-group">
+      <!-- <form action="https://formspree.io/f/xyyloezb" method="POST" id="my-form">
+         <div class="form-group">
           <label for="firstName"> First Name</label>
           <input type="text" id="firstName" name="firstName" required>
         </div>
@@ -96,9 +89,9 @@
           <label for="massage">Massage</label>
           <textarea name="massage" id="massage" cols="30" rows="10" required></textarea>
         </div>
-        <button type="submit">Submit</button> -->
-
-        <div class="row">
+        <button type="submit">Submit</button> 
+     --------
+         <div class="row">
           <div class="form-group">
             <div class="col-sm-1">
               <label for="firstName"> First Name</label>
@@ -128,9 +121,57 @@
               <textarea name="massage" id="massage" cols="30" rows="10" required></textarea><br>
               <button type="submit">Submit</button>
             </div><br><br>
-          </div>
+          </div> 
+      </form> -->
 
-      </form>
+
+      <div class="container">
+        <div class="contact-form">
+         <div class="row">
+             <div class="col-sm-7">                  
+                  <!-- <form id="ajax-contact"  method="post" action="contact-form-mail.php" role="form"> -->
+                    <form action="https://formspree.io/f/xyyloezb" method="POST" id="my-form" role="form">
+                      <div class="messages" id="form-messages"></div>
+                      <div class="controls">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="firstName">Firstname *</label>
+                                      <input id="firstName" type="text" name="firstName" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="lastName">Lastname *</label>
+                                      <input id="lastName" type="text" name="lastName" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="email">Email *</label>
+                                      <input id="email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label for="massage">Message *</label>
+                                      <textarea id="massage" name="message" class="form-control" placeholder="Message for us *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <input type="submit" class="btn btn-black" value="Send message">
+                              </div>
+                          </div>
+
+
       <div id="status"></div>
     </section>
   </div>
