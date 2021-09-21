@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>Mod loan's assistant - About</title>
+  <title>Mod loan's assistant - Calendar</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -55,40 +55,40 @@
 
 
 <body>
-  <script>
-    function calendar() {
-        window.location.replace('/studentWeb/calendar.html');
-      }
-      function about() {
-        window.location.replace('/studentWeb/about.html');
-      }
-      function news() {
-        window.location.replace('/studentWeb/news.html');
-      }
-      function home() {
-        window.location.replace('/studentWeb/home.html');
-      }
-    function contactUs() {
-        window.location.replace(`/studentWeb/contactUs.html`);
-      }
-  </script>
+    <script>
+        function homeStaff() {
+          window.location.replace('/staffWeb/homeStaff.html');
+        }
+        function newsStaff() {
+          window.location.replace('/staffWeb/newsStaff.html');
+        }
+        function mailBox() {
+          window.location.replace('/staffWeb/mailBox.html');
+        }
+        function calendarManage() {
+          window.location.replace('/staffWeb/calendarManage.html');
+        }
+        function msManage() {
+          window.location.replace('/staffWeb/msManage.html');
+        }
+  
+    </script>
   <nav class="navbar navbar-expand navbar-light" style="align-items:center;position: fixed; padding-right: 10px">
     <ul>
-      <a class="navbar-brand" action="index.html" onclick="home()"><img src="/img/Mod.png" width="75px"
+      <a class="navbar-brand" action="calendarManage.html" onclick="homeStaff.html"><img src="/img/Mod.png" width="75px"
         height="35px"></a>
-
-      <li><a action="contactUs.html" onclick="contactUs()">Contact us</a></li>
-      <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
-      <li><a action="news.html" onclick="news()">News</a></li>
-      <li><a class="active" action="about.html" onclick="about()">About</a></li>
-      <li><a action="index.html" onclick="home()">Home</a></li>
+        <li><a action="msManage.html" onclick="msManage()">MS manage</a></li>
+        <li><a class="active"action="calendarManage.html" onclick="calendaManager()">Calendar manage</a></li>
+        <li><a action="newsStaff.html" onclick="newsStaff()">News</a></li>
+        <li><a action="mailBox.html" onclick="mailBox()">Mail box</a></li>
+        <li><a action="homeStaff.html" onclick="homeStaff()">Home</a></li>
     </ul>
   </nav>
 
   <!--Main content-->
   <div class="jumbotron" style="padding-top:100px">
     <div class="container">
-      <h1>About Page</h1>
+      <h1>คอนนิจิว่ะ</h1>
     </div>
   </div>
 

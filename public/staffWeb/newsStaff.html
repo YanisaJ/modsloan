@@ -84,41 +84,49 @@
 
 <body>
   <script>
-    function calendar() {
-        window.location.replace('/studentWeb/calendar.html');
-      }
-      function about() {
-        window.location.replace('/studentWeb/about.html');
-      }
-      function news() {
-        window.location.replace('/studentWeb/news.html');
-      }
-      function home() {
-        window.location.replace('/studentWeb/home.html');
-      }
-    function contactUs() {
-      window.location.replace(`/studentWeb/contactUs.html`);
+    function homeStaff() {
+      window.location.replace('/staffWeb/homeStaff.html');
     }
-  </script>
+    function newsStaff() {
+      window.location.replace('/staffWeb/newsStaff.html');
+    }
+    function mailBox() {
+      window.location.replace('/staffWeb/mailBox.html');
+    }
+    function calendarManage() {
+      window.location.replace('/staffWeb/calendarManage.html');
+    }
+    function msManage() {
+      window.location.replace('/staffWeb/msManage.html');
+    }
+    function Upload() {
+        window.location.replace('/upload.html');
+      }
+</script>
   <nav class="navbar navbar-expand navbar-light" style="align-items:center;position: fixed; padding-right: 10px">
     <ul>
-      <a class="navbar-brand" action="index.html" onclick="home()"><img src="/img/Mod.png" width="75px"
+      <a class="navbar-brand" action="newsStaff.html" onclick="homeStaff.html"><img src="/img/Mod.png" width="75px"
         height="35px"></a>
 
-      <li><a action="contactUs.html" onclick="contactUs()">Contact us</a></li>
-      <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
-      <li><a class="active" action="news.html" onclick="news()">News</a></li>
-      <li><a action="about.html" onclick="about()">About</a></li>
-      <li><a action="index.html" onclick="home()">Home</a></li>
+        <li><a action="msManage.html" onclick="msManage()">MS manage</a></li>
+        <li><a action="calendarManage.html" onclick="calendaManager()">Calendar manage</a></li>
+        <li><a class="active" action="newsStaff.html" onclick="newsStaff()">News</a></li>
+        <li><a action="mailBox.html" onclick="mailBox()">Mail box</a></li>
+        <li><a action="homeStaff.html" onclick="homeStaff()">Home</a></li>
     </ul>
   </nav>
 
   <!--Main content-->
   <div class="jumbotron" style="padding-top:100px">
     <div class="container">
-      <h1>News Page</h1>
+      <h1>你好</h1>
     </div>
   </div>
+
+  ---------------------------------------------------------------
+    <p><button action="upload.html" onclick="Upload()">Upload file</button></p>
+  ---------------------------------------------------------------
+
 
   <div class="container">
     <div class="col-md-12">
@@ -186,7 +194,7 @@
             '<div class="p"><div class="col-sm-12">' +
             '<p>topic : ' + topic + '<br>' +
             // 'Link file : <a class="btn btn-outline-info" target = "_blank" href=' + linkFile + 'role="button">Click<br></p></div>';
-            '<form action="/studentWeb/viewContent.html"><button onclick="passvalue(' + id + ');">View</button></form></p></div>';
+            '<form action="viewContent.html"><button onclick="passvalue(' + id + ');">View</button></form></p></div>';
           document.getElementById('list_file').appendChild(li);
         }
       }
