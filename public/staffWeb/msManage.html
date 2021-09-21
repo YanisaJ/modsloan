@@ -55,40 +55,70 @@
 
 
 <body>
-    <script>
-        function homeStaff() {
-          window.location.replace('/staffWeb/homeStaff.html');
-        }
-        function newsStaff() {
-          window.location.replace('/staffWeb/newsStaff.html');
-        }
-        function mailBox() {
-          window.location.replace('/staffWeb/mailBox.html');
-        }
-        function calendarManage() {
-          window.location.replace('/staffWeb/calendarManage.html');
-        }
-        function msManage() {
-          window.location.replace('/staffWeb/msManage.html');
-        }
-  
-    </script>
+  <script>
+    function homeStaff() {
+      window.location.replace('/staffWeb/homeStaff.html');
+    }
+    function newsStaff() {
+      window.location.replace('/staffWeb/newsStaff.html');
+    }
+    function mailBox() {
+      window.location.replace('/staffWeb/mailBox.html');
+    }
+    function calendarManage() {
+      window.location.replace('/staffWeb/calendarManage.html');
+    }
+    function msManage() {
+      window.location.replace('/staffWeb/msManage.html');
+    }
+
+  </script>
   <nav class="navbar navbar-expand navbar-light" style="align-items:center;position: fixed; padding-right: 10px">
     <ul>
       <a class="navbar-brand" action="msManage.html" onclick="homeStaff.html"><img src="/img/Mod.png" width="75px"
-        height="35px"></a>
-        <li><a class="active" action="msManage.html" onclick="msManage()">MS manage</a></li>
-        <li><a action="calendarManage.html" onclick="calendaManager()">Calendar manage</a></li>
-        <li><a action="newsStaff.html" onclick="newsStaff()">News</a></li>
-        <li><a action="mailBox.html" onclick="mailBox()">Mail box</a></li>
-        <li><a action="homeStaff.html" onclick="homeStaff()">Home</a></li>
+          height="35px"></a>
+      <li><a class="active" action="msManage.html" onclick="msManage()">MS manage</a></li>
+      <li><a action="calendarManage.html" onclick="calendaManager()">Calendar manage</a></li>
+      <li><a action="newsStaff.html" onclick="newsStaff()">News</a></li>
+      <li><a action="mailBox.html" onclick="mailBox()">Mail box</a></li>
+      <li><a action="homeStaff.html" onclick="homeStaff()">Home</a></li>
     </ul>
   </nav>
 
   <!--Main content-->
   <div class="jumbotron" style="padding-top:100px">
     <div class="container">
+      <iframe id="rotator" src="http://www.zcast.ir" width="100%" height="600" scrolling="no" border="0"></iframe>
+
+      <script>
+        // start when the page is loaded
+        window.onload = function () {
+
+          var urls = [
+            "http://www.zcast.ir",
+          ];
+
+          var index = 1;
+          var el = document.getElementById("rotator");
+
+          setTimeout(function rotate() {
+
+            if (index === urls.length) {
+              index = 0;
+            }
+
+            el.src = urls[index];
+            index = index + 1;
+
+            // continue rotating iframes
+            setTimeout(rotate, 5000);
+
+          }, 5000); // 5000ms = 5s
+        };
+      </script>
+
       <h1>กราบสวัสดี</h1>
+
     </div>
   </div>
 
