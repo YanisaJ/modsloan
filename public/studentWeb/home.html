@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>Mod loan's Assistant</title>
+  <title>Mod loan's assistant - News</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -14,7 +14,6 @@
       margin: 0;
       background-color: whitesmoke;
     }
-
 
     ul {
       list-style-type: none;
@@ -27,6 +26,10 @@
       width: 100%;
       height: 60px;
       font-size: 20px;
+    }
+
+    ol {
+      list-style-type: none;
     }
 
     li {
@@ -51,101 +54,145 @@
       background-color: #9FB8AD;
       height: 60px;
     }
+
+    /* ///////////////////////////////////// */
+    .p {
+      display: block;
+      color: rgb(55, 92, 61);
+      text-align: left;
+      padding: 20px 20px;
+      text-decoration: none;
+      height: 10px;
+      letter-spacing: 1px;
+      line-height: 2;
+      display: block;
+    }
+
+    .p a {
+      background-color: #cfecd8;
+      color: rgb(82, 155, 93);
+      height: 30px;
+    }
+
+    .p a:hover:not(.p) {
+      background-color: #b2e7c2;
+      height: 30px;
+    }
   </style>
 </head>
 
 
 <body>
+  <script>
+    function calendar() {
+        window.location.replace('/studentWeb/calendar.html');
+      }
+      function about() {
+        window.location.replace('/studentWeb/about.html');
+      }
+      function home() {
+        window.location.replace('/studentWeb/home.html');
+      }
+    function contactUs() {
+      window.location.replace(`/studentWeb/contactUs.html`);
+    }
+  </script>
   <nav class="navbar navbar-expand navbar-light" style="align-items:center;position: fixed; padding-right: 10px">
     <ul>
       <a class="navbar-brand" action="index.html" onclick="home()"><img src="/img/Mod.png" width="75px"
-          height="35px"></a>
+        height="35px"></a>
 
       <li><a action="contactUs.html" onclick="contactUs()">Contact us</a></li>
       <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
-      <li><a action="news.html" onclick="news()">News</a></li>
       <li><a action="about.html" onclick="about()">About</a></li>
-      <li><a class="active" action="home.html" onclick="home()">Home</a></li>
+      <li><a  class="active" action="index.html" onclick="home()">Home</a></li>
     </ul>
   </nav>
 
   <!--Main content-->
   <div class="jumbotron" style="padding-top:100px">
     <div class="container">
-      <h1>News Annoucement</h1>
-      <p>last update </p> <!-- coding for last update news-->
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      <h1>Home Page</h1>
+      <h5>ทำให้อันล่าสุดมาแสดงตรงนี้ไม่เป็นจริมๆ</h5>
     </div>
   </div>
 
-  <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>This is an update collection of news info. </p> <!-- coding for last update news-->
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>This is an update collection of news info. </p> <!-- coding for last update news-->
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>This is an update collection of news info. </p> <!-- coding for last update news-->
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+  <div class="row f1" style="padding-left: 15%; padding-bottom: 3%;" >
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <ol id='list_file'>
+          </ol>
+        </div>
       </div>
     </div>
 
-    
-    <script>
-      function calendar() {
-        window.location.replace('/studentWeb/calendar.html');
-      }
-      function about() {
-        window.location.replace('/studentWeb/about.html');
-      }
-      function news() {
-        window.location.replace('/studentWeb/news.html');
-      }
-      function home() {
-        window.location.replace('/studentWeb/home.html');
-      }
-      //<!--Jay-->
-      function contactUs() {
-        window.location.replace('/studentWeb/contactUs.html');
-      }
-    </script>
 
-    <!-- plugin messenger -->
-    <!-- Messenger ปลั๊กอินแชท Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your ปลั๊กอินแชท code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "103484235166980");
-      chatbox.setAttribute("attribution", "biz_inbox");
-
-      window.fbAsyncInit = function () {
-        FB.init({
-          xfbml: true,
-          version: 'v12.0'
-        });
+  <div>
+    <!-- <script src="script.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <script src='https://www.gstatic.com/firebasejs/3.2.1/firebase.js'></script>
+    <script> //--------ConnectFirebase--------
+      var firebaseConfig = {
+        apiKey: "AIzaSyD_PU5bw4-vNEYL5ew7sow970gTu-ZtLG4",
+        authDomain: "modloans-f8d62.firebaseapp.com",
+        projectId: "modloans-f8d62",
+        storageBucket: "modloans-f8d62.appspot.com",
+        messagingSenderId: "398266070886",
+        appId: "1:398266070886:web:d684c75954cb090ae3faa7",
+        measurementId: "G-61MQ0SD6LJ",
+        databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
       };
+      firebase.initializeApp(firebaseConfig);
 
-      (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+      //--------------------------
+      var fileName, fileURL, fileDescription;
+      var files = [];
+      var reader = new FileReader();
+      //--------------------------
+      function parm() {
+        topicName = document.getElementById('topic').value;
+        fileName = document.getElementById('namebox').value;
+        fileDescription = document.getElementById('description').value;
+        topicName_view = document.getElementById('namebox2').value;
+        topicName_Del = document.getElementById('namebox3').value;
+      }
+      //+----- passvalue for view inside each content -----+
+      function passvalue(id) {
+        localStorage.setItem('VALUE', id);
+        // console.log(id);
+        // console.log("id");
+      }
+      //+----- view automatic -----+
+      database = firebase.database();
+      var Ref = database.ref('Files');
+      Ref.on('value', gotData);
+      function gotData(data) {
+        // console.log(data.val());
+        var Files = data.val();
+        var keys = Object.keys(Files);
+        // console.log(keys);
+        for (var i = 0; i < keys.length; i++) {
+          var k = keys[i];
+          var id = Files[k].Date;
+          var topic = Files[k].TopicName;
+          var description = Files[k].Description;
+          var fileName = Files[k].NameFile;
+          var linkFile = Files[k].LinkFile;
+          var date = Files[k].Date;
+          var _date = new Date(date);
+          console.log(topic, description, fileName);
+          var _li = document.createElement('li');
+          _li.innerHTML =
+            '<h5 class="card-title h2">'+ _date.toDateString() +'</h5>'+
+            '<p class="card-text h1">'+ topic +'</p>'+
+            '<form action="/studentWeb/viewContent.html"><button type="button" class="btn btn-primary" onclick="passvalue(' + id + ');">ดูข้อมูล</button></form></p></div>';
+          document.getElementById('list_file').appendChild(_li);
+        }
+      }
     </script>
-    <!-- plugin messenger -->
+  </div>
 </body>
 
 </html>
