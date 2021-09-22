@@ -40,15 +40,6 @@
   </div>
 
   <script>
-    let si = onSignIn();
-    let err = errorSignin();
-    
-    if (si) {
-      window.location.replace('/public/staffWeb/homeStaff.html');
-    } else {
-      return err;
-    }
-
     function onSignIn(googleUser) {
       var profile = googleUser.getBasicProfile();
       $("#name").text(profile.getName());
@@ -60,11 +51,6 @@
 
     function homeStaff() {
       window.location.replace('/staffWeb/homeStaff.html');
-    }
-    
-    function errorSignin(){
-      window.location.replace('login.html');
-      then.alert("Sign in ERROR, please try again.");
     }
 
     function signOut() {
