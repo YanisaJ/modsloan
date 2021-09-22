@@ -16,7 +16,7 @@
 
 <body>
   <!-- Jay 22/09/64 -->
-  <script src="/src/login.js"></script>
+  <!-- <script src="/src/login.js"></script> -->
   <!--GG signin-->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <!--JS-->
@@ -38,6 +38,26 @@
     <p id="email"></p>
     <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
   </div>
+
+  <script>
+  function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    $("#name").text(profile.getName());
+    $("#email").text(profile.getEmail());
+    $("#image").attr('src', profile.getImageUrl());
+    $(".data").css("display", "block");
+    $(".g-signin2").css("display", "none");
+}
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        alert("You have been signed out successfully");
+        $(".data").css("display", "none");
+        $(".g-signin2").css("display", "block");
+    });
+}
+</script>
 
 
   <!-- Jay 22/09/64 -->
