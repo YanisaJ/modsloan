@@ -10,8 +10,8 @@
   <!--css-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-  <link rel="stylesheet" href="/src/login.css">
-  <title>Sign in for Staff</title>
+    <title>Sign in for Staff</title>
+    <link rel="stylesheet" href="/src/login.css">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
   <!--JQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <h2 class="alert alert-primary" style="color: lightgreen;">Signin</h2>
+  <h2 style="color: lightgreen;">Signin</h2>
   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 
   <!-- main content -->
@@ -41,11 +41,11 @@
 
   <script>
     if (onSignIn == true) {
-      console.log(homeStaff());
+      window.location.replace('/public/staffWeb/homeStaff.html');
     } else {
-      console.log(errorLogin());
-    }break;
-    
+      return errorLogin;
+    }
+
     function onSignIn(googleUser) {
       var profile = googleUser.getBasicProfile();
       $("#name").text(profile.getName());
