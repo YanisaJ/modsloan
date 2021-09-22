@@ -3,94 +3,261 @@
 <html>
 
 <head>
-  <title>Mod loan's assistant - Calendar</title>
+  <title>Mod loan's assistant</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      background-color: whitesmoke;
-    }
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #C5D7BD;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 60px;
-      font-size: 20px;
-    }
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+.f1 {
+  font-family: 'Sarabun', sans-serif;
+}
+.sidebar-container {
+  position: fixed;
+  width: 220px;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #F0F2BA;
+  color: #111;
+}
 
-    li {
-      float: right;
-    }
+.content-container {
+  padding-top: 20px;
+}
 
-    li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 15px 17px;
-      text-decoration: none;
-      height: 60px;
-    }
+.sidebar-logo {
+  padding: 10px 15px 10px 30px;
+  font-size: 20px;
+  background-color: #945A32;
+}
 
-    li a:hover:not(.active) {
-      background-color: #adcca0;
-      height: 60px;
-    }
+.sidebar-navigation {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  position: relative;
+}
 
-    .active {
-      background-color: #9FB8AD;
-      height: 60px;
-    }
-  </style>
+.sidebar-navigation li {
+  background-color: transparent;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  line-height: 20px;
+}
+
+.sidebar-navigation li a {
+  padding: 10px 15px 10px 30px;
+  display: block;
+  color: rgb(77, 69, 69);
+}
+
+.sidebar-navigation li .fa {
+  margin-right: 10px;
+}
+
+.sidebar-navigation li a:active,
+.sidebar-navigation li a:hover,
+.sidebar-navigation li a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.sidebar-navigation li::before {
+  background-color: #CCDE99;
+  position: absolute;
+  content: '';
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+  width: 3px;
+  z-index: -1;
+}
+
+.sidebar-navigation li:hover::before {
+  width: 100%;
+}
+
+.sidebar-navigation .header {
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: #466D1D;
+  padding: 10px 15px 10px 30px;
+}
+
+.sidebar-navigation .header::before {
+  background-color: transparent;
+}
+
+.content-container {
+  padding-left: 220px;
+}
+
+
+</style>
 </head>
 
 
 <body>
   <script>
-      function homeStaff() {
-        window.location.replace('/staffWeb/homeStaff.html');
-      }
-      function newsStaff() {
-        window.location.replace('/staffWeb/newsStaff.html');
-      }
-      function mailBox() {
-        window.location.replace('/staffWeb/mailBox.html');
-      }
-      function calendarManage() {
-        window.location.replace('/staffWeb/calendarManage.html');
-      }
-      function msManage() {
-        window.location.replace('/staffWeb/msManage.html');
-      }
-
+    function homeStaff() {
+      window.location.replace('/staffWeb/homeStaff.html');
+    }
+    function mailBox() {
+      window.location.replace('/staffWeb/mailBox.html');
+    }
+    function calendarManage() {
+      window.location.replace('/staffWeb/calendarManage.html');
+    }
+    function msManage() {
+      window.location.replace('/staffWeb/msManage.html');
+    }
+    function Upload() {
+      window.location.replace('/upload.html');
+    }
+    function index() {
+      window.location.replace('/index.html');
+    }
   </script>
-  <nav class="navbar navbar-expand navbar-light" style="align-items:center;position: fixed; padding-right: 10px">
-    <ul>
-      <a class="navbar-brand" action="homeStaff.html" onclick="homeStaff.html"><img src="/img/Mod.png" width="75px"
-        height="35px"></a>
-      <li><a action="msManage.html" onclick="msManage()">MS manage</a></li>
-      <li><a action="calendarManage.html" onclick="calendaManager()">Calendar manage</a></li>
-      <li><a action="newsStaff.html" onclick="newsStaff()">News</a></li>
-      <li><a action="mailBox.html" onclick="mailBox()">Mail box</a></li>
-      <li><a class="active" action="homeStaff.html" onclick="homeStaff()">Home</a></li>
-    </ul>
-  </nav>
-
-  <!--Main content-->
-  <div class="jumbotron" style="padding-top:100px">
-    <div class="container">
-      <h1>안녕~</h1>
+  <div class="sidebar-container f1">
+    <div class="sidebar-logo">
+      มดน้อยผู้ช่วย
     </div>
+    <ul class="sidebar-navigation">
+      <li class="header">Navigation</li>
+      <li>
+        <a action="homeStaff.html" onclick="homeStaff()">
+          <i class="fa fa-tachometer" aria-hidden="true"></i> All post
+        </a>
+      </li>
+      <li>
+        <a action="upload.html" onclick="Upload()">
+          <i class="fa fa-home" aria-hidden="true"></i> New post
+        </a>
+      </li>
+      <li class="header">Another Menu</li>
+      <li>
+        <a action="msManage.html" onclick="msManage()">
+          <i class="fa fa-users" aria-hidden="true"></i> MS manage
+        </a>
+      </li>
+      <li>
+        <a action="calendarManage.html" onclick="calendaManager()">
+          <i class="fa fa-cog" aria-hidden="true"></i>Calendar manage
+        </a>
+      </li>
+      <li>
+        <a action="mailbox.html" onclick="mailBox()">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> Mail box
+        </a>
+      </li>
+      <li>
+        <a action="index.html" onclick="index">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> Logout
+        </a>
+      </li>
+    </ul>
   </div>
+
+  <div class="content-container f1">
+
+    <div class="container-fluid">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <!--main content view-->
+      <div class="cv" f1>
+        <div>
+          <div class="inbox">
+            <div class="inbox-sb">
+
+            </div>
+            <div class="inbox-bx container-fluid">
+              <div class="row">
+
+                <div class="col-md-10">
+                  <table class="table table-stripped">
+                    <tbody>
+                      <tr>
+                        <th id="list_file"></th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <script src='https://www.gstatic.com/firebasejs/3.2.1/firebase.js'></script>
+    <script> //--------ConnectFirebase--------
+      var firebaseConfig = {
+        apiKey: "AIzaSyD_PU5bw4-vNEYL5ew7sow970gTu-ZtLG4",
+        authDomain: "modloans-f8d62.firebaseapp.com",
+        projectId: "modloans-f8d62",
+        storageBucket: "modloans-f8d62.appspot.com",
+        messagingSenderId: "398266070886",
+        appId: "1:398266070886:web:d684c75954cb090ae3faa7",
+        measurementId: "G-61MQ0SD6LJ",
+        databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      //--------------------------
+      var fileName, fileURL, fileDescription;
+      var files = [];
+      var reader = new FileReader();
+      //--------------------------
+      function parm() {
+        topicName = document.getElementById('topic').value;
+        fileName = document.getElementById('namebox').value;
+        fileDescription = document.getElementById('description').value;
+        topicName_view = document.getElementById('namebox2').value;
+        topicName_Del = document.getElementById('namebox3').value;
+      }
+      //+----- passvalue for view inside each content -----+
+      function passvalue(id) {
+        localStorage.setItem('VALUE', id);
+        // console.log(id);
+        // console.log("id");
+      }
+      //+----- view automatic -----+
+      database = firebase.database();
+      var Ref = database.ref('Files');
+      Ref.on('value', gotData);
+      function gotData(data) {
+        // console.log(data.val());
+        var Files = data.val();
+        var keys = Object.keys(Files);
+        // console.log(keys);
+        for (var i = 0; i < keys.length; i++) {
+          var k = keys[i];
+          var id = Files[k].Date;
+          var topic = Files[k].TopicName;
+          var description = Files[k].Description;
+          var fileName = Files[k].NameFile;
+          var linkFile = Files[k].LinkFile;
+          var date = Files[k].Date;
+          var _date = new Date(date);
+          console.log(topic, description, fileName);
+          var _li = document.createElement('tr');
+          _li.innerHTML = _date.toDateString() + ' ' + '-' + ' ' + topic
+
+          document.getElementById('list_file').appendChild(_li);
+        }
+      }
+    </script>
 
 </body>
 
