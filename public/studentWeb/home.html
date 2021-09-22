@@ -185,7 +185,7 @@
           console.log(topic, description, fileName);
           var _li = document.createElement('li');
           _li.innerHTML =
-            '<h5 class="card-title h2">'+ _date.toDateString() +'</h5>'+
+            '<h5">'+ _date.toDateString() +'</h5>'+
             '<p class="card-text h1">'+ topic +'</p>'+
             '<form action="/studentWeb/viewContent.html"><button type="button" class="btn btn-primary" onclick="passvalue(' + id + ');">ดูข้อมูล</button></form></p></div>';
           document.getElementById('list_file').appendChild(_li);

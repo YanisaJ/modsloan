@@ -223,6 +223,7 @@ align-items: center;
           <div class="col-10">
             <label for="file" button type="button" class="btn btn-default " id="selectf">Select file</label>
             <div id="fileOldName"></div>
+<h5 id="upProgress"></h5>
           </div>
         </div>
 
@@ -295,7 +296,7 @@ align-items: center;
             function (snapshot) {
               var percent = snapshot.bytesTransferred / snapshot.totalBytes * 100;
               console.log(percent + "% done");
-              //document.getElementById('upProgress').innerHTML = percent;
+              document.getElementById('upProgress').innerHTML = 'Upload ' + percent + ' %';
             },
             function (error) {
               console.log('Error in saving file.');
