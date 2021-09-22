@@ -173,7 +173,7 @@ align-items: center;
 <body>
   <script>
     function homeStaff() {
-      window.location.replace('/studentWeb/homeStaff.html');
+      window.location.replace('/staffWeb/homeStaff.html');
     }
 
   </script>
@@ -193,7 +193,9 @@ align-items: center;
     <div class="container f1">
       <form action="">
         <div class="row">
-<div><h1>Upload content</h1></div>
+          <div>
+            <h1>Upload content</h1>
+          </div>
           <div class="col-10">
             <label for="topic">Topic name</label>
           </div>
@@ -223,7 +225,7 @@ align-items: center;
           <div class="col-10">
             <label for="file" button type="button" class="btn btn-default " id="selectf">Select file</label>
             <div id="fileOldName"></div>
-<h5 id="upProgress"></h5>
+            <h5 id="upProgress"></h5>
           </div>
         </div>
 
@@ -305,7 +307,7 @@ align-items: center;
               uploadTask.snapshot.ref.getDownloadURL().then(function (URL) {
                 fileURL = URL;
                 var now = new Date().getTime();
-               
+
                 firebase.database().ref('Files/' + now).set({
                   Date: now,
                   TopicName: topicName,
