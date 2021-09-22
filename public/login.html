@@ -2,13 +2,62 @@
 <html lang="en">
 
 <head>
-  <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <!-- <meta name="google-signin-scope" content="profile email"> -->
+  <!-- <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"> -->
+  <!--GG signin-->
+  <meta name="google-signin-client_id"
+    content="893396241688-0ipagot47at06pt2j0201j7t5p097jfe.apps.googleusercontent.com">
+  <!--css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" -->
+  integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/src/login.css">
+  <title>Sign in for Staff</title>
 </head>
 
 <body>
+  <!-- Jay 22/09/64 -->
+  <script src="/src/login.js"></script>
+  <!--GG signin-->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <!--JS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <!--JQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <h2 class="alert alert-primary">Please Signin Before work</h2>
   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+
+  <!-- main content -->
+  <div class="data">
+    <p>Name</p>
+    <p id="name"></p>
+    <p>Image</p>
+    <img id="image" class="rounded-circle" width="100" height="100" />
+    <p>Email</p>
+    <p id="email"></p>
+    <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+  </div>
+
+
+  <!-- Jay 22/09/64 -->
+
+  <!-- ice-->
+  <h3>สมุดว่า Login ได้เเล้ว</h3>
+  <a action="homeStaff.html" onclick="homeStaff()">กดตรงนี้</a>
+  <br><br><br>ปล. แค่เพิ่มไม่ได้ลบอะไรไปสักอย่างนะจ้ะ อิ้อิ้
+  <script>
+    function homeStaff() {
+      window.location.replace('/staffWeb/homeStaff.html');
+    }
+  </script>
+
+</body>
+
+</html>
+
+<!-- old code -->
+<!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
   <script>
     function onSignIn(googleUser) {
       // Useful data for your client-side scripts:
@@ -24,39 +73,4 @@
       var id_token = googleUser.getAuthResponse().id_token;
       console.log("ID Token: " + id_token);
     }
-  </script>
-
-
-
-
-
-  <!-- ice-->
-
-  <h3>สมุดว่า Login ได้เเล้ว</h3>
-  <a action="homeStaff.html" onclick="homeStaff()">กดตรงนี้</a>
-<br><br><br>ปล. แค่เพิ่มไม่ได้ลบอะไรไปสักอย่างนะจ้ะ อิ้อิ้
-  <script>
-    function homeStaff() {
-      window.location.replace('/staffWeb/homeStaff.html');
-    }
-  </script>
-</body>
-
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact us</title>
-    <link rel="stylesheet" href="">
-</head>
-
-<body>
-    <h1>Login page</h1>
-
-</body>
-
-</html> -->
+  </script> -->
