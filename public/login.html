@@ -40,10 +40,13 @@
   </div>
 
   <script>
-    if (onSignIn == true) {
+    let si = onSignIn();
+    let err = errorSignin();
+    
+    if (si) {
       window.location.replace('/public/staffWeb/homeStaff.html');
     } else {
-      return errorLogin;
+      return err;
     }
 
     function onSignIn(googleUser) {
@@ -59,7 +62,7 @@
       window.location.replace('/staffWeb/homeStaff.html');
     }
     
-    function errorLogin(){
+    function errorSignin(){
       window.location.replace('login.html');
       then.alert("Sign in ERROR, please try again.");
     }
