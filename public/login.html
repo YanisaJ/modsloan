@@ -8,8 +8,8 @@
   <meta name="google-signin-client_id"
     content="893396241688-0ipagot47at06pt2j0201j7t5p097jfe.apps.googleusercontent.com">
   <!--css-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
-  integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="/src/login.css">
   <title>Sign in for Staff</title>
 </head>
@@ -25,7 +25,7 @@
   <!--JQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <h2 class="alert alert-primary">Please Signin Before work</h2>
+  <h2 class="alert alert-primary" style="color: lightgreen;">Signin</h2>
   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 
   <!-- main content -->
@@ -40,28 +40,42 @@
   </div>
 
   <script>
-  function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    $("#name").text(profile.getName());
-    $("#email").text(profile.getEmail());
-    $("#image").attr('src', profile.getImageUrl());
-    $(".data").css("display", "block");
-    $(".g-signin2").css("display", "none");
-}
+    if (onSignIn == true) {
+      console.log(homeStaff());
+    } else {
+      console.log(errorLogin());
+    }break;
+    
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      $("#name").text(profile.getName());
+      $("#email").text(profile.getEmail());
+      $("#image").attr('src', profile.getImageUrl());
+      $(".data").css("display", "block");
+      $(".g-signin2").css("display", "none");
+    }
 
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-        alert("You have been signed out successfully");
+    function homeStaff() {
+      window.location.replace('/staffWeb/homeStaff.html');
+    }
+    
+    function errorLogin(){
+      window.location.replace('login.html');
+      then.alert("Sign in ERROR, please try again.");
+    }
+
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        alert("If you need to sign out, please confirm.");
         $(".data").css("display", "none");
         $(".g-signin2").css("display", "block");
-    });
-}
-</script>
-
-
+      });
+    }
+  </script>
   <!-- Jay 22/09/64 -->
 
+  
   <!-- ice-->
   <h3>สมุดว่า Login ได้เเล้ว</h3>
   <a action="homeStaff.html" onclick="homeStaff()">กดตรงนี้</a>
