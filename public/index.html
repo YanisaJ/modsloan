@@ -79,7 +79,7 @@
 
         <button class="button button1" action="index.html" onclick="student()">For Student</button>
         <!-- <button class="button button1" action="login.html" onclick="staff()">For Staff</button> -->
-        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">For Staff</div>
+        <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">For Staff</div> -->
     </div>
 
     <!-- Jay -->
@@ -97,15 +97,15 @@
         function student() {
             window.location.replace('/studentWeb/home.html');
         }
-        // Jay
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            $("#name").text(profile.getName());
-            $("#email").text(profile.getEmail());
-            $("#image").attr('src', profile.getImageUrl());
-            $(".data").css("display", "block");
-            $(".g-signin2").css("display", "none");
-        }
+        // // Jay
+        // function onSignIn(googleUser) {
+        //     var profile = googleUser.getBasicProfile();
+        //     $("#name").text(profile.getName());
+        //     $("#email").text(profile.getEmail());
+        //     $("#image").attr('src', profile.getImageUrl());
+        //     $(".data").css("display", "block");
+        //     $(".g-signin2").css("display", "none");
+        // }
     </script>
     
     <!-- Jay -->
