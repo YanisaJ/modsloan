@@ -78,7 +78,8 @@
         <p>welcome for our website please choos what role you are :</p>
 
         <button class="button button1" action="index.html" onclick="student()">For Student</button>
-        <button class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">For Staff</button>
+        <!-- <button class="button button1" action="login.html" onclick="staff()">For Staff</button> -->
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">For Staff</div>
     </div>
 
     <!-- Jay -->
@@ -104,8 +105,6 @@
             $("#image").attr('src', profile.getImageUrl());
             $(".data").css("display", "block");
             $(".g-signin2").css("display", "none");
-
-            window.location.replace('login.html');
         }
     </script>
     
