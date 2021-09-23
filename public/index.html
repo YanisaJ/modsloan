@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Welcome page</title>
     <link rel="stylesheet" href="">
+    <!-- Jay -->
+    <!--GG signin-->
+    <meta name="google-signin-client_id"
+        content="893396241688-0ipagot47at06pt2j0201j7t5p097jfe.apps.googleusercontent.com">
+    <!--css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="">
+    <!-- Jay -->
     <style>
         /* ///////////ICE/////////// */
 
@@ -47,6 +56,19 @@
         }
 
         /* Blue */
+
+        /* Jay */
+        .data {
+            display: none;
+        }
+
+        .g-signin2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+        }
     </style>
 </head>
 
@@ -57,18 +79,38 @@
         <p>welcome for our website please choos what role you are :</p>
 
         <button class="button button1" action="index.html" onclick="student()">For Student</button>
-        <button class="button button2" class="active" action="login.html" onclick="staff()">For Staff</button>
+        <button class="button button2" class="active" action="login.html" onclick="onSignIn()">For Staff</button>
     </div>
+
+    <!-- Jay -->
+    <!--GG signin-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!--JS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    
     <script>
         function student() {
             window.location.replace('/studentWeb/home.html');
         }
-        function staff() {
-            window.location.replace('login.html');
+        // Jay
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            $("#name").text(profile.getName());
+            $("#email").text(profile.getEmail());
+            $("#image").attr('src', profile.getImageUrl());
+            $(".data").css("display", "block");
+            $(".g-signin2").css("display", "none");
         }
     </script>
+    
+    <!-- Jay -->
 
-    อัพเดทหรือยังน้าาาา 22/09/64 16.29น.
+
 
 </body>
 
