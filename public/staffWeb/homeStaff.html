@@ -232,6 +232,16 @@
         topicName_view = document.getElementById('namebox2').value;
         topicName_Del = document.getElementById('namebox3').value;
       }
+
+
+      function del(id) {
+        firebase.database().ref('Files/' + id).remove().then(() => {
+          console.log('Delete file successfully');
+          window.alert('Delete file successfully');
+          location.reload();
+        });
+      }
+
       //+----- passvalue for view inside each content -----+
       function passvalue(id) {
         localStorage.setItem('VALUE', id);
@@ -259,9 +269,9 @@
           console.log(topic, description, fileName);
           var _li = document.createElement('li');
           _li.innerHTML =
-            _date.toDateString() + ' ' + '-' + ' ' + topic +
-            '<form action="/studentWeb/viewContent.html"><button onclick="passvalue(' + id + ');">ดูข้อมูล</button></form>' +
-            '<form action="/staffWeb/update.html"><button onclick="passvalue(' + id + ');"> X </button></form>';
+            '<button onclick="del(' + id + ');"> X </button>' + ' ' +
+             _date.toDateString() + ' ' + '-' + ' ' + topic +
+            '<form action="/studentWeb/viewContent.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
           document.getElementById('list_file').appendChild(_li);
         }
       }
