@@ -183,11 +183,17 @@
 
                 <div class="col-md-10">
                   <table class="table table-stripped">
-                    <tbody>
+                    <!-- <tbody>
                       <tr>
                         <th id="list_file"></th>
                       </tr>
-                    </tbody>
+                    </tbody> -->
+
+
+                    <ul id='list_file'>
+                    </ul>
+
+
                   </table>
                 </div>
               </div>
@@ -251,12 +257,11 @@
           var date = Files[k].Date;
           var _date = new Date(date);
           console.log(topic, description, fileName);
-          var _li = document.createElement('tr');
+          var _li = document.createElement('li');
           _li.innerHTML =
-            '<form action="/staffWeb/update.html"><button onclick="passvalue(' + id + ');"> X </button></form>'
-            + _date.toDateString() + ' ' + '-' + ' ' + topic +
-            '<form action="/studentWeb/viewContent.html"><button onclick="passvalue(' + id + ');">ดูข้อมูล</button></form>';
-
+            _date.toDateString() + ' ' + '-' + ' ' + topic +
+            '<form action="/studentWeb/viewContent.html"><button onclick="passvalue(' + id + ');">ดูข้อมูล</button></form>' +
+            '<form action="/staffWeb/update.html"><button onclick="passvalue(' + id + ');"> X </button></form>';
           document.getElementById('list_file').appendChild(_li);
         }
       }
