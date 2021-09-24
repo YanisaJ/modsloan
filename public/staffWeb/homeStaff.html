@@ -271,7 +271,7 @@
           _li.innerHTML =
             '<button onclick="del(' + id + ');"> X </button>' + ' ' +
              _date.toDateString() + ' ' + '-' + ' ' + topic +
-            '<form action="/studentWeb/viewContent.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
+            '<form action="/staffWeb/update.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
           document.getElementById('list_file').appendChild(_li);
         }
       }

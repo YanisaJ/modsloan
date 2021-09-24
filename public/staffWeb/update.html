@@ -8,6 +8,8 @@
 </head>
 
 <body>
+
+    <h2>ยังทำไม่ได้</h2>
     <div>
         GetValue id
         <div id='result_ID'></div>
@@ -15,6 +17,23 @@
         <ul id='result_id'>
         </ul>
     </div>
+
+    <h1>Update content</h1>
+    <label for="topic">Topic name</label>
+    <input type="text" id="topicName_" name="topicName_" placeholder="Topic name ...">
+    <br>
+    <label for="description">Content</label>
+    <textarea id="fileDescription_" name="fileDescription_"></textarea>
+    <br>
+    <label for="namebox">File name</label>
+    <input type="text" id="fileName_" name="fileName_" placeholder="File name ...">
+    <br>
+    <label for="file" button type="button" class="btn btn-default " id="selectfile_">Select file</label>
+    <button id="upload">Upload File</button>
+
+    <h3 id="fileOldName"></h3>
+    <h5 id="upProgress"></h5>
+
 
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
@@ -52,8 +71,82 @@
             var li = document.createElement('li');
             li.innerHTML =
                 '<p>topic : ' + topic + '<br>' +
-               'test';
+                'Content : ' + description + '<br>' +
+                'filename : ' + fileName + '<br>' +
+                'Link file : <a target = "_blank" href=' + linkFile + '>Click link here.<br></p>';
             document.getElementById('result_id').appendChild(li);
+        }
+
+
+
+
+        //--------------------------
+        var fileName, fileURL, fileDescription;
+        var files = [];
+        var reader = new FileReader();
+        //--------------------------
+        function parm() {
+            topicName = document.getElementById('topicName_').value;
+            fileName = document.getElementById('fileName_').value;
+            fileDescription = document.getElementById('fileDescription_').value;
+        }
+
+        //---------------------------selectFile----------------------------
+        document.getElementById('selectfile_').onclick = function (e) {
+            var input = document.createElement('input');
+            input.type = 'file';
+            input.onchange = e => {
+                files = e.target.files;
+                reader = new FileReader();
+                reader.onload = function () {
+                    //document.getElementById('myFile').src = reader.result;
+                    document.getElementById('fileOldName').innerHTML = '<b>Your file is : </b>' + files[0].name;
+                }
+                reader.readAsDataURL(files[0]);
+            }
+            input.click();
+        }
+
+        //-----------------uploadFile and createFileName------------------
+        document.getElementById('upload').onclick = function () {
+            parm();
+            if (fileName == "" || topicName == "") {
+                window.alert("Please enter Topic name and File name");
+                console.log("Please enter Topic name and File name");
+            } else {
+                console.log("Up loadfile. . .");
+                var uploadTask = firebase.storage().ref('Files/' + fileName).put(files[0]);
+
+                //---show % upload on log---
+                uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+                    function (snapshot) {
+                        var percent = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+                        console.log(percent + "% done");
+                        document.getElementById('upProgress').innerHTML = 'Upload ' + percent + ' %';
+                    },
+                    function (error) {
+                        console.log('Error in saving file.');
+                    },
+                    function () {
+                        uploadTask.snapshot.ref.getDownloadURL().then(function (URL) {
+                            fileURL = URL;
+                            // var now = new Date().getTime();
+                            var now = result_ID;
+
+                            firebase.database().ref('Files/' + now).set({
+                                Date: now,
+                                TopicName: topicName,
+                                NameFile: fileName,
+                                LinkFile: fileURL,
+                                Description: fileDescription
+                            }).then(() => {
+                                window.alert("Add file successfully.");
+                                console.log('Add file successfully');
+                                location.reload();
+                            });
+                        })
+                    });
+            }
         }
     </script>
 
