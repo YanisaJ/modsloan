@@ -54,6 +54,9 @@
         //--------------------------
         document.getElementById('result_ID').innerHTML = localStorage.getItem('VALUE');
         console.log(localStorage.getItem('VALUE'));
+
+        var xxx = document.getElementById('result_ID').value;
+
         //-----------------
 
         database = firebase.database();
@@ -131,10 +134,9 @@
                         uploadTask.snapshot.ref.getDownloadURL().then(function (URL) {
                             fileURL = URL;
                             // var now = new Date().getTime();
-                            var now = result_ID;
 
-                            firebase.database().ref('Files/' + now).set({
-                                Date: now,
+                            firebase.database().ref('Files/' + xxx).set({
+                                Date: xxx,
                                 TopicName: topicName,
                                 NameFile: fileName,
                                 LinkFile: fileURL,
