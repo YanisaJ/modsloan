@@ -252,7 +252,8 @@
           var _date = new Date(date);
           console.log(topic, description, fileName);
           var _li = document.createElement('tr');
-          _li.innerHTML = _date.toDateString() + ' ' + '-' + ' ' + topic
+          _li.innerHTML = 
+         '<form action="/studentWeb/viewContent.html"><a action="homeStaff.html" onclick="passvalue(' + id + ')>x</a>' +_date.toDateString() + ' ' + '-' + ' ' + topic
 
           document.getElementById('list_file').appendChild(_li);
         }
