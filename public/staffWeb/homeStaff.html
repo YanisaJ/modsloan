@@ -253,7 +253,7 @@
           console.log(topic, description, fileName);
           var _li = document.createElement('tr');
           _li.innerHTML =
-            '<form action="/studentWeb/viewContent.html"><img src="img_girl.jpg"  width="20" height="20" onclick="passvalue(' + id + ');"></img></form>'
+            '<form action="/staffWeb/update.html"><button onclick="passvalue(' + id + ');"> X </button></form>'
             + _date.toDateString() + ' ' + '-' + ' ' + topic +
             '<form action="/studentWeb/viewContent.html"><button onclick="passvalue(' + id + ');">ดูข้อมูล</button></form>';
 
