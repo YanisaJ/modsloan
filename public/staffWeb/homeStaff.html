@@ -289,6 +289,27 @@
              _date.toDateString() + ' ' + '-' + ' ' + topic +
             '<form action="/staffWeb/update.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
           document.getElementById('list_file').appendChild(_li);
+
+           // +---------- Auto delete ----------+
+           var countDownDate = Math.floor(id + 31536000000);
+          var x = setInterval(function () {
+            var now = new Date().getTime();
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            // If the count down is over
+            if (distance < 0) {
+              clearInterval(x);
+              delAuto();
+            }
+          }, 1000);
+
+          function delAuto() {
+            firebase.database().ref('Files/' + id).remove().then(() => {
+              //console.log('Delete file successfully');
+              //window.alert('Delete file successfully');
+              location.reload();
+            });
+          }
         }
       }
     </script>

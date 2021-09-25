@@ -120,16 +120,10 @@
       window.location.replace('/staffWeb/msManage.html');
     }
     function Upload() {
-      window.location.replace('/staffWeb/upload.html');
+      window.location.replace('/upload.html');
     }
     function index() {
       window.location.replace('/index.html');
-    }
-    function viewDoc() {
-      window.location.replace('/staffWeb/viewDoc.html');
-    }
-    function uploadDoc() {
-      window.location.replace('/staffWeb/uploadDoc.html');
     }
   </script>
   <div class="sidebar-container f1">
@@ -144,18 +138,8 @@
         </a>
       </li>
       <li>
-        <a action="viewDoc.html" onclick="viewDoc()">
-          <i class="fa fa-tachometer" aria-hidden="true"></i> All document
-        </a>
-      </li>
-      <li>
         <a action="upload.html" onclick="Upload()">
           <i class="fa fa-home" aria-hidden="true"></i> New post
-        </a>
-      </li>
-      <li>
-        <a action="uploadDoc.html" onclick="uploadDoc()">
-          <i class="fa fa-home" aria-hidden="true"></i> New document
         </a>
       </li>
       <li class="header">Another Menu</li>
@@ -251,7 +235,7 @@
 
 
       function del(id) {
-        firebase.database().ref('Files/' + id).remove().then(() => {
+        firebase.database().ref('File/' + id).remove().then(() => {
           console.log('Delete file successfully');
           window.alert('Delete file successfully');
           location.reload();
@@ -286,9 +270,30 @@
           var _li = document.createElement('li');
           _li.innerHTML =
             '<button onclick="del(' + id + ');"> X </button>' + ' ' +
-             _date.toDateString() + ' ' + '-' + ' ' + topic +
-            '<form action="/staffWeb/update.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
+            _date.toDateString() + ' ' + '-' + ' ' + topic +
+            '<form action="file:///C:/Users/ice_f/Desktop/testAll.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
           document.getElementById('list_file').appendChild(_li);
+
+          // +---------- Auto delete ----------+
+          var countDownDate = Math.floor(id + 31536000000);
+          var x = setInterval(function () {
+            var now = new Date().getTime();
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            // If the count down is over
+            if (distance < 0) {
+              clearInterval(x);
+              delAuto();
+            }
+          }, 1000);
+
+          function delAuto() {
+            firebase.database().ref('File/' + id).remove().then(() => {
+              //console.log('Delete file successfully');
+              //window.alert('Delete file successfully');
+              location.reload();
+            });
+          }
         }
       }
     </script>
