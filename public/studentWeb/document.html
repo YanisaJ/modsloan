@@ -96,6 +96,9 @@
     function contactUs() {
       window.location.replace('/studentWeb/contactUs.html');
     }
+    function document() {
+      window.location.replace('/studentWeb/document.html');
+    }
   </script>
   <nav class="navbar navbar-expand navbar-light" style="align-items:center;position: fixed; padding-right: 10px">
     <ul>
@@ -105,8 +108,8 @@
       <li><a action="contactUs.html" onclick="contactUs()">Contact us</a></li>
       <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
       <li><a action="about.html" onclick="about()">About</a></li>
-      <li><a action="document.html" onclick="document()">Document</a></li>
-      <li><a class="active" action="index.html" onclick="home()">Home</a></li>
+      <li><a class="active" action="document.html" onclick="document()">Document</a></li>
+      <li><a  action="index.html" onclick="home()">Home</a></li>
     </ul>
   </nav>
 
@@ -164,7 +167,7 @@
         }
         //+----- view automatic -----+
         database = firebase.database();
-        var Ref = database.ref('Files');
+        var Ref = database.ref('File');
         Ref.on('value', gotData);
         function gotData(data) {
           // console.log(data.val());

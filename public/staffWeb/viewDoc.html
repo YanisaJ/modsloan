@@ -266,7 +266,7 @@
       }
       //+----- view automatic -----+
       database = firebase.database();
-      var Ref = database.ref('Files');
+      var Ref = database.ref('File');
       Ref.on('value', gotData);
       function gotData(data) {
         // console.log(data.val());
