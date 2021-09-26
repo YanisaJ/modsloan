@@ -234,45 +234,47 @@
                 <div class="container">
                     <!--Main content-->
                     <h2>ติดต่อผู้พัฒนา</h2>
+                    <div>
+                        <form action="https://formspree.io/f/xyyloezb" method="POST">
+                            <div class="form-group">
+                                <label for="firstName lastName">Firstname Lastname *</label>
+                                <input id="firstName lastName" type="text" name="firstName lastName" class="form-control"
+                                    placeholder="Please enter your first-last name *" required="required"
+                                    data-error="Firstname Lastname is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input id="email" type="email" name="email" class="form-control" placeholder="Please enter your email *"
+                                    required="required" data-error="Valid email is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="massage">Message *</label>
+                                <textarea id="massage" name="message" class="form-control" placeholder="Message for us *" rows="4"
+                                    required="required" data-error="Please,leave us a message."></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                
+                            <div>
+                                <input type="submit" value="Send message">
+                            </div>
+                            <!-- your other form fields go here -->
+                            <div>
+                                <br>
+                                <small><strong>*</strong> These fields are required.</small>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 
-    <div>
-        <form action="https://formspree.io/f/xyyloezb" method="POST">
-            <div class="form-group">
-                <label for="firstName lastName">Firstname Lastname *</label>
-                <input id="firstName lastName" type="text" name="firstName lastName" class="form-control"
-                    placeholder="Please enter your first-last name *" required="required"
-                    data-error="Firstname Lastname is required.">
-                <div class="help-block with-errors"></div>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email *</label>
-                <input id="email" type="email" name="email" class="form-control" placeholder="Please enter your email *"
-                    required="required" data-error="Valid email is required.">
-                <div class="help-block with-errors"></div>
-            </div>
-
-            <div class="form-group">
-                <label for="massage">Message *</label>
-                <textarea id="massage" name="message" class="form-control" placeholder="Message for us *" rows="4"
-                    required="required" data-error="Please,leave us a message."></textarea>
-                <div class="help-block with-errors"></div>
-            </div>
-
-            <div>
-                <input type="submit" value="Send message">
-            </div>
-            <!-- your other form fields go here -->
-            <div>
-                <br>
-                <small><strong>*</strong> These fields are required.</small>
-            </div>
-        </form>
-    </div>
+   
 
 
 
