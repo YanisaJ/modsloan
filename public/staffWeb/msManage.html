@@ -101,6 +101,40 @@
     .content-container {
       padding-left: 220px;
     }
+
+    /* Jay */
+    .container {
+  position: relative;
+  width: auto;
+  max-width: auto;
+}
+
+.container img {
+  width: auto;
+  height: auto;
+}
+
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #17A589;
+  color: white;
+  font-size: 20px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: #0E6251;
+  color: white;
+}
+
   </style>
 </head>
 
@@ -189,17 +223,32 @@
     <div class="container-fluid">
       <div class="jumbotron" style="padding-top:30px">
         <div class="container">
-          <h1>FB-Messenger management</h1>
+          <h2>FB-Messenger management</h2>
+          <p>กรุณาเข้าระบบเฟสบุ๊คบัญชีผู็ดูแลของท่านเพื่อจัดการกล่องข้อความและการนัดหมาย: </p>
         </div>
       </div>
     </div>
 
-    <!-- Facebook API -->
-    <iframe id="rotator" src="https://www.facebook.com" width="100%" height="600" scrolling="no" border="0">
-    </iframe>
-    <!-- Login Button -->
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+    <div class="container">
+      <img src="https://i.pinimg.com/564x/35/a9/77/35a977b2e9cbb2a2106ab3a8a89a993d.jpg" alt="Snow" style="width:100%">
+      <button class="btn" onclick="location.href='https://www.facebook.com'">Go to Facebook</button>
+    </div>
 
+
+    
+
+
+
+
+
+
+    <!-- <iframe id="rotator" src="https://www.facebook.com" width="100%" height="600" scrolling="no" border="0">
+    </iframe> 
+    
+    //Facebook API
+
+    //Login Button 
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 
     <script>
       window.fbAsyncInit = function () {
@@ -242,7 +291,7 @@
         });
       }
 
-    </script>
+    </script> -->
 </body>
 
 </html>
