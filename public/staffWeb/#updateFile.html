@@ -55,7 +55,7 @@
         document.getElementById('result_ID').innerHTML = localStorage.getItem('VALUE');
         console.log(localStorage.getItem('VALUE'));
 
-        var xxx = document.getElementById('result_ID').value;
+        //var xxx = document.getElementById('result_ID').value;
 
         //-----------------
 
@@ -78,9 +78,7 @@
                 'filename : ' + fileName + '<br>' +
                 'Link file : <a target = "_blank" href=' + linkFile + '>Click link here.<br></p>';
             document.getElementById('result_id').appendChild(li);
-        }
-
-
+        
 
 
         //--------------------------
@@ -135,8 +133,8 @@
                             fileURL = URL;
                             // var now = new Date().getTime();
 
-                            firebase.database().ref('Files/' + xxx).set({
-                                Date: xxx,
+                            firebase.database().ref('Files/' + id).set({
+                                Date: id,
                                 TopicName: topicName,
                                 NameFile: fileName,
                                 LinkFile: fileURL,
@@ -150,6 +148,7 @@
                     });
             }
         }
+		}
     </script>
 
 

@@ -125,6 +125,12 @@
     function index() {
       window.location.replace('/index.html');
     }
+    function viewDoc() {
+      window.location.replace('/staffWeb/viewDoc.html');
+    }
+    function uploadDoc() {
+      window.location.replace('/staffWeb/uploadDoc.html');
+    }
   </script>
   <div class="sidebar-container f1">
     <div class="sidebar-logo">
@@ -138,8 +144,18 @@
         </a>
       </li>
       <li>
+        <a action="viewDoc.html" onclick="viewDoc()">
+          <i class="fa fa-tachometer" aria-hidden="true"></i> All document
+        </a>
+      </li>
+      <li>
         <a action="upload.html" onclick="Upload()">
           <i class="fa fa-home" aria-hidden="true"></i> New post
+        </a>
+      </li>
+      <li>
+        <a action="uploadDoc.html" onclick="uploadDoc()">
+          <i class="fa fa-home" aria-hidden="true"></i> New document
         </a>
       </li>
       <li class="header">Another Menu</li>
@@ -271,11 +287,11 @@
           _li.innerHTML =
             '<button onclick="del(' + id + ');"> X </button>' + ' ' +
             _date.toDateString() + ' ' + '-' + ' ' + topic +
-            '<form action="file:///C:/Users/ice_f/Desktop/testAll.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
+            '<form action="/staffWeb/#updateDoc.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
           document.getElementById('list_file').appendChild(_li);
 
-          // +---------- Auto delete ----------+
-          var countDownDate = Math.floor(id + 31536000000);
+          // +---------- Auto delete in 3 years ----------+
+          var countDownDate = Math.floor(id + 94608000000);
           var x = setInterval(function () {
             var now = new Date().getTime();
             // Find the distance between now and the count down date
