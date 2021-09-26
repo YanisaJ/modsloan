@@ -262,6 +262,7 @@
       //+----- passvalue for view inside each content -----+
       function passvalue(id) {
         localStorage.setItem('VALUE', id);
+        window.location.replace('/staffWeb/updateDoc.html');
         // console.log(id);
         // console.log("id");
       }
@@ -290,10 +291,10 @@
             //_date.toDateString() + ' ' + '-' + ' ' + topic +
             //'<form action="/staffWeb/updateDoc.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
 
-            '<form action="/staffWeb/updateFile.html"><button onclick="del(' + id + ');"> ลบ </button>' + ' ' +
-             _date.toDateString() + ' ' + '-' + ' ' + topic +
-            '<a class="card-text h5" style="color:blue"onclick="passvalue(' + id + ');">'+" "+'<u>แก้ไข</u></a></form>';
-            
+            '<button onclick="del(' + id + ');"> ลบ </button>' + ' ' +
+            _date.toDateString() + ' ' + '-' + ' ' + topic +
+            '<a class="card-text h5" style="color:blue" onclick="passvalue(' + id + ');"> แก้ไข</a>';
+
           document.getElementById('list_file').appendChild(_li);
 
           // +---------- Auto delete in 3 years ----------+
