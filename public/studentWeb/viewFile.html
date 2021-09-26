@@ -1,92 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>View</title>
+  <title>Mod loan's assistant - News</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: whitesmoke;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #C5D7BD;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      font-size: 20px;
+    }
+
+    ol {
+      list-style-type: none;
+    }
+
+    li {
+      float: right;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 15px 17px;
+      text-decoration: none;
+      height: 60px;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #adcca0;
+      height: 60px;
+    }
+
+    .active {
+      background-color: #9FB8AD;
+      height: 60px;
+    }
+
+    /* ///////////////////////////////////// */
+    .p {
+      display: block;
+      color: rgb(55, 92, 61);
+      text-align: left;
+      padding: 20px 20px;
+      text-decoration: none;
+      height: 10px;
+      letter-spacing: 1px;
+      line-height: 2;
+      display: block;
+    }
+
+    .p a {
+      background-color: #cfecd8;
+      color: rgb(82, 155, 93);
+      height: 30px;
+    }
+
+    .p a:hover:not(.p) {
+      background-color: #b2e7c2;
+      height: 30px;
+    }
+  </style>
 </head>
 
-<body>
-    <div>
-        GetValue id
-        <div id='result_ID'></div>
 
-        <ul id='result_id'>
-        </ul>
+<body>
+  <script>
+    function calendar() {
+      window.location.replace('/studentWeb/calendar.html');
+    }
+    function about() {
+      window.location.replace('/studentWeb/about.html');
+    }
+    function home() {
+      window.location.replace('/studentWeb/home.html');
+    }
+    function contactUs() {
+      window.location.replace('/studentWeb/contactUs.html');
+    }
+    function documentstd() {
+      window.location.replace('/studentWeb/document.html');
+    }
+  </script>
+  <nav class="navbar navbar-expand navbar-light" style="align-items:center;position: fixed; padding-right: 10px">
+    <ul>
+      <a class="navbar-brand" action="index.html" onclick="home()"><img src="/img/Mod.png" width="75px"
+          height="35px"></a>
+
+      <li><a action="contactUs.html" onclick="contactUs()">Contact us</a></li>
+      <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
+      <li><a action="about.html" onclick="about()">About</a></li>
+      <li><a action="document.html" onclick="documentstd()">Document</a></li>
+      <li><a class="active" action="index.html" onclick="home()">Home</a></li>
+    </ul>
+  </nav>
+
+
+  <div class=" main content f1" style="padding-top:100px; padding-left: 25%; padding-right: 25%;">
+    <div class="container">
+      <div id='result_ID'></div>
+      <div id='list_file'>
+      </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
     <script src='https://www.gstatic.com/firebasejs/3.2.1/firebase.js'></script>
     <script> //--------ConnectFirebase--------
-        var firebaseConfig = {
-            apiKey: "AIzaSyD_PU5bw4-vNEYL5ew7sow970gTu-ZtLG4",
-            authDomain: "modloans-f8d62.firebaseapp.com",
-            projectId: "modloans-f8d62",
-            storageBucket: "modloans-f8d62.appspot.com",
-            messagingSenderId: "398266070886",
-            appId: "1:398266070886:web:d684c75954cb090ae3faa7",
-            measurementId: "G-61MQ0SD6LJ",
-            databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
-        };
-        firebase.initializeApp(firebaseConfig);
+      var firebaseConfig = {
+        apiKey: "AIzaSyD_PU5bw4-vNEYL5ew7sow970gTu-ZtLG4",
+        authDomain: "modloans-f8d62.firebaseapp.com",
+        projectId: "modloans-f8d62",
+        storageBucket: "modloans-f8d62.appspot.com",
+        messagingSenderId: "398266070886",
+        appId: "1:398266070886:web:d684c75954cb090ae3faa7",
+        measurementId: "G-61MQ0SD6LJ",
+        databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
+      };
+      firebase.initializeApp(firebaseConfig);
 
-        //--------------------------
-        document.getElementById('result_ID').innerHTML = localStorage.getItem('VALUE');
-        console.log(localStorage.getItem('VALUE'));
-        //-----------------
+      //--------------------------
+      // document.getElementById('result_ID').innerHTML = localStorage.getItem('VALUE');
+      console.log(localStorage.getItem('VALUE'));
+      //-----------------
 
-        database = firebase.database();
-        var Ref = database.ref('Files');
-        Ref.on('value', gotData);
-        function gotData(data) {
-            var a = localStorage.getItem('VALUE');
-            var Files = data.val();
-            var id = Files[a].Date;
-            var topic = Files[a].TopicName;
-            var description = Files[a].Description;
-            var fileName = Files[a].NameFile;
-            var linkFile = Files[a].LinkFile;
-            console.log(topic, description, fileName);
-            var li = document.createElement('li');
-            li.innerHTML =
-                '<p>topic : ' + topic + '<br>' +
-                'Content : ' + description + '<br>' +
-                'filename : ' + fileName + '<br>' +
-                'Link file : <a target = "_blank" href=' + linkFile + '>Click link here.<br></p>';
-            document.getElementById('result_id').appendChild(li);
-        }
+      database = firebase.database();
+      var Ref = database.ref('Files');
+      Ref.on('value', gotData);
+      function gotData(data) {
+        var a = localStorage.getItem('VALUE');
+        var Files = data.val();
+        var id = Files[a].Date;
+        var topic = Files[a].TopicName;
+        var description = Files[a].Description;
+        var fileName = Files[a].NameFile;
+        var linkFile = Files[a].LinkFile;
+        var date = Files[a].Date;
+        var _date = new Date(date);
+        console.log(topic, description, fileName);
+        var _li = document.createElement('div');
+        _li.innerHTML =
+          '<h1>' + topic + '</h1>' +
+          '<p>' + _date.toDateString() + '</p>' +
+          '<p><h3>' + description + '</h3></p>' +
+          'Link file : <a target = "_blank" href=' + linkFile + '>Click link here.<br></a>';
+        document.getElementById('list_file').appendChild(_li);
+      }
     </script>
 
-<!-- plugin messenger / Messenger ปลั๊กอินแชท Code -->
-<div id="fb-root"></div>
-
-<!-- Your ปลั๊กอินแชท code -->
-<div id="fb-customer-chat" class="fb-customerchat">
-</div>
-
-<script>
-  var chatbox = document.getElementById('fb-customer-chat');
-  chatbox.setAttribute("page_id", "103484235166980");
-  chatbox.setAttribute("attribution", "biz_inbox");
-
-  window.fbAsyncInit = function () {
-    FB.init({
-      xfbml: true,
-      version: 'v12.0'
-    });
-  };
-
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-<!-- plugin messenger -->
 </body>
 
 </html>
