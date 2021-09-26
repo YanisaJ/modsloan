@@ -185,22 +185,54 @@
 
 
 
- <div class="content-container f1">
+  <div class="content-container f1">
     <div class="container-fluid">
-
-      <!-- Main component for a primary marketing message or call to action -->
-      <!--main content view-->
-      <!--Main content-->
-  <div class="jumbotron" style="padding-top:30px">
-    <div class="container">
-      <h1>ms management</h1>
+      <div class="jumbotron" style="padding-top:30px">
+        <div class="container">
+          <h1>FB-Messenger management</h1>
+        </div>
+      </div>
     </div>
-  </div>
-    </div>
- 
-      <iframe id="rotator" src="https://business.facebook.com" width="100%" height="600" scrolling="no" border="0"></iframe>
 
+    <iframe id="rotator" src="https://business.facebook.com" width="100%" height="600" scrolling="no"
+      border="0"></iframe>
 
+    <!-- Facebook API -->
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+    </iframe>
+
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: '400030431637232',
+          cookie: true,
+          xfbml: true,
+          version: 'v12.0'
+        });
+
+        FB.AppEvents.logPageView();
+      };
+
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+      FB.getLoginStatus(function (response) {
+        statusChangeCallback(response);
+      });
+
+      function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+          statusChangeCallback(response);
+        });
+      }
+
+    </script>
 </body>
 
 </html>
