@@ -284,9 +284,10 @@
           console.log(topic, description, fileName);
           var _li = document.createElement('li');
           _li.innerHTML =
-            '<button onclick="del(' + id + ');"> X </button>' + ' ' +
+            '<form action="/staffWeb/updateFile.html"><button onclick="del(' + id + ');"> ลบ </button>' + ' ' +
              _date.toDateString() + ' ' + '-' + ' ' + topic +
-            '<form action="/staffWeb/updateFile.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
+            '<a class="card-text h5" style="color:blue"onclick="passvalue(' + id + ');">'+" "+'<u>แก้ไข</u></a></form>';
+			
           document.getElementById('list_file').appendChild(_li);
 
            // +---------- Auto delete in 1 year ----------+
