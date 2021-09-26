@@ -251,6 +251,7 @@
 
 
       function del(id) {
+        firebase.storage().ref('File/' + id).remove();
         firebase.database().ref('File/' + id).remove().then(() => {
           console.log('Delete file successfully');
           window.alert('Delete file successfully');
@@ -287,7 +288,7 @@
           _li.innerHTML =
             '<button onclick="del(' + id + ');"> X </button>' + ' ' +
             _date.toDateString() + ' ' + '-' + ' ' + topic +
-            '<form action="/staffWeb/#updateDoc.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
+            '<form action="/staffWeb/updateDoc.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
           document.getElementById('list_file').appendChild(_li);
 
           // +---------- Auto delete in 3 years ----------+
@@ -304,6 +305,7 @@
           }, 1000);
 
           function delAuto() {
+            //firebase.storage().ref('File/' + id).remove();
             firebase.database().ref('File/' + id).remove().then(() => {
               //console.log('Delete file successfully');
               //window.alert('Delete file successfully');

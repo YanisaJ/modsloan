@@ -120,13 +120,13 @@
       window.location.replace('/staffWeb/msManage.html');
     }
     function Upload() {
-      window.location.replace('/staffWeb/upload.html');
+      window.location.replace('/upload.html');
     }
     function index() {
       window.location.replace('/index.html');
     }
     function viewDoc() {
-      window.location.replace('/staffWeb/viewAllDoc.html');
+      window.location.replace('/staffWeb/viewDoc.html');
     }
     function uploadDoc() {
       window.location.replace('/staffWeb/uploadDoc.html');
@@ -183,6 +183,7 @@
   </div>
 
   <div class="content-container f1">
+
     <div class="container-fluid">
 
       <!-- Main component for a primary marketing message or call to action -->
@@ -250,7 +251,8 @@
 
 
       function del(id) {
-        firebase.database().ref('Files/' + id).remove().then(() => {
+        firebase.storage().ref('File/' + id).remove();
+        firebase.database().ref('File/' + id).remove().then(() => {
           console.log('Delete file successfully');
           window.alert('Delete file successfully');
           location.reload();
@@ -265,7 +267,7 @@
       }
       //+----- view automatic -----+
       database = firebase.database();
-      var Ref = database.ref('Files');
+      var Ref = database.ref('File');
       Ref.on('value', gotData);
       function gotData(data) {
         // console.log(data.val());
@@ -285,12 +287,12 @@
           var _li = document.createElement('li');
           _li.innerHTML =
             '<button onclick="del(' + id + ');"> X </button>' + ' ' +
-             _date.toDateString() + ' ' + '-' + ' ' + topic +
-            '<form action="/staffWeb/updateFile.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
+            _date.toDateString() + ' ' + '-' + ' ' + topic +
+            '<form action="/staffWeb/updateDoc.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
           document.getElementById('list_file').appendChild(_li);
 
-           // +---------- Auto delete in 1 year ----------+
-           var countDownDate = Math.floor(id + 31536000000);
+          // +---------- Auto delete in 3 years ----------+
+          var countDownDate = Math.floor(id + 94608000000);
           var x = setInterval(function () {
             var now = new Date().getTime();
             // Find the distance between now and the count down date
@@ -303,7 +305,8 @@
           }, 1000);
 
           function delAuto() {
-            firebase.database().ref('Files/' + id).remove().then(() => {
+            //firebase.storage().ref('File/' + id).remove();
+            firebase.database().ref('File/' + id).remove().then(() => {
               //console.log('Delete file successfully');
               //window.alert('Delete file successfully');
               location.reload();
