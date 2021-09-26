@@ -194,12 +194,10 @@
       </div>
     </div>
 
-    <iframe id="rotator" src="https://business.facebook.com" width="100%" height="600" scrolling="no"
-      border="0"></iframe>
-
     <!-- Facebook API -->
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
+    <iframe id="rotator" src="https://www.facebook.com" width="100%" height="600" scrolling="no" border="0">
+      <!-- Login Button -->
+      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
     </iframe>
 
     <script>
