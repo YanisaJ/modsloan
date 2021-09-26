@@ -10,11 +10,16 @@
   <!--css-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="/src/login.css">
-    <title>Profile</title>
-  </head>
+  <link rel="stylesheet" href="/src/login.css">
+  <title>Profile</title>
+</head>
 
 <body>
+  <style>
+    div {
+      margin: 70px;
+    }
+  </style>
   <!-- Jay 22/09/64 -->
   <!-- <script src="/src/login.js"></script> -->
   <!--GG signin-->
@@ -24,9 +29,10 @@
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <!--JQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <h2>Sign in</h2>
-  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  <div>
+    <h2>Sign in</h2>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  </div>
 
   <!-- main content -->
   <div class="data">
@@ -46,33 +52,35 @@
       $("#email").text(profile.getEmail());
       $("#image").attr('src', profile.getImageUrl());
       $(".data").css("display", "block");
-      $(".g-signin2").css("display", "none");
+      $(".g-signin2").css("display", "none").then(() => {
+        window.location.replace('/staffWeb/homeStaff.html');
+      });
     }
 
 
     function signOut() {
-      var auth2 = gapi.auth2.getAuthInstance();
-      auth2.signOut().then(function () {
-        alert("If you need to sign out, please confirm.");
-        $(".data").css("display", "none");
-        $(".g-signin2").css("display", "block");
-      });
-    }
+          var auth2 = gapi.auth2.getAuthInstance();
+          auth2.signOut().then(function () {
+            alert("If you need to sign out, please confirm.");
+            $(".data").css("display", "none");
+            $(".g-signin2").css("display", "block");
+          });
+        }
   </script>
   <!-- Jay 22/09/64 -->
 
-  
+
   <!-- ice-->
-  <h3>สมุดว่า Login ได้เเล้ว</h3>
-  <a action="homeStaff.html" onclick="homeStaff()">ไปหน้าโฮม</a>
-  <br><br><br>ปล. แค่เพิ่มไม่ได้ลบอะไรไปสักอย่างนะจ้ะ อิ้อิ้ 
+  <div>
+    <h3>สมุดว่า Login ได้เเล้ว</h3>
+    <a action="homeStaff.html" onclick="homeStaff()">ไปหน้าโฮม</a>
+  </div>
   <script>
     function homeStaff() {
-      window.location.replace('/staffWeb/homeStaff.html');
-    }
+          window.location.replace('/staffWeb/homeStaff.html');
+        }
   </script>
 
 </body>
 
 </html>
-
