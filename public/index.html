@@ -1,100 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Welcome page</title>
-    <link rel="stylesheet" href="">
-    <!-- Jay -->
-    <!--GG signin-->
-    <meta name="google-signin-client_id"
-        content="893396241688-0ipagot47at06pt2j0201j7t5p097jfe.apps.googleusercontent.com">
-    <!--css-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <!-- Jay -->
-    <style>
-        /* ///////////ICE/////////// */
-
-        div {
-            margin: 70px;
-        }
-
-        /* ///////////ICE/////////// */
-
-        body {
-            margin: 0;
-            background-color: whitesmoke;
-        }
-
-        .active {
-            background-color: #9FB8AD;
-            height: 60px;
-        }
-
-        .button {
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-
-        .button1 {
-            background-color: #4CAF50;
-        }
-
-        /* Green */
-        .button2 {
-            background-color: #008CBA;
-        }
-
-        /* Blue */
-
-        /* Jay */
-        .data {
-            display: none;
-        }
-
-        .g-signin2 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -50px;
-            margin-left: -50px;
-        }
-    </style>
-</head>
-
-<body>
+<html>
     <div>
-        <h1>Welcome to</h1>
-        <h2>Mod loan's Assistant site</h2>        <p>welcome for our website please choos what role you are :</p>
-
-
-        <button class="button button1" action="/public/studentWeb/home.html" onclick="student()">For Student</button>
-        <button class="button button2" action="login.html" onclick="staff()">For Staff</button>
-   
-    </div>
-
+        <title>Mod loan's assistant</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
-    
-    <script>
-        function student() {
-            window.location.replace('/studentWeb/home.html');
-        }
-        function staff() {
-            window.location.replace('login.html');
-        }
-    </script>
-    <!-- Jay -->
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+body {margin:0;
+background-image: url(img/bg-index-01-01.jpg);
+background-size: cover;
+width: 100vw;
+  height: 100vh;
+}
+.f1 {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 20px;
+}
+div.img-resize img {
+height: 150px;
+width: auto;
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+}
 
+div.img-resize {
+width: 280px;
+height: 200px;
+overflow: hidden;
+text-align: center;
+float:left;
+padding-left: 10px;
+}
+div.img-resize2 img {
+height: 150px;
+width: auto;
+display: block;
+margin: auto;
+}
+div.img-resize2 {
+width: 400px;
+height: 300px;
+overflow: hidden;
+text-align: center;
+}
 
+div.position{
+width:200px;
+height:100px;
+position:fixed;
+top:40%;
+left:43%;
+margin-left:-100px;
+margin-top:-50px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #945a32;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 30px;
+  top:45%;
+left:45%;
+margin-left:-100px;
+margin-top:-50px;
+}
+
+.button:hover {
+  background: #ccde99;
+  color: #000;
+}
+</style>
+<body>
+<!--
+<div class="position">
+    <div class="img-resize2"> <img src="pic/banner.png"></div>
+  <div class="img-resize position2" ><a href ="#" target="_blank"><img src="pic/std-button.png "></a></div>
+  <div class="img-resize position3"><a href ="#" target="_blank"><img src="pic/stuff-button.png "></a></div>
+-->
+<div class="position">
+  <div class="img-resize2"> <img src="img/banner.png"></div>
+</div>
+<a href="#" class="button f1" style="margin-top: 35%;margin-left: 35%;" >Student</a>
+<a href="#" class="button f1" style="margin-top: 35%;margin-left: 10%;">Stuff</a>
 
 </body>
-</html>
