@@ -204,7 +204,7 @@
     <script>
       window.fbAsyncInit = function () {
         FB.init({
-          appId: '400030431637232',
+          appId: '339002374278630',
           cookie: true,
           xfbml: true,
           version: 'v12.0'
@@ -224,6 +224,17 @@
       FB.getLoginStatus(function (response) {
         statusChangeCallback(response);
       });
+
+      FB.response({
+            status: 'connected',
+            authResponse: {
+              accessToken: '...',
+              expiresIn: '...',
+              signedRequest: '...',
+              userID: '...'
+            }
+          });
+
 
       function checkLoginState() {
         FB.getLoginStatus(function (response) {
