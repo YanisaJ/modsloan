@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Mod loan's assistant</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+
+    body {
+      margin: 0;
+      background-color: whitesmoke;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #C5D7BD;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      font-size: 20px;
+    }
+
+    li {
+      float: right;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 15px 17px;
+      text-decoration: none;
+      height: 60px;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #9FB8AD;
+      height: 60px;
+    }
+
+    .active {
+      background-color: #9FB8AD;
+      height: 60px;
+    }
+
+    .f1 {
+      font-family: 'Sarabun', sans-serif;
+    }
+
+    input[type=text],
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    /*
+input[type=submit] {
+width: 100%;
+background-color: #4CAF50;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+input[type=submit]:hover {
+background-color: #45a049;
+}
+
+div {
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 50px;
+align-items: center;
+}*/
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+
+    input[type=submit] {
+      background-color: #9FB8AD;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+
+    input[type=submit]:hover {
+      background-color: #9FB8AD;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 60px;
+      align-items: center;
+    }
+
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+
+      .col-25,
+      .col-75,
+      input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+
+
+
+    /*ice*/
+    button {
+      width: 100px;
+      margin-left: 62%;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    function homeStaff() {
+      window.location.replace('/staffWeb/homeStaff.html');
+    }
+
+  </script>
+  <nav class="navbar navbar-expand navbar-light f1" style="align-items:center;position: absolute; padding-right: 10px">
+    <ul>
+      <a class="navbar-brand" action="upload.html" onclick="homeStaff()"><img src="/img/Mod.png" width="75px"
+          height="35px"></a>
+      <li>
+        <!-- <button type="button" class="btn btn-default" >
+     <span class="glyphicon glyphicon-user" aria-hidden="true" herf="#login" ></span>
+   </button> -->
+        <a class="navbar-brand" href="#Link"><img src="img/user.jpg" width="35px" height="35px"></a>
+      </li>
+    </ul>
+
+
+    <div class="container f1">
+      <form action="">
+        <div class="row">
+          <div>
+            <h1>Upload document file</h1>
+          </div>
+          <div class="col-10">
+            <label for="topic">Topic name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="topic" name="topic" placeholder="Topic name ...">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-15">
+            <label for="description">Content</label>
+          </div>
+          <div class="col-75">
+            <textarea id="description" name="description" placeholder="Write something ..."
+              style="height:200px"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-15">
+            <label for="namebox">File name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="namebox" name="namebox" placeholder="File name ...">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-10">
+            <label for="file" button type="button" class="btn btn-default " id="selectf">Select file</label>
+            <div id="fileOldName"></div>
+            <h5 id="upProgress"></h5>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <button id="upload">Upload File</button>
+      </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <script src='https://www.gstatic.com/firebasejs/3.2.1/firebase.js'></script>
+    <script> //--------ConnectFirebase--------
+      var firebaseConfig = {
+        apiKey: "AIzaSyD_PU5bw4-vNEYL5ew7sow970gTu-ZtLG4",
+        authDomain: "modloans-f8d62.firebaseapp.com",
+        projectId: "modloans-f8d62",
+        storageBucket: "modloans-f8d62.appspot.com",
+        messagingSenderId: "398266070886",
+        appId: "1:398266070886:web:d684c75954cb090ae3faa7",
+        measurementId: "G-61MQ0SD6LJ",
+        databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      //--------------------------
+      var fileName, fileURL, fileDescription;
+      var files = [];
+      var reader = new FileReader();
+      //--------------------------
+      function parm() {
+        topicName = document.getElementById('topic').value;
+        fileName = document.getElementById('namebox').value;
+        fileDescription = document.getElementById('description').value;
+      }
+
+      //---------------------------selectFile----------------------------
+      document.getElementById('selectf').onclick = function (e) {
+        var input = document.createElement('input');
+        input.type = 'file';
+        input.onchange = e => {
+          files = e.target.files;
+          reader = new FileReader();
+          reader.onload = function () {
+            //document.getElementById('myFile').src = reader.result;
+            document.getElementById('fileOldName').innerHTML = '<b>Your file is : </b>' + files[0].name;
+          }
+          reader.readAsDataURL(files[0]);
+        }
+        input.click();
+      }
+
+      //-----------------uploadFile and createFileName------------------
+      document.getElementById('upload').onclick = function () {
+        parm();
+        if (fileName == "" || topicName == "") {
+          window.alert("Please enter Topic name and File name");
+          console.log("Please enter Topic name and File name");
+        } else {
+          console.log("Up loadfile. . .");
+          var uploadTask = firebase.storage().ref('Files/' + fileName).put(files[0]);
+
+          //---show % upload on log---
+          uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+            function (snapshot) {
+              var percent = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+              console.log(percent + "% done");
+              document.getElementById('upProgress').innerHTML = 'Upload ' + percent + ' %';
+            },
+            function (error) {
+              console.log('Error in saving file.');
+            },
+            function () {
+              uploadTask.snapshot.ref.getDownloadURL().then(function (URL) {
+                fileURL = URL;
+                var now = new Date().getTime();
+
+                firebase.database().ref('File/' + now).set({
+                  Date: now,
+                  TopicName: topicName,
+                  NameFile: fileName,
+                  LinkFile: fileURL,
+                  Description: fileDescription
+                }).then(() => {
+                  window.alert("Add file successfully.");
+                  console.log('Add file successfully');
+                  location.reload();
+                });
+              })
+            });
+        }
+      }
+    </script>
+</body>
+
+</html>
