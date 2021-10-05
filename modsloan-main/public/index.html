@@ -10,7 +10,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap'); /*Sarabun*/
+
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap'); /*Itim*/
+
 body {margin:0;
 background-image: url(img/bg-index-01-01.jpg);
 background-size: cover;
@@ -19,6 +22,10 @@ width: 100vw;
 }
 .f1 {
   font-family: 'Sarabun', sans-serif;
+  font-size: 20px;
+}
+.f2 {
+  font-family:  'Itim', cursive;
   font-size: 20px;
 }
 div.img-resize img {
@@ -59,38 +66,53 @@ left:43%;
 margin-left:-100px;
 margin-top:-50px;
 }
-
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  color: #945a32;
-  text-decoration: none;
-  transition: 0.3s;
-  font-size: 30px;
-  top:45%;
-left:45%;
+div.position2{
+width:200px;
+height:100px;
+position:fixed;
+top:65%;
+left:32%;
+margin-left:-100px;
+margin-top:-50px;
+cursor: pointer;
+}
+div.position3{
+width:200px;
+height:100px;
+position:fixed;
+top:65%;
+left:58%;
 margin-left:-100px;
 margin-top:-50px;
 cursor: pointer;
 }
 
-.button:hover {
-  background: #ccde99;
-  color: #000;
-}
-
-
-
-
 </style>
-<body>
 
+
+<body>
 <div class="position">
   <div class="img-resize2"> <img src="img/banner.png"></div>
 </div>
+<div class="position2">
+  <a action="home.html" onclick="std()" >
+  <img src="img/std-button.png" style="margin-top: 40%;margin-left: 20%; width: auto ; height: 200px;">
+  </a>
+</div>
+<div class="position3">
+  <a action="login.html" onclick="stf()" >
+  <img src="img/stuff-button.png" style="margin-top: 40%;margin-left: 35%; width: auto ; height: 200px;">
+  </a>
+</div>
+
+
+<!--
+<a action="home.html" button type="button" class="btn btn-primary btn-lg button f1" onclick="std()" style="margin-top: 35%;margin-left: 35%;">Student</a>
+<a action="login.html" button type="button" class="btn btn-secondary btn-lg button f1" style="margin-top: 35%;margin-left: 35%;">Staff</a>
+
 <a action="home.html" class="button f1" onclick="std()" style="margin-top: 35%;margin-left: 35%;">Student</a></li>
 <a action="login.html" class="button f1" onclick="stf()" style="margin-top: 35%;margin-left: 10%;" >Staff</a>
-
+-->
 
 
 <script>
