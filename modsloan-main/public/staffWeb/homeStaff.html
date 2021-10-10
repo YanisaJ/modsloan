@@ -11,21 +11,24 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap'); /*sarabun font*/
+    @import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap'); /*Pattaya font*/
     .f1 {
       font-family: 'Sarabun', sans-serif;
     }
-
+    .f2 {
+  font-family: 'Pattaya', sans-serif;
+  font-size: 18px;
+    }
     .sidebar-container {
       position: fixed;
-      width: 220px;
+      width: 250px;
       height: 100%;
       left: 0;
       overflow-x: hidden;
       overflow-y: auto;
-      background: #F0F2BA;
-      color: #111;
+      background: #EDDDC3;
+      color: #651D2D;
     }
 
     .content-container {
@@ -35,7 +38,7 @@
     .sidebar-logo {
       padding: 10px 15px 10px 30px;
       font-size: 20px;
-      background-color: #945A32;
+      background-color: #D7B169;
     }
 
     .sidebar-navigation {
@@ -71,7 +74,7 @@
     }
 
     .sidebar-navigation li::before {
-      background-color: #CCDE99;
+      background-color: #96AC94;
       position: absolute;
       content: '';
       height: 100%;
@@ -88,10 +91,10 @@
     }
 
     .sidebar-navigation .header {
-      font-size: 12px;
-      text-transform: uppercase;
-      background-color: #466D1D;
+      font-size: 20px;
+      background-color: #3F4F46;
       padding: 10px 15px 10px 30px;
+      align-items: center;
     }
 
     .sidebar-navigation .header::before {
@@ -99,8 +102,19 @@
     }
 
     .content-container {
-      padding-left: 220px;
+      padding-left: 300px;
+      background-color: #EFE6CF;
+      background-image: url(img/bg-stf.png);
+      background-size:cover;
+      width: 100vw;
+      height: 100vh;
     }
+   .sidebar-image img {
+    width: 60px;
+    height: 60px;
+  margin-left: 60px;
+  border-radius: 50%;
+  }
   </style>
 </head>
 
@@ -136,12 +150,20 @@
       window.location.replace('/staffWeb/contactDev.html');
         }
   </script>
-  <div class="sidebar-container f1">
+  <div class="sidebar-container f2">
     <div class="sidebar-logo">
-      มดน้อยผู้ช่วย
+      <!--Side bar pic user-->
+      <div class="sidebar-image">
+        <img src="img/bg-stf.png">  <!--image of user-->
+    </div>
+        <!-- Sidebar user mail -->
+        <a data-toggle="dropdown" class="sidebar-brand"  style="font-size: 15px; color: #3F4F46">
+          Jaruwan.exol@mail.kmutt.ac.th
+      </a>
+      
     </div>
     <ul class="sidebar-navigation">
-      <li class="header">Navigation</li>
+      <li class="header f2" style="color: white;">Navigation</li>
       <li>
         <a action="homeStaff.html" onclick="homeStaff()">
           <i class="fa fa-tachometer" aria-hidden="true"></i> All post
@@ -162,7 +184,7 @@
           <i class="fa fa-home" aria-hidden="true"></i> New document
         </a>
       </li>
-      <li class="header">Another Menu</li>
+      <li class="header f2" style="color: white;">Another Menu</li>
       <li>
         <a action="msManage.html" onclick="msManage()">
           <i class="fa fa-users" aria-hidden="true"></i> MS manage
