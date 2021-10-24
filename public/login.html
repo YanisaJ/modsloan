@@ -150,9 +150,8 @@
 
   </body>
 
-
-  <!-- Jay 22/09/64 -->
-  <!-- <script src="/src/login.js"></script> -->
+<!-- Jay (script) 22/09/64 -->
+  <script src="/src/login.js"></script>
   <!--GG signin-->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <!--JS-->
@@ -161,6 +160,24 @@
   <!--JQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   
+
+  <!--
+  <div>
+    <h2>Sign in</h2></div>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  -->
+ 
+  <!-- main content -->
+  <!-- <div class="data">
+    <p>Name</p>
+    <p id="name"></p>
+    <p>Image</p>
+    <img id="image" class="rounded-circle" width="100" height="100" />
+    <p>Email</p>
+    <p id="email"></p>
+    <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+  </div>
+
   <script>
     function onSignIn(googleUser) {
       var profile = googleUser.getBasicProfile();
@@ -171,7 +188,6 @@
       $(".g-signin2").css("display", "none");
     }
 
-
     function signOut() {
           var auth2 = gapi.auth2.getAuthInstance();
           auth2.signOut().then(function () {
@@ -180,6 +196,9 @@
             $(".g-signin2").css("display", "block");
           });
         }
-  </script>
+  </script> -->
+  <!-- Jay 22/09/64 -->
+
+
 
 </html>
