@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mod loan's assistant - Contact Us</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: whitesmoke;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #C5D7BD;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      font-size: 20px;
+    }
+
+    li {
+      float: right;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 15px 17px;
+      text-decoration: none;
+      height: 60px;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #adcca0;
+      height: 60px;
+    }
+
+    .active {
+      background-color: #9FB8AD;
+      height: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand navbar-light" style="align-items:center;position: fixed; padding-right: 10px">
+    <ul>
+      <a class="navbar-brand" action="index.html" onclick="home()">
+        <img src="/img/Mod.png" width="75px" height="35px"></a>
+
+      <li><a class="active" action="contactUs.html" onclick="contactUs()">Contact us</a></li>
+      <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
+      <li><a action="about.html" onclick="about()">About</a></li>
+      <li><a action="document.html" onclick="documentstd()">Document</a></li>
+      <li><a action="index.html" onclick="home()">Home</a></li>
+    </ul>
+  </nav>
+
+<!--old-->
+  <div class="container-fluid" style="padding-top:100px">
+    <section>
+      <div class="container">
+        <div class="contact-form">
+         <div class="row">
+             <div class="col-sm-7">                  
+                  <!-- <form id="ajax-contact"  method="post" action="contact-form-mail.php" role="form"> -->
+                    <form action="https://formspree.io/f/xyyloezb" method="POST" id="my-form" role="form">
+                      <div class="messages" id="form-messages"></div>
+                      <div class="controls">
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="firstName">Firstname *</label>
+                                      <input id="firstName" type="text" name="firstName" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="lastName">Lastname *</label>
+                                      <input id="lastName" type="text" name="lastName" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="email">Email *</label>
+                                      <input id="email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label for="massage">Message *</label>
+                                      <textarea id="massage" name="message" class="form-control" placeholder="Message for us *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                      <div class="help-block with-errors"></div>
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <input type="submit" class="btn btn-black" value="Send message">
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                               <br>
+                                <small class="text-muted"><strong>*</strong> These fields are required.</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+           </div>
+           <div class="col-sm-5">
+               <div class="row col1">
+                   <div class="col-xs-3">
+                       <i class="fa fa-map-marker" style="font-size:16px;"></i>   Address
+                   </div>
+                   <div class="col-xs-9">
+                    อาคารจอดรถ 1 ชั้น 6B มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี 126 ถนน ประชาอุทิศ แขวง บางมด เขตทุ่งครุ กรุงเทพมหานคร 10140
+                   </div>
+               </div>
+               
+                <div class="row col1">
+                    <div class="col-sm-3">
+                        <i class="fa fa-phone"></i>   Phone
+                    </div>
+                    <div class="col-sm-9">
+                      <a href ="tel:024708097-8">024708097-8</a>,<a href="tel:024708107">024708107</a>
+                    </div>
+                </div>
+                <div class="row col1">
+                  <div class="col-sm-3">
+                      <i class="fa fa-envelope"></i>   Email
+                  </div>
+                  <div class="col-sm-9">
+                       <a href="mailto:Ml.mailer.bt@gmail.com">Ml.mailer.bt@gmail.com</a> 
+                  </div>
+              </div><br>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.1083911253986!2d100.49445521454234!3d13.651169990412585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a251bb6b0cf1%3A0xf656e94ff13324ad!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Lie4Lij4Liw4LiI4Lit4Lih4LmA4LiB4Lil4LmJ4Liy4LiY4LiZ4Lia4Li44Lij4Li1!5e0!3m2!1sth!2sth!4v1632109518702!5m2!1sth!2sth" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+       </div>
+       
+      </div>
+   </div>
+</div>
+      <div id="status"></div>
+    </section>
+  </div>
+
+  <script>
+    function calendar() {
+      window.location.replace('/studentWeb/calendar.html');
+    }
+    function about() {
+      window.location.replace('/studentWeb/about.html');
+    }
+    function home() {
+      window.location.replace('/studentWeb/home.html');
+    }
+    function contactUs() {
+      window.location.replace('/studentWeb/contactUs.html');
+    }
+    function documentstd() {
+      window.location.replace('/studentWeb/document.html');
+    }
+  </script>
+
+
+  <!-- plugin messenger / Messenger ปลั๊กอินแชท Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your ปลั๊กอินแชท code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "103484235166980");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v12.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <!-- plugin messenger -->
+</body>
+
+</html>
+
+<!-- <div class="form-group" ฟอมเก่าจ้าเลยเอามาแปะนี่จ้าอิ้อิ้>
+        เข้าแก้ไขที่ https://formspree.io/forms/xyyloezb/integration-->
+      <!-- <form action="https://formspree.io/f/xyyloezb" method="POST" id="my-form">
+          <label for="firstName"> First Name</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="latsName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="massage">Massage</label>
+          <textarea name="massage" id="massage" cols="30" rows="10" required></textarea>
+        </div>
+        <button type="submit">Submit</button> -->

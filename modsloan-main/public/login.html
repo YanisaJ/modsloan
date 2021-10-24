@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- <meta name="google-signin-scope" content="profile email"> -->
+  <!-- <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"> -->
+  <!--GG signin-->
+  <meta name="google-signin-client_id"
+    content="893396241688-0ipagot47at06pt2j0201j7t5p097jfe.apps.googleusercontent.com">
+  <!--css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/src/login.css">
+  <title>Login</title>
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap'); /*Pattaya font*/
+  @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap'); /*Sarabun font*/
+    .f1 {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 20px;
+  
+}
+
+.f2 {
+  font-family: 'Pattaya', sans-serif;
+  font-size: 18px;
+}
+.sidebar-container {
+      position: fixed;
+      width: 200px;
+      height: 100%;
+      left: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: #EDDDC3;
+      color: #651D2D;
+    }
+
+    .content-container {
+      padding-top: 20px;
+    }
+
+    .sidebar-logo {
+      padding: 10px 15px 10px 30px;
+      font-size: 20px;
+      background-color: #D7B169;
+    }
+
+    .sidebar-navigation {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      position: relative;
+    }
+
+    .sidebar-navigation li {
+      background-color: transparent;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      line-height: 20px;
+    }
+
+    .sidebar-navigation li a {
+      padding: 10px 15px 10px 30px;
+      display: block;
+      color: rgb(77, 69, 69);
+    }
+
+    .sidebar-navigation li .fa {
+      margin-right: 10px;
+    }
+
+    .sidebar-navigation li a:active,
+    .sidebar-navigation li a:hover,
+    .sidebar-navigation li a:focus {
+      text-decoration: none;
+      outline: none;
+    }
+
+    .sidebar-navigation li::before {
+      background-color: #96AC94;
+      position: absolute;
+      content: '';
+      height: 100%;
+      left: 0;
+      top: 0;
+      -webkit-transition: width 0.2s ease-in;
+      transition: width 0.2s ease-in;
+      width: 3px;
+      z-index: -1;
+    }
+
+    .sidebar-navigation li:hover::before {
+      width: 100%;
+    }
+
+    .sidebar-navigation .header {
+      font-size: 20px;
+      background-color: #3F4F46;
+      padding: 10px 15px 10px 30px;
+      align-items: center;
+    }
+
+    .sidebar-navigation .header::before {
+      background-color: transparent;
+    }
+
+    .content-container {
+      padding-left: 220px;
+      background-color: #EFE6CF;
+      background-image: url(img/bg-stf.png);
+      background-size:cover;
+      width: 100vw;
+      height: 100vh;
+      
+    
+    }
+    /*
+    div {
+      margin: 70px;
+    }
+    */
+  </style>
+
+
+<body> 
+  <div class="sidebar-container f1">
+    <div class="sidebar-logo f1">
+      <img src="img/Mod.png" style="width: 130px; height: auto;" >
+    </div>
+    <ul class="sidebar-navigation f2">
+      <li class="header" style="color: white;">navigation</li>
+      
+
+       
+        <!-- J 
+        <a action="contactDev.html" onclick="contactDev()">
+            <i class="fa fa-info-circle" aria-hidden="true"></i> ติดต่อผู้พัฒนา
+        </a>
+    </li>-->
+      <li>
+        <a action="index.html" onclick="index()">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> Login
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content-container f1">
+    <div class="container-fluid">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <!--main content view-->
+      
+    </div>
+
+  </body>
+
+
+  <!-- Jay 22/09/64 -->
+  <!-- <script src="/src/login.js"></script> -->
+  <!--GG signin-->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <!--JS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <!--JQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+ 
+
+  <!-- main content <div>
+    <h2>Sign in</h2></div>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  <div class="data">
+    <p>Name</p>
+    <p id="name"></p>
+    <p>Image</p>
+    <img id="image" class="rounded-circle" width="100" height="100" />
+    <p>Email</p>
+    <p id="email"></p>
+    <button type="button" class="btn btn-danger" onclick="signOut();">Sign Out</button>
+  </div>
+-->
+  <script>
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      $("#name").text(profile.getName());
+      $("#email").text(profile.getEmail());
+      $("#image").attr('src', profile.getImageUrl());
+      $(".data").css("display", "block");
+      $(".g-signin2").css("display", "none");
+    }
+
+
+    function signOut() {
+          var auth2 = gapi.auth2.getAuthInstance();
+          auth2.signOut().then(function () {
+            alert("If you need to sign out, please confirm.");
+            $(".data").css("display", "none");
+            $(".g-signin2").css("display", "block");
+          });
+        }
+  </script>
+  <!-- Jay 22/09/64 -->
+
+
+  <!-- ice
+  <div>
+    <a action="homeStaff.html" onclick="homeStaff()"><strong>ไปหน้าโฮม</strong></a>
+  </div>
+  <script>
+    function homeStaff() {
+          window.location.replace('/staffWeb/homeStaff.html');
+        }
+  </script>
+-->
+
+</html>

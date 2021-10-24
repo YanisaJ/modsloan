@@ -1,0 +1,194 @@
+<<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Mod loan's assistant</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+    
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+body {margin:0;
+background-color: whitesmoke;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #C5D7BD;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height:60px;
+  font-size: 20px;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px 17px;
+  text-decoration: none;
+  height:60px;
+}
+
+li a:hover:not(.active) {
+  background-color: #9FB8AD;
+  height:60px;
+}
+
+.active {
+  background-color: #9FB8AD;
+  height:60px;
+}
+.f1 {
+  font-family: 'Sarabun', sans-serif;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+</style>
+</head>
+
+   
+  <body>
+      
+   <nav class="navbar navbar-expand navbar-light f1" style="align-items:center;position: absolute; padding-right: 10px">
+   <ul>
+       <a class="navbar-brand" href="#Home"><img src="pic/Mod.png" width="75px" height="35px"></a>
+  <li>
+    <li><a href="#Calendar">Calendar</a></li>
+    <li><a class="active" a href="#news">News</a></li>
+    <li><a href="#About">About</a></li>
+    <li><a href="#Home">Home</a></li>
+</li>
+</ul> 
+
+
+  <div class="contact-us" style="padding-top:100px">
+       <div class="container">
+          <div class="contact-form">
+           <div class="row">
+               <div class="col-sm-7">                  
+                    <form id="ajax-contact"  method="post" action="contact-form-mail.php" role="form">
+                        <div class="messages" id="form-messages"></div>
+                        <div class="controls">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_name">Firstname *</label>
+                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_lastname">Lastname *</label>
+                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_email">Email *</label>
+                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_phone">Phone*</label>
+                                        <input id="form_phone" type="tel" name="phone"  class="form-control" placeholder="Please enter your phone*" required oninvalid="setCustomValidity('Plz enter your correct phone number ')"
+    onchange="try{setCustomValidity('')}catch(e){}">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_message">Message *</label>
+                                        <textarea id="form_message" name="message" class="form-control" placeholder="Message for us *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-black" value="Send message">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                   <br>
+                                    <small class="text-muted"><strong>*</strong> These fields are required.</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+    
+               </div>
+               <div class="col-sm-5">
+                   <div class="row col1">
+                       <div class="col-xs-3">
+                           <i class="fa fa-map-marker" style="font-size:16px;"></i>   Address
+                       </div>
+                       <div class="col-xs-9">
+                        อาคารจอดรถ 1 ชั้น 6B มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี 126 ถนน ประชาอุทิศ แขวง บางมด เขตทุ่งครุ กรุงเทพมหานคร 10140
+                       </div>
+                   </div>
+                   
+                    <div class="row col1">
+                        <div class="col-sm-3">
+                            <i class="fa fa-phone"></i>   Phone
+                        </div>
+                        <div class="col-sm-9">
+                          024708097-8, 024708107
+                        </div>
+                    </div>
+                    <div class="row col1">
+                        <div class="col-sm-3">
+                            <i class="fa fa-envelope"></i>   Email
+                        </div>
+                        <div class="col-sm-9">
+                             <a href="mailto:info@yourdomain.com">info@yourdomain.com</a> <br> <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>
+                        </div>
+                    </div><br>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.1083911253986!2d100.49445521454234!3d13.651169990412585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a251bb6b0cf1%3A0xf656e94ff13324ad!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Lie4Lij4Liw4LiI4Lit4Lih4LmA4LiB4Lil4LmJ4Liy4LiY4LiZ4Lia4Li44Lij4Li1!5e0!3m2!1sth!2sth!4v1632109518702!5m2!1sth!2sth" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  </div>
+           </div>
+           
+          </div>
+       </div>
+   </div>
+
+
+
+
+</body>
+</html>
