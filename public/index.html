@@ -10,17 +10,35 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
     <style>
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+=======
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap'); /*Sarabun*/
+
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap'); /*Itim*/
+
+>>>>>>> 99b4180d1f73c9c1f3183d3dcc7b63e09496bce5
 body {margin:0;
 background-image: url(img/bg-index-01-01.jpg);
 background-size: cover;
 width: 100vw;
+<<<<<<< HEAD
   height: 100vh;
+=======
+height: 100vh;
+>>>>>>> 99b4180d1f73c9c1f3183d3dcc7b63e09496bce5
 }
 .f1 {
   font-family: 'Sarabun', sans-serif;
   font-size: 20px;
 }
+<<<<<<< HEAD
+=======
+.f2 {
+  font-family:  'Itim', cursive;
+  font-size: 20px;
+}
+>>>>>>> 99b4180d1f73c9c1f3183d3dcc7b63e09496bce5
 div.img-resize img {
 height: 150px;
 width: auto;
@@ -59,6 +77,7 @@ left:43%;
 margin-left:-100px;
 margin-top:-50px;
 }
+<<<<<<< HEAD
 
 .button {
   display: inline-block;
@@ -90,6 +109,65 @@ margin-top:-50px;
 </div>
 <a action="home.html" class="button f1" onclick="std()" style="margin-top: 35%;margin-left: 35%;">Student</a></li>
 <a action="login.html" class="button f1" onclick="stf()" style="margin-top: 35%;margin-left: 10%;" >Staff</a>
+=======
+div.position2{
+width:200px;
+height:100px;
+position:fixed;
+top:60%;
+left:32%;
+margin-left:-100px;
+margin-top:-50px;
+cursor: pointer;
+}
+div.position3{
+width:200px;
+height:100px;
+position:fixed;
+top:60%;
+left:58%;
+margin-left:-100px;
+margin-top:-50px;
+cursor: pointer;
+}
+
+/*grow hover*/
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+
+</style>
+
+<body>
+<div class="position">
+  <div class="img-resize2"> <img src="img/banner.png"></div>
+</div>
+<div class="position2 hvr-grow">
+  <a action="home.html" onclick="std()">
+  <img src="img/std-button.png" style="margin-top: 35%;margin-left: 20%; width: auto ; height: 200px;">
+  </a>
+</div>
+<div class="position3 hvr-grow">
+  <a action="login.html" onclick="stf()" class="hover01">
+  <img src="img/stuff-button.png" style="margin-top: 35%;margin-left: 35%; width: auto ; height: 200px;">
+  </a>
+</div>
+
+>>>>>>> 99b4180d1f73c9c1f3183d3dcc7b63e09496bce5
 <script>
     function std() {
       window.location.replace('/studentWeb/home.html');
