@@ -125,12 +125,6 @@
   }
 </style>
 
-<script>
-  function homeStaff() {
-    window.location.replace('/staffWeb/homeStaff.html');
-  }
-</script>
-
 <body>
   <div class="sidebar-container f1">
     <div class="sidebar-logo f1">
@@ -139,6 +133,7 @@
     <ul class="sidebar-navigation f2">
       <li class="header" style="color: white;">Navigation</li>
 
+      <!-- login by saiy -->
       <li>
         <a action="index.html" onclick="homeStaff()">
           <i class="fa fa-info-circle" aria-hidden="true"></i> Login
@@ -147,12 +142,54 @@
     </ul>
   </div>
 
+  <script>
+    function homeStaff() {
+      window.location.replace('/staffWeb/homeStaff.html');
+    }
+  </script>
+
+  <!-- login by Jay Azure AD -->
+  <li>
+    <a action="index.html" onclick="StfLogin()">
+      <i class="fa fa-info-circle" aria-hidden="true"></i> Login
+    </a>
+  </li>
+  </ul>
+  </div>
+
+  <script>
+    //config.js
+    export const config = {
+      appId: '437d057f-8ca1-4363-8e89-53723e5c9feb',
+      redirectUrl: 'https://modloansassistant.herokuapp.com/login.html',
+      scopes: [
+        'user,rea<!-- login by Jay Azure AD -->d'
+      ],
+      authority: ''
+    };
+    function StfLogin() {
+      window.location.replace('/staffWeb/homeStaff.html');
+    }
+  </script>
+  <!-- login by Jay Azure AD -->
+
   <div class="content-container f1">
     <div class="container-fluid">
 
     </div>
 
 </body>
+
+
+<!-- ice home button -->
+<div>
+  <a action="homeStaff.html" onclick="homeStaff()"><strong>ไปหน้าโฮม55</strong></a>
+</div>
+<script>
+  function homeStaff() {
+    window.location.replace('/staffWeb/homeStaff.html');
+  }
+</script>
 
 <!-- Jay (script) 22/09/64
   <script src="/src/login.js"></script> -->
@@ -205,17 +242,6 @@
         }
   </script> -->
 <!-- Jay 22/09/64 -->
-
-
-<!-- ice-->
-<div>
-  <a action="homeStaff.html" onclick="homeStaff()"><strong>ไปหน้าโฮม55</strong></a>
-</div>
-<script>
-  function homeStaff() {
-    window.location.replace('/staffWeb/homeStaff.html');
-  }
-</script>
 
 </body>
 
