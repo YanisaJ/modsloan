@@ -165,6 +165,14 @@
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
+
+                <div>
+                    <div className="container mt-5">
+                        <h1>ยินดีต้อนรับ</h1>
+                        <p>ท่านได้ทำการเข้าสู่ระบบเรียบร้อยแล้ว</p>
+                        <Script><button onClick={() => firebaseConfig.auth().signOut()} class="btn btn-danger">Sign Out</button></Script>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -198,7 +206,7 @@
             databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
         };
         firebase.initializeApp(firebaseConfig);
-    
+
         import React, { useContext } from 'react'
         import { Redirect } from 'react-router-dom'
         import { AuthContext } from '.../src/cpnLogon/Auth'
@@ -222,27 +230,20 @@
 
             const { currentUser } = useContext(AuthContext);
             if (currentUser) {
-                return <Redirect to="/dashboard.html" />;
+                return <Redirect to="/login.html" />;
             }
         }
+
+        //Dashboard
         const DashBoard = () => {
             const { currentUser } = useContext(AuthContext);
 
             if (!currentUser) {
                 return <Redirect to="/login.html" />;
             }
-
-            return (
-                <div>
-                    <div className="container mt-5">
-                        <h1>ยินดีต้อนรับ</h1>
-                        <p>ท่านได้ทำการเข้าสู่ระบบเรียบร้อยแล้ว</p>
-                        <button onClick={() => firebaseConfig.auth().signOut()} class="btn btn-danger">Sign Out</button>
-                    </div>
-                </div>
-            )
         }
 
+        //Auth
         export const AuthContext = React.createContext(); //ใช้ตรวจสอบเมื่อยูเซอร์ทำการออเทน
 
         export const AuthProvider = ({ children }) => {
@@ -267,8 +268,6 @@
             )
         }
     </script>
-
-
 
 </body>
 
