@@ -150,6 +150,22 @@
     <div class="content-container f1">
         <div class="container-fluid">
             login
+            <div className="container mt-5">
+                <h1>Log In</h1>
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                        <label for="exampleInputEmail1" className="form-label">Email address</label>
+                        <input type="email" name="email" className="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" />
+                        <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div className="mb-3">
+                        <label for="exampleInputPassword1" className="form-label">Password</label>
+                        <input type="password" name="password" className="form-control" id="exampleInputPassword1" />
+                    </div>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
 
     </div>
@@ -165,30 +181,28 @@
             window.location.replace('/staffWeb/signUp.html');
         }
     </script>
-    
+
     <!-- code -->
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
     <script src='https://www.gstatic.com/firebasejs/3.2.1/firebase.js'></script>
     <script> //--------ConnectFirebase--------
-      var firebaseConfig = {
-        apiKey: "AIzaSyD_PU5bw4-vNEYL5ew7sow970gTu-ZtLG4",
-        authDomain: "modloans-f8d62.firebaseapp.com",
-        projectId: "modloans-f8d62",
-        storageBucket: "modloans-f8d62.appspot.com",
-        messagingSenderId: "398266070886",
-        appId: "1:398266070886:web:d684c75954cb090ae3faa7",
-        measurementId: "G-61MQ0SD6LJ",
-        databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
-      };
-      firebase.initializeApp(firebaseConfig);
-      </script>
-      
-      <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyD_PU5bw4-vNEYL5ew7sow970gTu-ZtLG4",
+            authDomain: "modloans-f8d62.firebaseapp.com",
+            projectId: "modloans-f8d62",
+            storageBucket: "modloans-f8d62.appspot.com",
+            messagingSenderId: "398266070886",
+            appId: "1:398266070886:web:d684c75954cb090ae3faa7",
+            measurementId: "G-61MQ0SD6LJ",
+            databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
+        };
+        firebase.initializeApp(firebaseConfig);
+    
         import React, { useContext } from 'react'
         import { Redirect } from 'react-router-dom'
         import { AuthContext } from '.../src/cpnLogon/Auth'
-        //import firebaseConfig from '.../src/config'
+        import React, { useState, useEffect } from 'react'
 
         const LogIn = () => {
 
@@ -208,31 +222,50 @@
 
             const { currentUser } = useContext(AuthContext);
             if (currentUser) {
-                return <Redirect to="/dashboard" />;
+                return <Redirect to="/dashboard.html" />;
+            }
+        }
+        const DashBoard = () => {
+            const { currentUser } = useContext(AuthContext);
+
+            if (!currentUser) {
+                return <Redirect to="/login.html" />;
             }
 
             return (
-                <>
+                <div>
                     <div className="container mt-5">
-                        <h1>Log In</h1>
-                        <form onSubmit={handleSubmit}>
-                            <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Email address</label>
-                                <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-                            </div>
-                            <div className="mb-3">
-                                <label for="exampleInputPassword1" className="form-label">Password</label>
-                                <input type="password" name="password" className="form-control" id="exampleInputPassword1" />
-                            </div>
-                            <button type="submit" className="btn btn-primary">Submit</button>
-                        </form>
+                        <h1>ยินดีต้อนรับ</h1>
+                        <p>ท่านได้ทำการเข้าสู่ระบบเรียบร้อยแล้ว</p>
+                        <button onClick={() => firebaseConfig.auth().signOut()} class="btn btn-danger">Sign Out</button>
                     </div>
-                </>
+                </div>
             )
         }
 
-        export default LogIn;
+        export const AuthContext = React.createContext(); //ใช้ตรวจสอบเมื่อยูเซอร์ทำการออเทน
+
+        export const AuthProvider = ({ children }) => {
+            const [loading, setLoading] = useState(true);
+            const [currentUser, setCurrentUser] = useState(null);
+
+            useEffect(() => {
+                firebaseConfig.auth().onAuthStateChanged((user) => { //onAuthStateChanged คือตัวสังเกตการ์ณการเข้าและออกของ ยูเซอ
+                    setCurrentUser(user);
+                    setLoading(false);
+                })
+            }, [])
+
+            if (loading) {
+                return <p>Loading...</p>;
+            }
+
+            return (
+                <AuthContext.Provider value={{ currentUser }}>
+                    {children}
+                </AuthContext.Provider> //แชร์ข้อมูลหรือส่งสถานะ ของ current user ไปให้กับ components ตัวอื่นๆที่เราสร้างมา
+            )
+        }
     </script>
 
 
