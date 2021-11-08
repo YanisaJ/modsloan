@@ -165,6 +165,77 @@
             window.location.replace('/staffWeb/signUp.html');
         }
     </script>
+    
+    <!-- code -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <script src='https://www.gstatic.com/firebasejs/3.2.1/firebase.js'></script>
+    <script> //--------ConnectFirebase--------
+      var firebaseConfig = {
+        apiKey: "AIzaSyD_PU5bw4-vNEYL5ew7sow970gTu-ZtLG4",
+        authDomain: "modloans-f8d62.firebaseapp.com",
+        projectId: "modloans-f8d62",
+        storageBucket: "modloans-f8d62.appspot.com",
+        messagingSenderId: "398266070886",
+        appId: "1:398266070886:web:d684c75954cb090ae3faa7",
+        measurementId: "G-61MQ0SD6LJ",
+        databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
+      };
+      firebase.initializeApp(firebaseConfig);
+      </script>
+      
+      <script>
+        import React, { useContext } from 'react'
+        import { Redirect } from 'react-router-dom'
+        import { AuthContext } from '.../src/cpnLogon/Auth'
+        //import firebaseConfig from '.../src/config'
+
+        const LogIn = () => {
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+
+                const { email, password } = e.target.elements;
+
+                try {
+
+                    firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value);
+
+                } catch (error) {
+                    alert(error);
+                }
+            }
+
+            const { currentUser } = useContext(AuthContext);
+            if (currentUser) {
+                return <Redirect to="/dashboard" />;
+            }
+
+            return (
+                <>
+                    <div className="container mt-5">
+                        <h1>Log In</h1>
+                        <form onSubmit={handleSubmit}>
+                            <div className="mb-3">
+                                <label for="exampleInputEmail1" className="form-label">Email address</label>
+                                <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                            </div>
+                            <div className="mb-3">
+                                <label for="exampleInputPassword1" className="form-label">Password</label>
+                                <input type="password" name="password" className="form-control" id="exampleInputPassword1" />
+                            </div>
+                            <button type="submit" className="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </>
+            )
+        }
+
+        export default LogIn;
+    </script>
+
+
 
 </body>
 
