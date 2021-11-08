@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- <meta name="google-signin-scope" content="profile email"> -->
   <!-- <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"> -->
@@ -11,8 +10,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="/src/login.css">
-  <!--ลิงค์ไปที่ js by J-->
-  <script type="text/javascript" src="../src/cpnLogon/LogIn.js"></script>
   <title>Login</title>
 </head>
 
@@ -122,10 +119,10 @@
     background-size: cover;
     width: 100vw;
     height: 100vh;
-
-
   }
 </style>
+
+
 
 <body>
   <div class="sidebar-container f1">
@@ -135,10 +132,17 @@
     <ul class="sidebar-navigation f2">
       <li class="header" style="color: white;">Navigation</li>
 
-      <!-- login by saiy -->
+      <!-- login -->
       <li>
         <a action="index.html" onclick="homeStaff()">
           <i class="fa fa-info-circle" aria-hidden="true"></i> Login
+        </a>
+      </li>
+
+      <!-- SignUp -->
+      <li>
+        <a action="index.html" onclick="signUp()">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> ลงทะเบียน >
         </a>
       </li>
 
@@ -148,6 +152,9 @@
   <script>
     function homeStaff() {
       window.location.replace('/staffWeb/homeStaff.html');
+    }
+    function signUp() {
+      window.location.replace('/staffWeb/signUp.html');
     }
   </script>
 

@@ -86,6 +86,7 @@ margin-top:-50px;
   background: #ccde99;
   color: #000;
 }
+
 </style>
 <body>
 <!--
@@ -99,7 +100,35 @@ margin-top:-50px;
 </div>
 <a action="home.html" class="button f1" onclick="std()" style="margin-top: 35%;margin-left: 35%;">Student</a></li>
 <a action="login.html" class="button f1" onclick="stf()" style="margin-top: 35%;margin-left: 10%;" >Staff</a>
-div.position2{
+</style>
+
+<body>
+<div class="position">
+  <div class="img-resize2"> <img src="img/banner.png"></div>
+</div>
+<div class="position2 hvr-grow">
+  <a action="home.html" onclick="std()">
+  <img src="img/std-button.png" style="margin-top: 35%;margin-left: 20%; width: auto ; height: 200px;">
+  </a>
+</div>
+<div class="position3 hvr-grow">
+  <a action="login.html" onclick="stf()" class="hover01">
+  <img src="img/stuff-button.png" style="margin-top: 35%;margin-left: 35%; width: auto ; height: 200px;">
+  </a>
+</div>
+
+<script>
+    function std() {
+      window.location.replace('/studentWeb/home.html');
+    }
+    function stf() {
+      window.location.replace('login.html');
+    }
+</script>
+</body>
+
+<!-- อันนี้มันเด้งไปอยู่ในบอดีเลยเอามาแปะตรงนี้นะ -->
+<!-- div.position2{
 width:200px;
 height:100px;
 position:fixed;
@@ -135,33 +164,4 @@ cursor: pointer;
 .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-}
-
-
-
-</style>
-
-<body>
-<div class="position">
-  <div class="img-resize2"> <img src="img/banner.png"></div>
-</div>
-<div class="position2 hvr-grow">
-  <a action="home.html" onclick="std()">
-  <img src="img/std-button.png" style="margin-top: 35%;margin-left: 20%; width: auto ; height: 200px;">
-  </a>
-</div>
-<div class="position3 hvr-grow">
-  <a action="login.html" onclick="stf()" class="hover01">
-  <img src="img/stuff-button.png" style="margin-top: 35%;margin-left: 35%; width: auto ; height: 200px;">
-  </a>
-</div>
-
-<script>
-    function std() {
-      window.location.replace('/studentWeb/home.html');
-    }
-    function stf() {
-      window.location.replace('login.html');
-    }
-</script>
-</body>
+} -->
