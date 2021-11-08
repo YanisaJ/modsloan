@@ -130,7 +130,6 @@
 
       <!-- login -->
       <li>
-        <a action="index.html" onclick="homeStaff()">
           <i class="fa fa-info-circle" aria-hidden="true"></i> Login
         </a>
       </li>
@@ -145,28 +144,18 @@
     </ul>
   </div>
 
-  <script>
-    function homeStaff() {
-      window.location.replace('/staffWeb/homeStaff.html');
-    }
-    function signUp() {
-      window.location.replace('/staffWeb/signUp.html');
-    }
-  </script>
-
   <!-- Main contents -->
   <div class="content-container f1">
     <div class="container-fluid">
-        123456
-    </div>
-    <!-- ice home button -->
-    <div>
-      <a action="homeStaff.html" onclick="homeStaff()"><strong>ไปหน้าโฮม55</strong></a>
+        <a action="homeStaff.html" onclick="homeStaff()"><strong>ไปหน้าโฮม</strong></a>
     </div>
 
   </div>
 
   <script>
+    function signUp() {
+      window.location.replace('/staffWeb/signUp.html');
+    }
     function homeStaff() {
       window.location.replace('/staffWeb/staffPage/homeStaff.html');
     }
