@@ -191,8 +191,8 @@
     <label class="logo" action="index.html" onclick="home()" ><img src="/img/longlogo.png" style="width:100px" ></label>
     <ul>
         <li><a action="index.html" onclick="home()">Home</a></li>
-        <li><a action="news.html" onclick="news()">News</a></li>
-        <li><a class="active" action="document.html" onclick="documentstd()">Document</a></li>
+        <li><a class="active" action="news.html" onclick="news()">News</a></li>
+        <li><a action="document.html" onclick="documentstd()">Document</a></li>
         <li><a action="about.html" onclick="about()">About</a></li>
         <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
         <li><a action="contactUs.html" onclick="contactUs()">Contact</a></li>
@@ -204,7 +204,7 @@
     <table class="table table-fixed">
       <thead>
         <tr>
-            <th class="col-xs-3 "><h5>All document</h5></th>
+            <th class="col-xs-3 "><h5>All news</h5></th>
           <th class="col-xs-3"></th>
           <th class="col-xs-6 "><h5>Date</h5></th>
         </tr>
@@ -256,7 +256,7 @@
         }
         //+----- view automatic -----+
         database = firebase.database();
-        var Ref = database.ref('File');
+        var Ref = database.ref('Files');
         Ref.on('value', gotData);
         function gotData(data) {
           // console.log(data.val());
