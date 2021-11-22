@@ -125,6 +125,38 @@
               left: 0;
           }
   }
+  .table-fixed{
+  width: 100%;
+  background-color: #efe6cf;
+  tbody{
+    height:200px;
+    overflow-y:auto;
+    width: 100%;
+    }
+    font{
+           font-family: 'Prompt', sans-serif;
+           font-size: 12px;
+           color: white;
+    }
+  thead,tbody,tr,td,th{
+    display:block;
+  }
+  tbody{
+    td{
+      float:left;
+    }
+  }
+  thead {
+    tr{
+      th{
+        float:left;
+       background-color: #f39c12;
+       border-color:#e67e22;
+      }
+    }
+  }
+}
+      
         
   </style>
 </head>
@@ -163,19 +195,22 @@
     </ul>
 </nav>
 
-  <!--Main content-->
-  <div class="jumbotron" style="padding-top:100px">
-    <div class="container">
-      <h1>Home Page</h1>
-      <h4>All content</h4>
-    </div>
-  </div>
-
-  <div class="row f1" style="padding-left: 15%; padding-bottom: 3%;">
-    <div class="col-sm-10">
-      <div class="card" id='list_file'>
-      </div>
-    </div>
+   <!--Main-->
+   <div class="container font">
+    <table class="table table-fixed">
+      <thead>
+        <tr>
+            <th class="col-xs-3 "><h5>All news</h5></th>
+          <th class="col-xs-3"></th>
+          <th class="col-xs-6 "><h5>Date</h5></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-xs-3" id='list_file'></td>
+          <td class="col-xs-3"></td>
+          <td class="col-xs-6">date</td>
+        </tr>
 
 
     <div>
