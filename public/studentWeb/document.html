@@ -209,7 +209,7 @@
         <tr>
           <td class="col-xs-3" id='list_file'></td>
           <td class="col-xs-3"></td>
-          <td class="col-xs-6">date</td>
+          <td class="col-xs-6" id='list_file2'></td>
         </tr>
 
 
@@ -271,9 +271,13 @@
             console.log(topic, description, fileName);
             var _li = document.createElement('div');
             _li.innerHTML =
-              '<h6 style="color:gray">' + _date.toDateString() + '</h6>' +
               '<a class="card-text h3" onclick="passvalue(' + id + ');">' + topic + '</a>';
             document.getElementById('list_file').appendChild(_li);
+			
+			var _li2 = document.createElement('div');
+            _li2.innerHTML =
+              '<h6 style="color:gray">' + _date.toDateString() + '</h6>';
+            document.getElementById('list_file2').appendChild(_li2);
           }
         }
       </script>
