@@ -84,49 +84,48 @@
   /*--------------------------*/
   
   @media (max-width: 952px){
-    label.logo{
-        font-size: 30px;
-        padding-left: 50px;
-    }
-    nav ul li a{
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 858px){
-    .checkbtn{
-        display: block; 
-    }
-    ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        top: 80px;
-        left: -100%;
-        top: 80px;
-        transition: all .5s;
-        text-align: center;
-        background-color: #e7c48a;
-    }
-        nav ul li{
-            display: block;
-            margin: 50px 0;
-            line-height: 30px;
-        }
-            nav ul li a{
-                font-size: 20px;
-            }
-                a:hover,a.active{
-                    background: none;
-                    color: #e7c48a;
-                }
-
-        #check:checked ~ ul{
-            left: 0;
-        }
-}
- /*     
-.table-fixed{
+      label.logo{
+          font-size: 30px;
+          padding-left: 50px;
+      }
+      nav ul li a{
+          font-size: 16px;
+      }
+  }
+  
+  @media (max-width: 858px){
+      .checkbtn{
+          display: block; 
+      }
+      ul{
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          top: 80px;
+          left: -100%;
+          top: 80px;
+          transition: all .5s;
+          text-align: center;
+          background-color: #e7c48a;
+      }
+          nav ul li{
+              display: block;
+              margin: 50px 0;
+              line-height: 30px;
+          }
+              nav ul li a{
+                  font-size: 20px;
+              }
+                  a:hover,a.active{
+                      background: none;
+                      color: #e7c48a;
+                  }
+  
+          #check:checked ~ ul{
+              left: 0;
+          }
+  }
+  .table-fixed{
   width: 100%;
   background-color: #efe6cf;
   tbody{
@@ -144,7 +143,7 @@
   }
   tbody{
     td{
-      float: left;
+      float:left;
     }
   }
   thead {
@@ -156,7 +155,7 @@
       }
     }
   }
- */
+}
       
         
   </style>
@@ -192,8 +191,8 @@
     <label class="logo" action="index.html" onclick="home()" ><img src="/img/longlogo.png" style="width:100px" ></label>
     <ul>
         <li><a action="index.html" onclick="home()">Home</a></li>
-        <li><a action="news.html" onclick="news()">News</a></li>
-        <li><a class="active" action="document.html" onclick="documentstd()">Document</a></li>
+        <li><a class="active" action="news.html" onclick="news()">News</a></li>
+        <li><a action="document.html" onclick="documentstd()">Document</a></li>
         <li><a action="about.html" onclick="about()">About</a></li>
         <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
         <li><a action="contactUs.html" onclick="contactUs()">Contact</a></li>
@@ -205,7 +204,7 @@
     <table class="table table-fixed">
       <thead>
         <tr>
-            <th class="col-xs-7 "><h5>All document</h5></th>
+            <th class="col-xs-7 "><h5>All news</h5></th>
           <th class="col-xs-2"></th>
           <th class="col-xs-6 "><h5>Date</h5></th>
         </tr>
@@ -257,7 +256,7 @@
         }
         //+----- view automatic -----+
         database = firebase.database();
-        var Ref = database.ref('File');
+        var Ref = database.ref('Files');
         Ref.on('value', gotData);
         function gotData(data) {
           // console.log(data.val());
