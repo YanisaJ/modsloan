@@ -1,1 +1,0 @@
-import firebaseConfig from '../config'
