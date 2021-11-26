@@ -141,9 +141,10 @@
     <label class="logo" action="index.html" onclick="home()" ><img src="/img/longlogo.png" style="width:100px" ></label>
     <ul>
         <li><a action="index.html" onclick="home()">Home</a></li>
+        <li><a action="about.html" onclick="about()">About</a></li>
         <li><a action="new.html" onclick="news()">News</a></li>
         <li><a  action="document.html" onclick="documentstd()">Document</a></li>
-        <li><a action="about.html" onclick="about()">About</a></li>
+        
         <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
         <li><a class="active" action="contactUs.html" onclick="contactUs()">Contact</a></li>
     </ul>
@@ -267,34 +268,6 @@
   </script>
 
 
-  <!-- plugin messenger / Messenger ปลั๊กอินแชท Code -->
-  <div id="fb-root"></div>
-
-  <!-- Your ปลั๊กอินแชท code -->
-  <div id="fb-customer-chat" class="fb-customerchat">
-  </div>
-
-  <script>
-    var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "103484235166980");
-    chatbox.setAttribute("attribution", "biz_inbox");
-
-    window.fbAsyncInit = function () {
-      FB.init({
-        xfbml: true,
-        version: 'v12.0'
-      });
-    };
-
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <!-- plugin messenger -->
 </body>
 
 </html>
