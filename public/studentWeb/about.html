@@ -2,199 +2,259 @@
 
 <html>
 
-<head>
-  <title>Mod loan's assistant - About</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    * {
-      vertical-align: baseline;
-      font-weight: inherit;
-      font-family: inherit;
-      font-style: inherit;
-      font-size: 100%;
-      border: 0 none;
-      outline: 0;
-      padding: 0;
-      margin: 0;
-      text-decoration: none;
-      list-style: none;
-      box-sizing: border-box;
-  }
-  
-  body {
-      font-family: 'Prompt', sans-serif;
-      background-color: #edddc3;
-  
-  }
-      nav { 
-          background: #d7b169; 
-          height: 80px; 
-          width: 100%; 
-      }
-          label.logo{ 
-              color: white; 
-              font-size: 35px; 
-              line-height: 80px; 
-              padding:0 100px; 
-              font-weight: bold; 
-          }
-          nav ul{ 
-              float: right; 
-              margin-right:20px; 
-          }
-              nav ul li{ 
-                  display: inline-block; 
-                  line-height:80px;
-                  margin: 0 5px; 
-              }
-                  nav ul li a{
-                      color: white;
-                      font-size: 17px;
-                      padding: 7px 13px;
-                      border-radius: 3px;
-                  }
-                      a.active,a:hover{
-                          background-color: #e7c48a;
-                          transition: .5s;
-                          cursor: pointer;
-                      }
-      .checkbtn{
-          font-size: 30px;
-          color: white;
-          float: right;
-          line-height: 80px;
-          margin-right: 40px;
-          cursor: pointer;
-          display: none; 
-      }
-          #check{
-             display: none; 
-          }
-  
-  /*--------------------------*/
-  /*----- MEDIA QUERRY -----*/
-  /*--------------------------*/
-  
-  @media (max-width: 952px){
-      label.logo{
-          font-size: 30px;
-          padding-left: 50px;
-      }
-      nav ul li a{
-          font-size: 16px;
-      }
-  }
-  
-  @media (max-width: 858px){
-      .checkbtn{
-          display: block; 
-      }
-      ul{
-          position: fixed;
-          width: 100%;
-          height: 100vh;
-          top: 80px;
-          left: -100%;
-          top: 80px;
-          transition: all .5s;
-          text-align: center;
-          background-color: #e7c48a;
-      }
-          nav ul li{
-              display: block;
-              margin: 50px 0;
-              line-height: 30px;
-          }
-              nav ul li a{
-                  font-size: 20px;
-              }
-                  a:hover,a.active{
-                      background: none;
-                      color: #e7c48a;
-                  }
-  
-          #check:checked ~ ul{
-              left: 0;
-          }
-  }
-  </style>
-</head>
+    <head>
+        <title>Mod loan's assistant - About</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Sarabun:wght@200;400&display=swap" rel="stylesheet">
+        <style>
+            * {
+                vertical-align: baseline;
+                font-weight: inherit;
+                font-family: inherit;
+                font-style: inherit;
+                font-size: 100%;
+                border: 0 none;
+                outline: 0;
+                padding: 0;
+                margin: 0;
+                text-decoration: none;
+                list-style: none;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Sarabun', sans-serif;
+                background-color: #edddc3;
+
+            }
+            navfont{
+                font-family: 'Kanit', sans-serif; 
+            }
+            nav { 
+                background: #d7b169; 
+                height: 80px; 
+                width: 100%; 
+            }
+            label.logo{ 
+                color: white; 
+                font-size: 35px; 
+                line-height: 80px; 
+                padding:0 100px; 
+                font-weight: bold; 
+            }
+            nav ul{ 
+                float: right; 
+                margin-right:20px; 
+            }
+            nav ul li{ 
+                display: inline-block; 
+                line-height:80px;
+                margin: 0 5px; 
+            }
+            nav ul li a{
+                color: white;
+                font-size: 17px;
+                padding: 7px 13px;
+                border-radius: 3px;
+            }
+            a.active,a:hover{
+                background-color: #e7c48a;
+                transition: .5s;
+                cursor: pointer;
+            }
+            .checkbtn{
+                font-size: 30px;
+                color: white;
+                float: right;
+                line-height: 80px;
+                margin-right: 40px;
+                cursor: pointer;
+                display: none; 
+            }
+            #check{
+                display: none; 
+            }
+
+            /*--------------------------*/
+            /*----- MEDIA QUERRY -----*/
+            /*--------------------------*/
+
+            @media (max-width: 952px){
+                label.logo{
+                    font-size: 30px;
+                    padding-left: 50px;
+                }
+                nav ul li a{
+                    font-size: 16px;
+                }
+            }
+
+            @media (max-width: 858px){
+                .checkbtn{
+                    display: block; 
+                }
+                ul{
+                    position: fixed;
+                    width: 100%;
+                    height: 100vh;
+                    top: 80px;
+                    left: -100%;
+                    top: 80px;
+                    transition: all .5s;
+                    text-align: center;
+                    background-color: #e7c48a;
+                }
+                nav ul li{
+                    display: block;
+                    margin: 50px 0;
+                    line-height: 30px;
+                }
+                nav ul li a{
+                    font-size: 20px;
+                }
+                a:hover,a.active{
+                    background: none;
+                    color: #e7c48a;
+                }
+
+                #check:checked ~ ul{
+                    left: 0;
+                }
+            }
+            .item1 { 
+                grid-area: header;
+                font-size: 30px;
+                border: 3px solid #d7b169;  
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 20px 10px ;
+                text-align: center; 
+         
+            }
+            .item2 { 
+                grid-area: main;
+                font-size: 13px;
+                padding:  30px 0;
+                border: 3px solid #d7b169;  
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 20px 15px ;
+
+            }
+            .item3 { 
+                grid-area: footer; 
+                font-size: 12px;
+            }
+            
+
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                    'header header header header header header'
+                    'main main main main main main '
+                    ' footer footer footer footer footer footer';
+                grid-gap: 15px;
+                background-color: #edddc3;
+                padding: 10px;
+            }
 
 
-<body>
-  <script>
-    function calendar() {
-        window.location.replace('/studentWeb/calendar.html');
-      }
-      function about() {
-        window.location.replace('/studentWeb/about.html');
-      }
-      function home() {
-        window.location.replace('/studentWeb/home.html');
-      }
-    function contactUs() {
-        window.location.replace(`/studentWeb/contactUs.html`);
-      }
-      function documentstd() {
-      window.location.replace('/studentWeb/document.html');
-    }
-    function news() {
-      window.location.replace('/studentWeb/news.html');
-    }
-  </script>
-  <!--Navbar-->
-  <nav>
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-    </label>
-    <label class="logo" action="index.html" onclick="home()" ><img src="/img/longlogo.png" style="width:100px" ></label>
-    <ul>
-        <li><a action="index.html" onclick="home()">Home</a></li>
-        <li><a action="news.html" onclick="news()">News</a></li>
-        <li><a  action="document.html" onclick="documentstd()">Document</a></li>
-        <li><a class="active" action="about.html" onclick="about()">About</a></li>
-        <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
-        <li><a action="contactUs.html" onclick="contactUs()">Contact</a></li>
-    </ul>
-</nav>
+        </style>
+    </head>
 
-  <!--Main content-->
-  <img src="/img/test.png" style="width: 100vw;
-  height: 100vh;">
 
-<!-- plugin messenger / Messenger ปลั๊กอินแชท Code -->
-<div id="fb-root"></div>
+    <body>
+        <script>
+            function calendar() {
+                window.location.replace('/studentWeb/calendar.html');
+            }
+            function about() {
+                window.location.replace('/studentWeb/about.html');
+            }
+            function home() {
+                window.location.replace('/studentWeb/home.html');
+            }
+            function contactUs() {
+                window.location.replace(`/studentWeb/contactUs.html`);
+            }
+            function documentstd() {
+                window.location.replace('/studentWeb/document.html');
+            }
+            function news() {
+                window.location.replace('/studentWeb/news.html');
+            }
+        </script>
+        <!--Navbar-->
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo" action="index.html" onclick="home()" ><img src="/img/longlogo.png" style="width:100px" ></label>
+            <ul>
+                <li><a action="index.html" onclick="home()">Home</a></li>
+                <li><a class="active" action="about.html" onclick="about()">About</a></li>
+                   <li><a action="new.html" onclick="news()">News</a></li>
+                <li><a  action="document.html" onclick="documentstd()">Document</a></li>
+                <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
+                <li><a action="contactUs.html" onclick="contactUs()">Contact</a></li>
+            </ul>
+        </nav>
+        <br>
+        <!--Main content-->
+        <div class="grid-container">
+            <div class="item1">เกี่ยวกับเรา</div>
+            <div class="item2">
+                <center> <u><h2>ทุนกู้ยืมทางการศึกษา</h2> </u></center> <br>
+                ทุนที่จะช่วยให้โอกาสทางการศึกษาแก่ครอบครัวผู้เรียนที่มีรายได้น้อย โดยให้กู้ยืมเงินเป็นค่าใช้จ่ายในการศึกษา ส่งเสริมให้ผู้กู้มีความรับผิดชอบต่อตนเองและสังคมในการชำระเงินคืนกองทุนหลังสำเร็จการศึกษาเป็นลำดับถัดไป
+                เว็บไซต์ของเราหวังเป็นอย่างยิ่งว่าจะช่วยอำนวยความสะดวกในการเข้าถึงข้อมูลการกู้ยืม เอกสาร ประกาศการกู้ยืมต่างๆ ได้อย่างทั่วถึงแก่นักศึกษาหรือผู้ที่สนใจในเรื่องของการกู้ยืมทางการศึกษา <br>
+                ประเภทการกู้ยืม ประเภทกองทุนกู้ยืมทางการศึกษาจะแบ่งออกเป็น 2 กองทุนหลักๆด้วยกัน คือ  <br>
+                1. กองทุนให้กู้ยืมเพื่อการศึกษา (กยศ.) <br>
+                2. กองทุนให้กู้ยืมเพื่อการศึกษาที่ผู้กับรายได้ในอนาคต (กรอ.)<br><br>
+                ในปัจจุบันมีการปรับให้มีลักษณะของผู้กู้เพิ่มมากขึ้นถึง 4 ลักษณะด้วยกันคือ 
+                <br>
+                คุณสมบัติเฉพาะลักษณะที่ 1 :  เงินกู้ยืมเพื่อการศึกษา ให้แก่นักศึกษาที่ขาดแคลนทุนทรัพย์
+                <br>
+                คุณสมบัติเฉพาะลักษณะที่ 2 : เงินกู้ยืมเพื่อการศึกษาให้แก่นักศึกษาที่ศึกษาในสาขาวิชาที่เป็นความต้องการหลักซึ่งมีความชัดเจนของการผลิตกำลังคนและมีความจำเป็นต่อการพัฒนาประเทศ <br>
+                คุณสมบัติเฉพาะลักษณะที่ 3 :  เงินกู้ยืมเพื่อการศึกษาให้แก่นักเรียนหรือนักศึกษาที่ศึกษาในสาขาวิชาขาดแคลนหรือสาขาวิชาที่กองทุนมุ่งส่งเสริมเป็นพิเศษ
+                <br>
+                คุณสมบัติเฉพาะลักษณะที่ 4 : เงินกู้ยืมเพื่อการศึกษาให้แก่นักเรียนหรือนักศึกษาที่เรียนดีเพื่อสร้างความเป็นเลิศ <br><br>
+                คุณสมบัติและลักษณะต้องห้ามของผู้กู้มีดังนี้
+                <br><br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/> 
+</svg>คุณสมบัติทั่วไป
+                <br>
+                1. มีสัญชาติไทย <br>
+                2. เป็นผู้ศึกษาหรือได้รับการตอบรับให้เข้าศึกษาอยู่ในสถานศึกษาที่เข้าร่วมดำเนินงานกับกองทุน <br>
+                3. เป็นผู้ขอกู้ยืมเงินเพื่อการศึกษาในการเข้าศึกษาที่สถานศึกษาเพียงแห่งเดียวในคราวภาคการศึกษาเดียวกัน <br>
+                4. เป็นผู้มีผลการเรียนดีหรือผ่านเกณฑ์การวัดและประเมินผลของสถานศึกษา <br>
+                5. เป็นผู้มีความประพฤติดีไม่ฝ่าฝืนระเบียบข้อบังคับของสถานศึกษาขั้นร้ายแรงหรือไม่เป็นผู้มีความประพฤติเสื่อมเสียเช่นหมกมุ่นในการพนัน เสพยาเสพติดให้โทษ ดื่มสุราเป็นอาจิณหรือเที่ยวเตร่ในสถานบันเทิงรื่นรมย์เป็นอาจิณเป็นต้น <br>
+                <br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                </svg>ลักษณะต้องห้าม <br>
+                1. เป็นผู้สำเร็จการศึกษาระดับปริญญาตรีในสาขาใดสาขาหนึ่งมาก่อนเว้นแต่จะได้กำหนดเป็นอย่างอื่นในคุณสมบัติเฉพาะสำหรับการให้เงินกู้ยืมเพื่อการศึกษาลักษณะหนึ่งลักษณะใด <br>
+                2. เป็นผู้ปฏิบัติงานและรับเงินเดือนหรือค่าจ้างประจำในหน่วยงานของรัฐหรือเอกชนในลักษณะเต็มเวลาเว้นแต่จะได้กำหนดเป็นอย่างอื่นในคุณสมบัติเฉพาะสำหรับการให้เงินกู้ยืมเพื่อการศึกษาลักษณะหนึ่งลักษณะใด <br>
+                3. เป็นบุคคลล้มละลาย <br>
+                4. เป็นหรือเคยเป็นผู้ได้รับโทษจำคุกโดยคำพิพากษาถึงที่สุดให้จำคุกเว้นแต่เป็นโทษสำหรับความผิดที่ได้กระทำโดยประมาทหรือความผิดลหุโทษ <br>
+                5. เป็นหรือเคยเป็นผู้ที่ผิดนัดชำระหนี้กับกองทุนเว้นแต่ได้ชำระหนี้ดังกล่าวครบถ้วนแล้ว <br>
 
-<!-- Your ปลั๊กอินแชท code -->
-<div id="fb-customer-chat" class="fb-customerchat">
-</div>
 
-<script>
-  var chatbox = document.getElementById('fb-customer-chat');
-  chatbox.setAttribute("page_id", "103484235166980");
-  chatbox.setAttribute("attribution", "biz_inbox");
 
-  window.fbAsyncInit = function () {
-    FB.init({
-      xfbml: true,
-      version: 'v12.0'
-    });
-  };
 
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-<!-- plugin messenger -->
-</body>
+
+            </div>  
+            <div class="item3">
+               
+                <center>   อ้างอิง <a action="https://www.kmutt.ac.th/education/scholarships/" onclick="">www.kmutt.ac.th/education/scholarships</a></div></center>
+        </div>
+        
+    </body>
 
 </html>
