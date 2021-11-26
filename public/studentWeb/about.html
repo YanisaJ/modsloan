@@ -40,7 +40,7 @@
                 background: #d7b169; 
                 height: 80px; 
                 width: 100%; 
-                position: fixed;
+                top:0%;
             }
             label.logo{ 
                 color: white; 
@@ -128,6 +128,8 @@
                     left: 0;
                 }
             }
+
+
             .item1 { 
                 grid-area: header;
                 font-size: 30px;
@@ -135,7 +137,7 @@
                 background-color: rgba(255, 255, 255, 0.8);
                 padding: 20px 10px ;
                 text-align: center; 
-         
+
             }
             .item2 { 
                 grid-area: main;
@@ -150,7 +152,7 @@
                 grid-area: footer; 
                 font-size: 12px;
             }
-            
+
 
             .grid-container {
                 display: grid;
@@ -190,7 +192,7 @@
             }
         </script>
         <!--Navbar-->
-        <nav class="stick-top">
+            <nav class="sticky-top">
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
@@ -199,12 +201,14 @@
             <ul>
                 <li><a action="index.html" onclick="home()">Home</a></li>
                 <li><a class="active" action="about.html" onclick="about()">About</a></li>
-                   <li><a action="new.html" onclick="news()">News</a></li>
+                <li><a action="new.html" onclick="news()">News</a></li>
                 <li><a  action="document.html" onclick="documentstd()">Document</a></li>
                 <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
                 <li><a action="contactUs.html" onclick="contactUs()">Contact</a></li>
             </ul>
         </nav>
+    </div>
+        
         <br>
         <!--Main content-->
         <div class="grid-container">
@@ -227,8 +231,8 @@
                 คุณสมบัติและลักษณะต้องห้ามของผู้กู้มีดังนี้
                 <br><br>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/> 
-</svg>คุณสมบัติทั่วไป
+                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/> 
+                </svg>คุณสมบัติทั่วไป
                 <br>
                 1. มีสัญชาติไทย <br>
                 2. เป็นผู้ศึกษาหรือได้รับการตอบรับให้เข้าศึกษาอยู่ในสถานศึกษาที่เข้าร่วมดำเนินงานกับกองทุน <br>
@@ -246,18 +250,12 @@
                 4. เป็นหรือเคยเป็นผู้ได้รับโทษจำคุกโดยคำพิพากษาถึงที่สุดให้จำคุกเว้นแต่เป็นโทษสำหรับความผิดที่ได้กระทำโดยประมาทหรือความผิดลหุโทษ <br>
                 5. เป็นหรือเคยเป็นผู้ที่ผิดนัดชำระหนี้กับกองทุนเว้นแต่ได้ชำระหนี้ดังกล่าวครบถ้วนแล้ว <br>
 
-
-
-
-
             </div>  
             <div class="item3">
-               
                 <center>   อ้างอิง <a action="https://www.kmutt.ac.th/education/scholarships/" onclick="">www.kmutt.ac.th/education/scholarships</a></div></center>
-        </div>
-        
-    </body>
+            </div>
+    
 
 
-
+</body>
 </html>
