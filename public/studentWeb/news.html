@@ -174,26 +174,316 @@
 
 
 <body>
-  <script>
-    function calendar() {
-      window.location.replace('/studentWeb/calendar.html');
+  <!DOCTYPE html>
+
+  <html>
+  
+  <head>
+    <title>Mod loan's assistant - News</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Sarabun:wght@200;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.adoff.net/cdn-v-1-0/main.css">
+      <style>
+      * {
+        vertical-align: baseline;
+        font-weight: inherit;
+        font-family: inherit;
+        font-style: inherit;
+        font-size: 100%;
+        border: 0 none;
+        outline: 0;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
     }
-    function about() {
-      window.location.replace('/studentWeb/about.html');
+    
+    body {
+        font-family: 'Sarabun', sans-serif;
+        background-color: #edddc3;
+    
     }
-    function home() {
-      window.location.replace('/studentWeb/home.html');
+        nav { 
+            background: #d7b169; 
+            height: 80px; 
+            width: 100%; 
+        }
+            label.logo{ 
+                color: white; 
+                font-size: 35px; 
+                line-height: 80px; 
+                padding:0 100px; 
+                font-weight: bold; 
+            }
+            nav ul{ 
+                float: right; 
+                margin-right:20px; 
+            }
+                nav ul li{ 
+                    display: inline-block; 
+                    line-height:80px;
+                    margin: 0 5px; 
+                }
+                    nav ul li a{
+                        color: white;
+                        font-size: 17px;
+                        padding: 7px 13px;
+                        border-radius: 3px;
+                    }
+                        a.active,a:hover{
+                            background-color: #e7c48a;
+                            transition: .5s;
+                            cursor: pointer;
+                        }
+        .checkbtn{
+            font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none; 
+        }
+            #check{
+               display: none; 
+            }
+    
+    /*--------------------------*/
+    /*----- MEDIA QUERRY -----*/
+    /*--------------------------*/
+    
+    @media (max-width: 952px){
+      label.logo{
+          font-size: 30px;
+          padding-left: 50px;
+      }
+      nav ul li a{
+          font-size: 16px;
+      }
+  }
+  
+  @media (max-width: 858px){
+      .checkbtn{
+          display: block; 
+      }
+      ul{
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          top: 80px;
+          left: -100%;
+          top: 80px;
+          transition: all .5s;
+          text-align: center;
+          background-color: #e7c48a;
+      }
+          nav ul li{
+              display: block;
+              margin: 50px 0;
+              line-height: 30px;
+          }
+              nav ul li a{
+                  font-size: 20px;
+              }
+                  a:hover,a.active{
+                      background: none;
+                      color: #e7c48a;
+                  }
+  
+          #check:checked ~ ul{
+              left: 0;
+          }
+  }
+   
+  .table-fixed{
+    width: 100%;
+    background-color: #666f51;
+    tbody{
+      height:200px;
+      overflow-y:auto;
+      width: 100%;
+      }
+      font{
+             font-family: 'Sarabun', sans-serif;
+             font-size: 15px;
+             color: white;
+      }
+    thead,tbody,tr,td,th{
+      display:block;
     }
-    function contactUs() {
-      window.location.replace('/studentWeb/contactUs.html');
+    tbody{
+      td{
+        float: left;
+       padding:15px 15px 15px  ;
+       cursor: pointer;
+      }
     }
-    function documentstd() {
-      window.location.replace('/studentWeb/viewDocSTD.html');
+    thead {
+      tr{ 
+      
+      float:left;
+         background-color: #f39c12;
+         border-color:#e67e22;
+          
+      }
+      
+        th{
+          float:left;
+         background-color: #f39c12;
+         border-color:#e67e22;
+          
+        }
+     
     }
-    function news() {
-      window.location.replace('/studentWeb/viewNewsSTD.html');
-    }
-  </script>
+   
+        
+          
+    </style>
+  </head>
+  
+  
+  <body>
+    <script>
+      function calendar() {
+        window.location.replace('/studentWeb/calendar.html');
+      }
+      function about() {
+        window.location.replace('/studentWeb/about.html');
+      }
+      function home() {
+        window.location.replace('/studentWeb/home.html');
+      }
+      function contactUs() {
+        window.location.replace('/studentWeb/contactUs.html');
+      }
+      function documentstd() {
+        window.location.replace('/studentWeb/document.html');
+      }
+      function news() {
+        window.location.replace('/studentWeb/news.html');
+      }
+    </script>
+     <nav class="stick-top">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo" action="index.html" onclick="home()" ><img src="/img/longlogo.png" style="width:100px" ></label>
+      <ul>
+          <li><a action="index.html" onclick="home()">Home</a></li>
+          <li><a action="about.html" onclick="about()">About</a></li>
+          <li><a class="active"action="news.html" onclick="news()">News</a></li>
+          <li><a action="document.html" onclick="documentstd()">Document</a></li>    
+          <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
+          <li><a action="contactUs.html" onclick="contactUs()">Contact</a></li>
+      </ul>
+  </nav>
+  
+     
+  
+  
+  
+           <!--Main-->
+           <br>
+     <div class="container font">
+      <table class="table table-fixed">
+        <thead>
+          <tr>
+              <th class="col-xs-7" style="color:white;padding: 15px 15px 15px"><h4>All document</h4></th>
+            <th class="col-xs-2"></th>
+            <th class="col-xs-6" style="color:white;padding: 15px 15px 15px"><h4>Date</h4></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-xs-7" id='list_file' style="padding: 15px 15px 15px" ></td>
+            <td class="col-xs-2" style=""></td>
+            <td class="col-xs-6" id='list_file2' style="padding: 15px 15px 15px" ></td>
+          </tr>
+  
+          <div>
+              <!-- <script src="script.js"></script> -->
+              <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+              <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+              <script src='https://www.gstatic.com/firebasejs/3.2.1/firebase.js'></script>
+              <script> //--------ConnectFirebase--------
+                var firebaseConfig = {
+                  apiKey: "AIzaSyD_PU5bw4-vNEYL5ew7sow970gTu-ZtLG4",
+                  authDomain: "modloans-f8d62.firebaseapp.com",
+                  projectId: "modloans-f8d62",
+                  storageBucket: "modloans-f8d62.appspot.com",
+                  messagingSenderId: "398266070886",
+                  appId: "1:398266070886:web:d684c75954cb090ae3faa7",
+                  measurementId: "G-61MQ0SD6LJ",
+                  databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
+                };
+                firebase.initializeApp(firebaseConfig);
+        
+                //--------------------------
+                var fileName, fileURL, fileDescription;
+                var files = [];
+                var reader = new FileReader();
+                //--------------------------
+                function parm() {
+                  topicName = document.getElementById('topic').value;
+                  fileName = document.getElementById('namebox').value;
+                  fileDescription = document.getElementById('description').value;
+                  topicName_view = document.getElementById('namebox2').value;
+                  topicName_Del = document.getElementById('namebox3').value;
+                }
+                //+----- passvalue for view inside each content -----+
+                function passvalue(id) {
+                  localStorage.setItem('VALUE', id);
+                  window.location.replace('/studentWeb/viewFile.html');
+                  // console.log(id);
+                  // console.log("id");
+                }
+                //+----- view automatic -----+
+                database = firebase.database();
+                var Ref = database.ref('Files');
+                Ref.on('value', gotData);
+                function gotData(data) {
+                  // console.log(data.val());
+                  var Files = data.val();
+                  var keys = Object.keys(Files);
+                  // console.log(keys);
+                  for (var i = 0; i < keys.length; i++) {
+                    var k = keys[i];
+                    var id = Files[k].Date;
+                    var topic = Files[k].TopicName;
+                    var description = Files[k].Description;
+                    var fileName = Files[k].NameFile;
+                    var linkFile = Files[k].LinkFile;
+                    var date = Files[k].Date;
+                    var _date = new Date(date);
+                    console.log(topic, description, fileName);
+                    var _li = document.createElement('div');
+                    _li.innerHTML =
+                      '<a class="col-xs-7 h5" onclick="passvalue(' + id + ');" style="color:white" >' + topic + '</h5>'+ '</a>';
+                    document.getElementById('list_file').appendChild(_li);
+                    
+                    var _li2 = document.createElement('div');
+                    _li2.innerHTML =
+                      '<a class="col-xs-10 h5" style="color:white">' + _date.toDateString() + '</a>';
+                      //'<h5 style="color:white">' + _date.toDateString() + '</h5>';
+                    document.getElementById('list_file2').appendChild(_li2);
+                  }
+                }
+              </script>
+            </div>
+        
+        
+        </body>
+        
+        </html>
+  
    <nav class="stick-top">
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
