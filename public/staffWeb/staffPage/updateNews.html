@@ -111,6 +111,7 @@
     .f3 {
       font-family: 'Sarabun', sans-serif;
       font-size: 15px;
+	    background-color: #F9F6F5;
       padding: 5px 8px 5px 20px;
     }
   </style>
@@ -156,7 +157,7 @@
       <li class="header">Navigation</li>
       <li>
         <a action="homeStaff.html" onclick="homeStaff()">
-          <i class="fa fa-tachometer" aria-hidden="true"></i> All post
+          <i class="fa fa-tachometer" aria-hidden="true"></i> All News
         </a>
       </li>
       <li>
@@ -166,12 +167,12 @@
       </li>
       <li>
         <a action="upload.html" onclick="Upload()">
-          <i class="fa fa-home" aria-hidden="true"></i> New post
+          <i class="fa fa-home" aria-hidden="true"></i> Upload News
         </a>
       </li>
       <li>
         <a action="uploadDoc.html" onclick="uploadDoc()">
-          <i class="fa fa-home" aria-hidden="true"></i> New document
+          <i class="fa fa-home" aria-hidden="true"></i> Upload document
         </a>
       </li>
       <li class="header">Another Menu</li>
@@ -204,18 +205,21 @@
   </div>
 
   <div class=" main content f2">
+  <h4 style="color:gray;">[เอกสารเดิม]</h4>
     <div id='result_ID'></div>
     <div id='list_file'></div>
     <div class="container">
     </div>
 
-
+<br>
     <div class="container f3">
       <form action="">
         <div class="row">
           <div>
+		  <h4 style="color:gray;">[แก้ไข]</h4>
             <h1>Update document</h1>
           </div>
+		  		  <br>
           <div class="col-10">
             <label for="topic">Topic name</label>
           </div>
@@ -223,6 +227,7 @@
             <input type="text" id="topic" name="topic" style="width:500px" placeholder="Topic name ...">
           </div>
         </div>
+		<br>
         <div class="row">
           <div class="col-15">
             <label for="description">Content</label>
@@ -232,6 +237,7 @@
               style="width:500px"></textarea>
           </div>
         </div>
+		<br>
         <div class="row">
           <div class="col-15">
             <label for="namebox">File name</label>
@@ -240,7 +246,6 @@
             <input type="text" id="namebox" name="namebox" placeholder="File name ...">
           </div>
         </div>
-
         <div class="row">
           <div class="col-10">
             <label for="file" button type="button" class="btn btn-default " id="selectf">Select file</label>
