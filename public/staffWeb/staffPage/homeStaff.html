@@ -143,12 +143,12 @@ ul.CTAs a {
 
 a.download {
     background: #fff;
-    color: #7386D5;
+    color: #a9a47e;
 }
 
 a.article,
 a.article:hover {
-    background: #6d7fcc !important;
+    background: #666f51 !important;
     color: #fff !important;
 }
 
@@ -193,9 +193,9 @@ a.article:hover {
     function calendarManage() {
       window.location.replace('/staffWeb/staffPage/calendarManage.html');
     }
-    function msManage() {
-      window.location.replace('/staffWeb/staffPage/msManage.html');
-    }
+    // function msManage() {
+    //   window.location.replace('/staffWeb/staffPage/msManage.html');
+    // }
     function Upload() {
       window.location.replace('/staffWeb/staffPage/uploadNews.html');
     }
@@ -216,112 +216,17 @@ a.article:hover {
     function announce() {
       window.location.replace('/staffWeb/staffPage/announceNotify.html');
     }
+    function stdBookingList() {
+      window.location.replace('/staffWeb/staffPage/stdBookingList.html');
+    }
   </script>
-  <!--
-  <div class="sidebar-container f1">
-    <div class="sidebar-logo">
-      มดน้อยผู้ช่วย
-    </div>
-    <ul class="sidebar-navigation">
-      <li class="header">Navigation</li>
-      <li>
-        <a action="homeStaff.html" onclick="homeStaff()">
-          <i class="fa fa-tachometer" aria-hidden="true"></i> All News
-        </a>
-      </li>
-      <li>
-        <a action="viewDoc.html" onclick="viewDoc()">
-          <i class="fa fa-tachometer" aria-hidden="true"></i> All document
-        </a>
-      </li>
-      <li>
-        <a action="upload.html" onclick="Upload()">
-          <i class="fa fa-home" aria-hidden="true"></i> Upload News
-        </a>
-      </li>
-      <li>
-        <a action="uploadDoc.html" onclick="uploadDoc()">
-          <i class="fa fa-home" aria-hidden="true"></i> Upload document
-        </a>
-      </li>
-      <li class="header">Another Menu</li>
-      <li>
-        <a action="msManage.html" onclick="msManage()">
-          <i class="fa fa-users" aria-hidden="true"></i> MS manage
-        </a>
-      </li>
-      <li>
-        <a action="calendarManage.html" onclick="calendarManage()">
-          <i class="fa fa-cog" aria-hidden="true"></i>Calendar manage
-        </a>
-      </li>
-      <li>
-        <a action="mailbox.html" onclick="mailBox()">
-          <i class="fa fa-info-circle" aria-hidden="true"></i> Mail box
-        </a>
-      </li>
-      <li>
-        <!-- J -
-        <a action="announceNotify.html" onclick="announce()">
-          <i class="fa fa-info-circle" aria-hidden="true"></i> ประกาศไปยังผู้กู้ยืม
-        </a>
-      </li>
-      <li>
-        <!-- J 
-        <a action="contactDev.html" onclick="contactDev()">
-          <i class="fa fa-info-circle" aria-hidden="true"></i> ติดต่อผู้พัฒนา
-        </a>
-      </li>
-      <li>
-        <a action="index.html" onclick="index()">
-          <i class="fa fa-info-circle" aria-hidden="true"></i> Logout
-        </a>
-      </li>
-    </ul>
-  </div>
+  
 
-
-  <div class="content-container f1">
-    <div class="container-fluid">
-
-      <!-- Main component for a primary marketing message or call to action -->
-      <!--main content view
-      <div class="cv" f1>
-        <div>
-          <div class="inbox">
-            <div class="inbox-sb">
-
-            </div>
-            <div class="inbox-bx container-fluid">
-              <div class="row">
-
-                <div class="col-md-10">
-                  <table class="table table-stripped">
-                    <!-- <tbody>
-                      <tr>
-                        <th id="list_file"></th>
-                      </tr>
-                    </tbody> 
-
-
-                    <ul id='list_file'>
-                    </ul>
-
-
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
--->
 <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3> <img src="/img/longlogo.png"></h3>
+                <img src="/img/longlogo.png" style="width: 100px; height: auto;">
             </div>
 
             <ul class="list-unstyled components">
@@ -353,6 +258,9 @@ a.article:hover {
                 </li>
                 <li>
                     <a action="announceNotify.html" onclick="announce()">ประกาศไปยังผู้กู้ยืม</a>
+                </li>
+                <li>
+                  <a action="announceNotify.html" onclick="announce()">รายชื่อนักศึกษาขอเข้าพบ</a>
                 </li>
                  <li>
                     <a action="contactDev.html" onclick="contactDev()">ติดต่อผู้พัฒนา</a>
