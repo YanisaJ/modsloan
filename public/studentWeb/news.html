@@ -210,9 +210,6 @@
     </ul>
 </nav>
 
-   
-
-
 
          <!--Main-->
          <br>
@@ -265,19 +262,15 @@
               //+----- passvalue for view inside each content -----+
               function passvalue(id) {
                 localStorage.setItem('VALUE', id);
-                window.location.replace('/studentWeb/viewFile.html');
-                // console.log(id);
-                // console.log("id");
+                window.location.replace('/studentWeb/viewNewsSTD.html');
               }
               //+----- view automatic -----+
               database = firebase.database();
               var Ref = database.ref('Files');
               Ref.on('value', gotData);
               function gotData(data) {
-                // console.log(data.val());
                 var Files = data.val();
                 var keys = Object.keys(Files);
-                // console.log(keys);
                 for (var i = 0; i < keys.length; i++) {
                   var k = keys[i];
                   var id = Files[k].Date;
@@ -289,13 +282,12 @@
                   var _date = new Date(date);
                   console.log(topic, description, fileName);
                   var _li = document.createElement('div');
-                  _li.innerHTML =
-                    '<a class="col-xs-7 h5" onclick="passvalue(' + id + ');" style="color:white" >' + topic + '</h5>'+ '</a>';
+                  _li.innerHTML ='<a class="col-xs-7 h5" onclick="passvalue(' + id + ');" style="color:white" >' 
+                    + topic + '</h5>'+ '</a>';
                   document.getElementById('list_file').appendChild(_li);
-                  
                   var _li2 = document.createElement('div');
-                  _li2.innerHTML =
-                    '<h5 style="color:white;">' + _date.toDateString() + '</h5>';
+                  _li2.innerHTML ='<a class="col-xs-10 h5" style="color:white">' + _date.toDateString() + '</a>';
+                    //'<h5 style="color:white;">' + _date.toDateString() + '</h5>';
                   document.getElementById('list_file2').appendChild(_li2);
                 }
               }

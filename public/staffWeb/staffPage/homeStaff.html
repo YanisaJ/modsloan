@@ -120,13 +120,13 @@
       window.location.replace('/staffWeb/staffPage/msManage.html');
     }
     function Upload() {
-      window.location.replace('/staffWeb/staffPage/upload.html');
+      window.location.replace('/staffWeb/staffPage/uploadNews.html');
     }
     function index() {
       window.location.replace('/index.html');
     }
     function viewDoc() {
-      window.location.replace('/staffWeb/staffPage/viewAllDoc.html');
+      window.location.replace('/staffWeb/staffPage/viewDocSTAFF.html');
     }
     function uploadDoc() {
       window.location.replace('/staffWeb/staffPage/uploadDoc.html');
@@ -134,6 +134,10 @@
     // J
     function contactDev() {
       window.location.replace('/staffWeb/staffPage/contactDev.html');
+    }
+    //เพิ่มใหม่
+    function announce() {
+      window.location.replace('/staffWeb/staffPage/announceNotify.html');
     }
   </script>
   <div class="sidebar-container f1">
@@ -144,7 +148,7 @@
       <li class="header">Navigation</li>
       <li>
         <a action="homeStaff.html" onclick="homeStaff()">
-          <i class="fa fa-tachometer" aria-hidden="true"></i> All post
+          <i class="fa fa-tachometer" aria-hidden="true"></i> All News
         </a>
       </li>
       <li>
@@ -154,12 +158,12 @@
       </li>
       <li>
         <a action="upload.html" onclick="Upload()">
-          <i class="fa fa-home" aria-hidden="true"></i> New post
+          <i class="fa fa-home" aria-hidden="true"></i> Upload News
         </a>
       </li>
       <li>
         <a action="uploadDoc.html" onclick="uploadDoc()">
-          <i class="fa fa-home" aria-hidden="true"></i> New document
+          <i class="fa fa-home" aria-hidden="true"></i> Upload document
         </a>
       </li>
       <li class="header">Another Menu</li>
@@ -176,6 +180,12 @@
       <li>
         <a action="mailbox.html" onclick="mailBox()">
           <i class="fa fa-info-circle" aria-hidden="true"></i> Mail box
+        </a>
+      </li>
+      <li>
+        <!-- J -->
+        <a action="announceNotify.html" onclick="announce()">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> ประกาศไปยังผู้กู้ยืม
         </a>
       </li>
       <li>
@@ -270,7 +280,7 @@
       //+----- passvalue for view inside each content -----+
       function passvalue(id) {
         localStorage.setItem('VALUE', id);
-        window.location.replace('/staffWeb/updateFile.html');
+        window.location.replace('/staffWeb/staffPage/updateNews.html');
         // console.log(id);
         // console.log("id");
       }
