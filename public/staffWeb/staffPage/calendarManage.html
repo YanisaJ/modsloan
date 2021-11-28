@@ -229,7 +229,7 @@
 
         <ul class="list-unstyled components">
             <p>Navigation</p>
-            <li class="active">
+            <li>
                 <a action="homeStaff.html" onclick="homeStaff()" data-toggle="collapse" aria-expanded="false" >All News</a>
                
             </li>
@@ -249,7 +249,7 @@
                <a action="msManage.html" onclick="msManage()">MS manage</a>           
             </li>   
             <li>
-                <a action="calendarManage.html" onclick="calendarManage()">Calendar Manage</a>
+                <a action="calendarManage.html" class="active" onclick="calendarManage()">Calendar Manage</a>
             </li>
             <li>
                 <a action="mailbox.html" onclick="mailBox()">Mail Box</a>
@@ -258,7 +258,7 @@
                 <a action="announceNotify.html" onclick="announce()">ประกาศไปยังผู้กู้ยืม</a>
             </li>
             <li>
-              <a action="announceNotify.html" onclick="announce()">รายชื่อนักศึกษาขอเข้าพบ</a>
+              <a action="stdBookingList.html" onclick="stdBookingList()">รายชื่อนักศึกษาขอเข้าพบ</a>
             </li>
              <li>
                 <a action="contactDev.html" onclick="contactDev()">ติดต่อผู้พัฒนา</a>
@@ -300,7 +300,14 @@
   </div>
     </div>
  </div>
-
+ <script>
+  $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+    
+  </script>
 </body>
 
 </html>
