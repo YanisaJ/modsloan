@@ -149,9 +149,9 @@
     function calendarManage() {
       window.location.replace('/staffWeb/staffPage/calendarManage.html');
     }
-    function msManage() {
-      window.location.replace('/staffWeb/staffPage/msManage.html');
-    }
+    // function msManage() {
+    //   window.location.replace('/staffWeb/staffPage/msManage.html');
+    // }
     function Upload() {
       window.location.replace('/staffWeb/staffPage/uploadNews.html');
     }
@@ -168,6 +168,13 @@
     function contactDev() {
       window.location.replace('/staffWeb/staffPage/contactDev.html');
     }
+    function announce() {
+      window.location.replace('/staffWeb/staffPage/announceNotify.html');
+    }
+    function stdBookingList() {
+      window.location.replace('/staffWeb/staffPage/stdBookingList.html');
+    }
+
   </script>
   <div class="sidebar-container f1">
     <div class="sidebar-logo">
@@ -196,11 +203,11 @@
         </a>
       </li>
       <li class="header">Another Menu</li>
-      <li>
+      <!-- <li>
         <a action="msManage.html" onclick="msManage()">
           <i class="fa fa-users" aria-hidden="true"></i> MS manage
         </a>
-      </li>
+      </li> -->
       <li>
         <a action="calendarManage.html" onclick="calendarManage()">
           <i class="fa fa-cog" aria-hidden="true"></i>Calendar manage
@@ -211,11 +218,24 @@
           <i class="fa fa-info-circle" aria-hidden="true"></i> Mail box
         </a>
       </li>
-      <li><!-- J -->
-        <a action="contactDev.html" onclick="contactDev()">
-            <i class="fa fa-info-circle" aria-hidden="true"></i> ติดต่อผู้พัฒนา
+      <li>
+        <!-- J -->
+        <a action="announceNotify.html" onclick="announce()">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> ประกาศไปยังผู้กู้ยืม
         </a>
-    </li>
+      </li>
+      <li>
+        <!-- J -->
+        <a action="stdBookingList.html" onclick="stdBookingList()">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> รายชื่อนักศึกษาขอเข้าพบ
+        </a>
+      </li>
+      <li>
+        <!-- J -->
+        <a action="contactDev.html" onclick="contactDev()">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> ติดต่อผู้พัฒนา
+        </a>
+      </li>
       <li>
         <a action="index.html" onclick="index()">
           <i class="fa fa-info-circle" aria-hidden="true"></i> Logout
@@ -225,32 +245,11 @@
   </div>
 
 
-
-
-  <div class="content-container f1">
-    <div class="container-fluid">
-      <!--Main content-->
-      <div class="jumbotron" style="padding-top:30px">
-        <div class="container">
-          <h2>Mailbox</h2>
-          <p>กรุณาเข้าระบบอีเมล์บัญชีผู้ดูแลของท่านเพื่อจัดการกล่องข้อความ: </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <img src="https://www.hiveage.com/wp-content/uploads/2015/06/gmail-for-business.jpg" alt="Snow" style="width:100%">
-      <p>
-        <a href='https://www.gmail.com' target="_blank">
-          <button class="btn">Go to Gmail</button>
-        </a>
-      </p>
-    </div>
-
-
-
-    <!-- <iframe id="rotator" src="https://business.facebook.com" width="100%" height="600" scrolling="no" border="0">
-    </iframe> -->
+  <div class="content-container f1" style="border: white;">
+    <button onClick="window.location = 'https://www.gmail.com'" target="_blank" style="background-color: transparent; border: 0;" ><img
+        src="https://www.img.in.th/images/3b4ecfec9c679d1d6a5ee8d4864ffeda.png"
+        alt="3b4ecfec9c679d1d6a5ee8d4864ffeda.png"  style="width:70%" alt="Snow" /></button>
+  </div>
 </body>
 
 </html>
