@@ -12,7 +12,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Sarabun:wght@200;400&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.adoff.net/cdn-v-1-0/main.css">
   <style>
     
@@ -32,7 +32,7 @@
   }
   
   body {
-      font-family: 'Prompt', sans-serif;
+      font-family: 'Sarabun', sans-serif;
       background-color: #edddc3;
   
   }
@@ -133,7 +133,7 @@
 <body>
  
   <!--Navbar-->
-  <nav>
+  <nav class="stick-top">
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
@@ -141,9 +141,10 @@
     <label class="logo" action="index.html" onclick="home()" ><img src="/img/longlogo.png" style="width:100px" ></label>
     <ul>
         <li><a action="index.html" onclick="home()">Home</a></li>
-        <li><a action="new.html" onclick="news()">News</a></li>
-        <li><a  action="document.html" onclick="documentstd()">Document</a></li>
         <li><a action="about.html" onclick="about()">About</a></li>
+        <li><a action="news.html" onclick="news()">News</a></li>
+        <li><a  action="document.html" onclick="documentstd()">Document</a></li>
+        
         <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
         <li><a class="active" action="contactUs.html" onclick="contactUs()">Contact</a></li>
     </ul>
@@ -246,6 +247,7 @@
   </div>
 
   <script>
+<script>
     function calendar() {
       window.location.replace('/studentWeb/calendar.html');
     }
@@ -267,34 +269,6 @@
   </script>
 
 
-  <!-- plugin messenger / Messenger ปลั๊กอินแชท Code -->
-  <div id="fb-root"></div>
-
-  <!-- Your ปลั๊กอินแชท code -->
-  <div id="fb-customer-chat" class="fb-customerchat">
-  </div>
-
-  <script>
-    var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "103484235166980");
-    chatbox.setAttribute("attribution", "biz_inbox");
-
-    window.fbAsyncInit = function () {
-      FB.init({
-        xfbml: true,
-        version: 'v12.0'
-      });
-    };
-
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <!-- plugin messenger -->
 </body>
 
 </html>

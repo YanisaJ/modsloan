@@ -3,341 +3,223 @@
 <html>
 
 <head>
-  <title>Mod loan's assistant - Home</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
-              rel="stylesheet">
-        <link rel="stylesheet" href="styles/index.processed.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    </head>
+    <title>Mod loan's assistant - Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.processed.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
 
-    <style>
-        :root{
-            --background-dark: #e7c48a;
-            --text-light: rgba(255,255,255,0.6);
-            --text-lighter: rgba(255,255,255,0.9);
-            --spacing-s: 8px;
-            --spacing-m: 16px;
-            --spacing-l: 24px;
-            --spacing-xl: 32px;
-            --spacing-xxl: 64px;
-            --width-container: 1200px;
+<style>
+    :root {
+        --background-dark: #e7c48a;
+        --text-light: rgba(255, 255, 255, 0.6);
+        --text-lighter: rgba(255, 255, 255, 0.9);
+        --spacing-s: 8px;
+        --spacing-m: 16px;
+        --spacing-l: 24px;
+        --spacing-xl: 32px;
+        --spacing-xxl: 64px;
+        --width-container: 1200px;
+    }
+
+    * {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        height: 100%;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    .hero-section {
+        align-items: flex-start;
+        background-image: linear-gradient(15deg, #e7c48a 7089%, #d7b169 150%);
+        display: flex;
+        min-height: 100%;
+        justify-content: center;
+        padding: var(--spacing-xxl) var(--spacing-l);
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: var(--spacing-l);
+        grid-row-gap: var(--spacing-l);
+        max-width: var(--width-container);
+        width: 100%;
+    }
+
+    @media(min-width: 540px) {
+        .card-grid {
+            grid-template-columns: repeat(2.5, 1fr);
         }
+    }
 
-        *{
-            border: 0;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    @media(min-width: 960px) {
+        .card-grid {
+            grid-template-columns: repeat(5, 1fr);
         }
+    }
 
-        html{
-            height: 100%;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
+    .card {
+        list-style: none;
+        position: relative;
+    }
+
+    .card:before {
+        content: '';
+        display: block;
+        padding-bottom: 150%;
+        width: 100%;
+    }
+
+    .card__background {
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--spacing-l);
+        bottom: 0;
+        filter: brightness(0.75) saturate(1.2) contrast(0.85);
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform-origin: center;
+        trsnsform: scale(1) translateZ(0);
+        transition:
+            filter 200ms linear,
+            transform 200ms linear;
+    }
+
+    .card:hover .card__background {
+        transform: scale(1.05) translateZ(0);
+    }
+
+    .card-grid:hover>.card:not(:hover) .card__background {
+        filter: brightness(2.0) saturate(0) contrast(0.5) blur(15px);
+    }
+
+    .card__content {
+        left: 0;
+        padding: var(--spacing-l);
+        position: absolute;
+        top: 0;
+    }
+
+    .card__category {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-s);
+        text-transform: uppercase;
+    }
+
+    .card__heading {
+        color: var(--text-lighter);
+        font-size: 1.9rem;
+        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+        line-height: 1.4;
+        word-spacing: 100vw;
+    }
+</style>
+
+
+<body>
+    <script>
+        function calendar() {
+          window.location.replace('/studentWeb/calendar.html');
         }
-
-        body{
-            height: 100%;
+        function about() {
+          window.location.replace('/studentWeb/about.html');
         }
-
-        .hero-section{
-            align-items: flex-start;
-            background-image: linear-gradient(15deg, #e7c48a 7089%, #d7b169 150%);
-            display: flex;
-            min-height: 100%;
-            justify-content: center;
-            padding: var(--spacing-xxl) var(--spacing-l);
+        function home() {
+          window.location.replace('/studentWeb/home.html');
         }
-
-        .card-grid{
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            grid-column-gap: var(--spacing-l);
-            grid-row-gap: var(--spacing-l);
-            max-width: var(--width-container);
-            width: 100%;
+        function contactUs() {
+          window.location.replace('/studentWeb/contactUs.html');
         }
-
-        @media(min-width: 540px){
-            .card-grid{
-                grid-template-columns: repeat(2, 1fr); 
-            }
+        function documentstd() {
+          window.location.replace('/studentWeb/document.html');
         }
-
-        @media(min-width: 960px){
-            .card-grid{
-                grid-template-columns: repeat(4, 1fr); 
-            }
+        function news() {
+          window.location.replace('/studentWeb/news.html');
         }
-
-        .card{
-            list-style: none;
-            position: relative;
-        }
-
-        .card:before{
-            content: '';
-            display: block;
-            padding-bottom: 150%;
-            width: 100%;
-        }
-
-        .card__background{
-            background-size: cover;
-            background-position: center;
-            border-radius: var(--spacing-l);
-            bottom: 0;
-            filter: brightness(0.75) saturate(1.2) contrast(0.85);
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            transform-origin: center;
-            trsnsform: scale(1) translateZ(0);
-            transition: 
-                filter 200ms linear,
-                transform 200ms linear;
-        }
-
-        .card:hover .card__background{
-            transform: scale(1.05) translateZ(0);
-        }
-
-        .card-grid:hover > .card:not(:hover) .card__background{
-            filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
-        }
-
-        .card__content{
-            left: 0;
-            padding: var(--spacing-l);
-            position: absolute;
-            top: 0;
-        }
-
-        .card__category{
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: var(--spacing-s);
-            text-transform: uppercase;
-        }
-
-        .card__heading{
-            color: var(--text-lighter);
-            font-size: 1.9rem;
-            text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
-            line-height: 1.4;
-            word-spacing: 100vw;
-        }
-    </style>
-
-
-    <body>
-        <script>
-            function calendar() {
-                window.location.replace('/studentWeb/calendar.html');
-            }
-            function about() {
-                window.location.replace('/studentWeb/about.html');
-            }
-            function home() {
-                window.location.replace('/studentWeb/home.html');
-            }
-            function contactUs() {
-                window.location.replace('/studentWeb/contactUs.html');
-            }
-            function documentstd() {
-                window.location.replace('/studentWeb/document.html');
-            }
-            function index() {
-                window.location.replace('/index.html');
-            }
-        </script>
-
-        <!--navbar
-        
-      <header class="main-header">
-          <div class="container">
-            <nav class="navbar navbar-expand-lg main-nav px-0">
-              <a class="navbar-brand" action="index.html" onclick="index()"><img src="img/longlogo.png" > </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-                              <span class="icon-bar icon-bar-1"></span>
-                              <span class="icon-bar icon-bar-2"></span>
-                              <span class="icon-bar icon-bar-3"></span>
-                          </button>
-              <div class="collapse navbar-collapse" id="mainMenu">
-                <ul class="navbar-nav ml-auto text-uppercase f1">
-                  <li>
-                    <a class="active" action="index.html" onclick="home()">home</a>
-                  </li>
-                  <li>
-                    <a action="about.html" onclick="about()">about us</a>
-                  </li>
-                  <li>
-                    <a action="document.html" onclick="documentstd()">document</a>
-                  </li>
-                  <li>
-                    <a action="calendar.html" onclick="calendar()">calendar</a>
-                  </li>
-                  <li>
-                    <a action="contactUs.html" onclick="contactUs()">contact us</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div><ul class="list-group">
-        <li class="list-group-item" id='list_file'></li>
-      
-      </header>
-        <!-- /.container -->
+      </script>
 
 
 
-        <section class="hero-section">
-            <div class="card-grid">
-                <a class="card" action="document.html" onclick="documentstd()">
-                    <div class="card__background" style="background-image: url(/img/doc.png);"></div>
+
+    <section class="hero-section">
+        <div class="card-grid">
+            <a class="card" action="about.html" onclick="about()">
+                <div class="card__background"
+                    style="background-image: url(https://image.freepik.com/free-vector/customer-service-with-icons-illustration_53876-66281.jpg)">
+                </div>
+                <div class="card__content">
+
+                    <h3 class="card__heading">About</h3>
+                </div>
+            </a>
+            <a class="card" action="news.html" onclick="news()">
+                <div class="card__background"
+                    style="background-image: url(https://image.freepik.com/free-vector/customer-service-with-icons-illustration_53876-66281.jpg)">
+                </div>
+                <div class="card__content">
+
+                    <h3 class="card__heading">News</h3>
+                </div>
+            </a>
+            <a class="card" action="document.html" onclick="documentstd()">
+                <div class="card__background" style="background-image: url(/img/doc.png);"></div>
+                <div class="card__content">
+
+                    <h3 class="card__heading">Document</h3>
+                </div>
+            </a>
+            <a class="card" action="calendar.html" onclick="calendar()">
+                <div class="card__background" style="background-image: url(/img/calendar.png);"></div>
+                <div class="card__content">
+
+                    <h3 class="card__heading">Calendar</h3>
+                </div>
+                </li>
+                <a class="card" action="contactUs.html" onclick="contactUs()">
+                    <div class="card__background"
+                        style="background-image: url(https://image.freepik.com/free-vector/call-center_24877-49048.jpg)">
+                    </div>
                     <div class="card__content">
 
-                        <h3 class="card__heading">Document</h3>
+                        <h3 class="card__heading">Contact Us</h3>
                     </div>
                 </a>
-                <a class="card" action="about.html" onclick="about()">
-                    <div class="card__background" style="background-image: url(https://image.freepik.com/free-vector/customer-service-with-icons-illustration_53876-66281.jpg)"></div>
-                    <div class="card__content">
 
-                        <h3 class="card__heading">About</h3>
-                    </div>
-                </a>
-                <a class="card" action="calendar.html" onclick="calendar()">
-                    <div class="card__background" style="background-image: url(/img/calendar.png);"></div>
-                    <div class="card__content">
+                <!-- Placed at the end of the document so the pages load faster -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+                <!-- Scripts -->
+                <script src="scripts/index.js"></script>
 
-                        <h3 class="card__heading">Calendar</h3>
-                    </div>
-                    </li>
-                    <a class="card" action="contactUs.html" onclick="contactUs()">
-                        <div class="card__background" style="background-image: url(https://image.freepik.com/free-vector/call-center_24877-49048.jpg)"></div>
-                        <div class="card__content">
+</body>
 
-                            <h3 class="card__heading">Contact Us</h3>
-                        </div>
-                    </a>
-                    <div>
-                        </section>
-
-                        <!-- <script src="script.js"></script> -->
-
-
-                        <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
-                        <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
-                        <script src='https://www.gstatic.com/firebasejs/3.2.1/firebase.js'></script>
-                        <script> //--------ConnectFirebase--------
-                          var firebaseConfig = {
-                              apiKey: "AIzaSyD_PU5bw4-vNEYL5ew7sow970gTu-ZtLG4",
-                              authDomain: "modloans-f8d62.firebaseapp.com",
-                              projectId: "modloans-f8d62",
-                              storageBucket: "modloans-f8d62.appspot.com",
-                              messagingSenderId: "398266070886",
-                              appId: "1:398266070886:web:d684c75954cb090ae3faa7",
-                              measurementId: "G-61MQ0SD6LJ",
-                              databaseURL: "https://modloans-f8d62-default-rtdb.firebaseio.com"
-                          };
-                          firebase.initializeApp(firebaseConfig);
-
-                          //--------------------------
-                          var fileName, fileURL, fileDescription;
-                          var files = [];
-                          var reader = new FileReader();
-                          //--------------------------
-                          function parm() {
-                              topicName = document.getElementById('topic').value;
-                              fileName = document.getElementById('namebox').value;
-                              fileDescription = document.getElementById('description').value;
-                              topicName_view = document.getElementById('namebox2').value;
-                              topicName_Del = document.getElementById('namebox3').value;
-                          }
-                          //+----- passvalue for view inside each content -----+
-                          function passvalue(id) {
-                              localStorage.setItem('VALUE', id);
-                              window.location.replace('/studentWeb/viewFile.html');
-                              // console.log(id);
-                              // console.log("id");
-                          }
-                          //+----- view automatic -----+
-                          database = firebase.database();
-                          var Ref = database.ref('Files');
-                          Ref.on('value', gotData);
-                          function gotData(data) {
-                              // console.log(data.val());
-                              var Files = data.val();
-                              var keys = Object.keys(Files);
-                              // console.log(keys);
-                              for (var i = 0; i < keys.length; i++) {
-                                  var k = keys[i];
-                                  var id = Files[k].Date;
-                                  var topic = Files[k].TopicName;
-                                  var description = Files[k].Description;
-                                  var fileName = Files[k].NameFile;
-                                  var linkFile = Files[k].LinkFile;
-                                  var date = Files[k].Date;
-                                  var _date = new Date(date);
-                                  console.log(topic, description, fileName);
-                                  var _li = document.createElement('div');
-                                  _li.innerHTML =
-                                          '<h6 style="color:gray">' + _date.toDateString() + '</h6>' +
-                                          '<a class="card-text h3" onclick="passvalue(' + id + ');">' + topic + '</a>';
-                                  document.getElementById('list_file').appendChild(_li);
-                              }
-                          }
-                        </script>
-                    </div>
-
-                    <!-- plugin messenger / Messenger ปลั๊กอินแชท Code -->
-                    <div id="fb-root"></div>
-
-                    <!-- Your ปลั๊กอินแชท code -->
-                    <div id="fb-customer-chat" class="fb-customerchat">
-                    </div>
-
-                    <script>
-                        var chatbox = document.getElementById('fb-customer-chat');
-                        chatbox.setAttribute("page_id", "103484235166980");
-                        chatbox.setAttribute("attribution", "biz_inbox");
-
-                        window.fbAsyncInit = function () {
-                            FB.init({
-                                xfbml: true,
-                                version: 'v12.0'
-                            });
-                        };
-
-                        (function (d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0];
-                            if (d.getElementById(id))
-                                return;
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'facebook-jssdk'));
-                    </script>
-                    <!-- plugin messenger -->
-
-                    <!-- Placed at the end of the document so the pages load faster -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-                    <!-- Scripts -->
-                    <script src="scripts/index.js"></script>
-
-                    </body>
-
-                    </html>
+</html>

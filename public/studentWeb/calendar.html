@@ -138,51 +138,38 @@ calendar {
 
 
 <body>
-  <script>
-    function calendar() {
-        window.location.replace('/studentWeb/calendar.html');
-      }
-      function about() {
-        window.location.replace('/studentWeb/about.html');
-      }
-      function home() {
-        window.location.replace('/studentWeb/home.html');
-      }
-    function contactUs() {
-        window.location.replace(`/studentWeb/contactUs.html`);
-      }
-      function documentstd() {
-      window.location.replace('/studentWeb/document.html');
-    }
-    function news() {
-      window.location.replace('/studentWeb/news.html');
-    }
-  </script>
-  <!--
-  <nav class="navbar navbar-expand navbar-light" style="align-items:center;position: fixed; padding-right: 10px">
-    <ul>
-      <a class="navbar-brand" action="index.html" onclick="home()"><img src="/img/Mod.png" width="75px"
-        height="35px"></a>
+    <script>
+        function calendar() {
+          window.location.replace('/studentWeb/calendar.html');
+        }
+        function about() {
+          window.location.replace('/studentWeb/about.html');
+        }
+        function home() {
+          window.location.replace('/studentWeb/home.html');
+        }
+        function contactUs() {
+          window.location.replace('/studentWeb/contactUs.html');
+        }
+        function documentstd() {
+          window.location.replace('/studentWeb/document.html');
+        }
+        function news() {
+          window.location.replace('/studentWeb/news.html');
+        }
+      </script>
 
-      <li><a action="contactUs.html" onclick="contactUs()">Contact us</a></li>
-      <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
-      <li><a class="active" action="about.html" onclick="about()">About</a></li>
-      <li><a action="document.html" onclick="documentstd()">Document</a></li>
-      <li><a action="index.html" onclick="home()">Home</a></li>
-    </ul>
-  </nav> -->
-
-      <nav>
+      <nav class="stick-top">
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
         <label class="logo" action="index.html" onclick="home()" ><img src="/img/longlogo.png" style="width:100px" ></label>
         <ul>
-            <li><a action="index.html" onclick="home()">Home</a></li>
+            <li><a action="index.html" onclick="home()">Home</a></li>           
+            <li><a action="about.html" onclick="about()">About</a></li> 
             <li><a action="news.html" onclick="news()">News</a></li>
             <li><a action="document.html" onclick="documentstd()">Document</a></li>
-            <li><a action="about.html" onclick="about()">About</a></li>
             <li><a class="active" action="calendar.html" onclick="calendar()">Calendar</a></li>
             <li><a action="contactUs.html" onclick="contactUs()">Contact</a></li>
         </ul>
@@ -195,68 +182,8 @@ calendar {
       </div>
 </div>
 
-  
-  
-<!-- plugin messenger / Messenger ปลั๊กอินแชท Code -->
-<div id="fb-root"></div>
 
-<!-- Your ปลั๊กอินแชท code -->
-<div id="fb-customer-chat" class="fb-customerchat">
-</div>
 
-<script>
-  var chatbox = document.getElementById('fb-customer-chat');
-  chatbox.setAttribute("page_id", "103484235166980");
-  chatbox.setAttribute("attribution", "biz_inbox");
-
-  window.fbAsyncInit = function () {
-    FB.init({
-      xfbml: true,
-      version: 'v12.0'
-    });
-  };
-
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-<!-- plugin messenger -->
-</body>
-
-</html>
-
-<!-- plugin messenger / Messenger ปลั๊กอินแชท Code -->
-<div id="fb-root"></div>
-
-<!-- Your ปลั๊กอินแชท code -->
-<div id="fb-customer-chat" class="fb-customerchat">
-</div>
-
-<script>
-  var chatbox = document.getElementById('fb-customer-chat');
-  chatbox.setAttribute("page_id", "103484235166980");
-  chatbox.setAttribute("attribution", "biz_inbox");
-
-  window.fbAsyncInit = function () {
-    FB.init({
-      xfbml: true,
-      version: 'v12.0'
-    });
-  };
-
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-<!-- plugin messenger -->
 </body>
 
 </html>

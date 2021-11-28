@@ -11,7 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Sarabun:wght@200;400&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.adoff.net/cdn-v-1-0/main.css">
     <style>
     * {
@@ -30,7 +30,7 @@
   }
   
   body {
-      font-family: 'Prompt', sans-serif;
+      font-family: 'Sarabun', sans-serif;
       background-color: #edddc3;
   
   }
@@ -78,7 +78,7 @@
           #check{
              display: none; 
           }
-  
+         
   /*--------------------------*/
   /*----- MEDIA QUERRY -----*/
   /*--------------------------*/
@@ -116,7 +116,7 @@
             nav ul li a{
                 font-size: 20px;
             }
-                a:hover,a.active{
+                nav:hover,nav.active{
                     background: none;
                     color: #e7c48a;
                 }
@@ -125,6 +125,8 @@
             left: 0;
         }
 }
+
+
  /*     
 .table-fixed{
   width: 100%;
@@ -164,7 +166,7 @@
 
 
 <body>
-    <script>
+  <script>
     function calendar() {
       window.location.replace('/studentWeb/calendar.html');
     }
@@ -178,13 +180,13 @@
       window.location.replace('/studentWeb/contactUs.html');
     }
     function documentstd() {
-      window.location.replace('/studentWeb/document.html');
+      window.location.replace('/studentWeb/viewDocSTD.html');
     }
     function news() {
-      window.location.replace('/studentWeb/news.html');
+      window.location.replace('/studentWeb/viewNewsSTD.html');
     }
   </script>
-   <nav>
+   <nav class="stick-top">
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
@@ -192,19 +194,24 @@
     <label class="logo" action="index.html" onclick="home()" ><img src="/img/longlogo.png" style="width:100px" ></label>
     <ul>
         <li><a action="index.html" onclick="home()">Home</a></li>
+        <li><a action="about.html" onclick="about()">About</a></li>
         <li><a action="news.html" onclick="news()">News</a></li>
         <li><a action="document.html" onclick="documentstd()">Document</a></li>
-        <li><a action="about.html" onclick="about()">About</a></li>
         <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
         <li><a action="contactUs.html" onclick="contactUs()">Contact</a></li>
     </ul>
 </nav>
 
+  <br>
 
-  <div class=" main content f1">
+  <A onclick='window.location.href="document.html"' style="padding:30px 30px"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+</svg></A>
+
+<div class=" main content">
     <div class="container">
-      <div id='result_ID'></div>
-      <div id='list_file'>
+        <div id='result_ID' ></div>
+      <div id='list_file' style="font-size:15px">
       </div>
     </div>
 
@@ -230,7 +237,7 @@
       //-----------------
 
       database = firebase.database();
-      var Ref = database.ref('Files');
+      var Ref = database.ref('File');
       Ref.on('value', gotData);
       function gotData(data) {
         var a = localStorage.getItem('VALUE');
@@ -244,8 +251,6 @@
         var _date = new Date(date);
         console.log(topic, description, fileName);
         var _li = document.createElement('div');
-
-        console.log("id")
         _li.innerHTML =
           '<h1>' + topic + '</h1>' +
           '<p>' + _date.toDateString() + '</p>' +
@@ -253,6 +258,9 @@
           'Link file : <a target = "_blank" href=' + linkFile + '>Click link here.<br></a>';
         document.getElementById('list_file').appendChild(_li);
       }
+      
+      
+     
     </script>
 
 </body>
