@@ -461,7 +461,7 @@
             //_date.toDateString() + ' ' + '-' + ' ' + topic +
             //'<form action="/staffWeb/updateDoc.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
 
-            '<button onclick="del(' + id + ');"> ลบ </button>' + ' ' +
+            '<i class="bi bi-trash-fill" onclick="del(' + id + ');" style="color:black;" ></i> '+ '&nbsp' + '&nbsp' + ' ' +
             _date.toDateString() + ' ' + '-' + ' ' + topic +
             '<a class="card-text h5" style="color:blue" onclick="passvalue(' + id + ');"> แก้ไข</a>';
           document.getElementById('list_file').appendChild(_li);
