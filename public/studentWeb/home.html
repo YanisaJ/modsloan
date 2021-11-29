@@ -19,196 +19,200 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 
-<style>
-    :root {
-        --background-dark: #e7c48a;
-        --text-light: rgba(255, 255, 255, 0.6);
-        --text-lighter: rgba(255, 255, 255, 0.9);
-        --spacing-s: 8px;
-        --spacing-m: 16px;
-        --spacing-l: 24px;
-        --spacing-xl: 32px;
-        --spacing-xxl: 64px;
-        --width-container: 1200px;
-    }
 
+
+    <style>
     * {
-        border: 0;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      vertical-align: baseline;
+      font-weight: inherit;
+      font-family: inherit;
+      font-style: inherit;
+      font-size: 100%;
+      border: 0 none;
+      outline: 0;
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+  }
+  
+  body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: #edddc3;
+  
+  }
+      nav { 
+          background: #d7b169; 
+          height: 80px; 
+          width: 100%; 
+      }
+          label.logo{ 
+              color: white; 
+              font-size: 35px; 
+              line-height: 80px; 
+              padding:0 100px; 
+              font-weight: bold; 
+          }
+          nav ul{ 
+              float: right; 
+              margin-right:20px; 
+          }
+              nav ul li{ 
+                  display: inline-block; 
+                  line-height:80px;
+                  margin: 0 5px; 
+              }
+                  nav ul li a{
+                      color: white;
+                      font-size: 17px;
+                      padding: 7px 13px;
+                      border-radius: 3px;
+                  }
+                      a.active,a:hover{
+                          background-color: #e7c48a;
+                          transition: .5s;
+                          cursor: pointer;
+                      }
+      .checkbtn{
+          font-size: 30px;
+          color: white;
+          float: right;
+          line-height: 80px;
+          margin-right: 40px;
+          cursor: pointer;
+          display: none; 
+      }
+          #check{
+             display: none; 
+          }
+         
+  /*--------------------------*/
+  /*----- MEDIA QUERRY -----*/
+  /*--------------------------*/
+  
+  @media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
     }
-
-    html {
-        height: 100%;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 14px;
+    nav ul li a{
+        font-size: 16px;
     }
+}
 
-    body {
-        height: 100%;
+@media (max-width: 858px){
+    .checkbtn{
+        display: block; 
     }
-
-    .hero-section {
-        align-items: flex-start;
-        background-image: linear-gradient(15deg, #e7c48a 7089%, #d7b169 150%);
-        display: flex;
-        min-height: 100%;
-        justify-content: center;
-        padding: var(--spacing-xxl) var(--spacing-l);
-    }
-
-    .card-grid {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-column-gap: var(--spacing-l);
-        grid-row-gap: var(--spacing-l);
-        max-width: var(--width-container);
+    ul{
+        position: fixed;
         width: 100%;
+        height: 100vh;
+        top: 80px;
+        left: -100%;
+        top: 80px;
+        transition: all .5s;
+        text-align: center;
+        background-color: #e7c48a;
     }
-
-    @media(min-width: 540px) {
-        .card-grid {
-            grid-template-columns: repeat(2.5, 1fr);
+        nav ul li{
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
         }
-    }
+            nav ul li a{
+                font-size: 20px;
+            }
+                nav:hover,nav.active{
+                    background: none;
+                    color: #e7c48a;
+                }
 
-    @media(min-width: 960px) {
-        .card-grid {
-            grid-template-columns: repeat(5, 1fr);
+        #check:checked ~ ul{
+            left: 0;
         }
-    }
+}
 
-    .card {
-        list-style: none;
-        position: relative;
-    }
 
-    .card:before {
-        content: '';
-        display: block;
-        padding-bottom: 150%;
-        width: 100%;
+ /*     
+.table-fixed{
+  width: 100%;
+  background-color: #efe6cf;
+  tbody{
+    height:200px;
+    overflow-y:auto;
+    width: 100%;
     }
-
-    .card__background {
-        background-size: cover;
-        background-position: center;
-        border-radius: var(--spacing-l);
-        bottom: 0;
-        filter: brightness(0.75) saturate(1.2) contrast(0.85);
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        transform-origin: center;
-        trsnsform: scale(1) translateZ(0);
-        transition:
-            filter 200ms linear,
-            transform 200ms linear;
+    font{
+           font-family: 'Prompt', sans-serif;
+           font-size: 12px;
+           color: white;
     }
-
-    .card:hover .card__background {
-        transform: scale(1.05) translateZ(0);
+  thead,tbody,tr,td,th{
+    display:block;
+  }
+  tbody{
+    td{
+      float: left;
     }
-
-    .card-grid:hover>.card:not(:hover) .card__background {
-        filter: brightness(2.0) saturate(0) contrast(0.5) blur(15px);
+  }
+  thead {
+    tr{
+      th{
+        float:left;
+       background-color: #f39c12;
+       border-color:#e67e22;
+      }
     }
-
-    .card__content {
-        left: 0;
-        padding: var(--spacing-l);
-        position: absolute;
-        top: 0;
-    }
-
-    .card__category {
-        color: var(--text-light);
-        font-size: 0.9rem;
-        margin-bottom: var(--spacing-s);
-        text-transform: uppercase;
-    }
-
-    .card__heading {
-        color: var(--text-lighter);
-        font-size: 1.9rem;
-        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-        line-height: 1.4;
-        word-spacing: 100vw;
-    }
-</style>
+  }
+ */
+      
+        
+  </style>
+</head>
 
 
 <body>
-    <script>
-        function calendar() {
-          window.location.replace('/studentWeb/calendar.html');
-        }
-        function about() {
-          window.location.replace('/studentWeb/about.html');
-        }
-        function home() {
-          window.location.replace('/studentWeb/home.html');
-        }
-        function contactUs() {
-          window.location.replace('/studentWeb/contactUs.html');
-        }
-        function documentstd() {
-          window.location.replace('/studentWeb/document.html');
-        }
-        function news() {
-          window.location.replace('/studentWeb/news.html');
-        }
-      </script>
+  <script>
+    function calendar() {
+      window.location.replace('/studentWeb/calendar.html');
+    }
+    function about() {
+      window.location.replace('/studentWeb/about.html');
+    }
+    function home() {
+      window.location.replace('/studentWeb/home.html');
+    }
+    function contactUs() {
+      window.location.replace('/studentWeb/contactUs.html');
+    }
+    function documentstd() {
+      window.location.replace('/studentWeb/viewDocSTD.html');
+    }
+    function news() {
+      window.location.replace('/studentWeb/viewNewsSTD.html');
+    }
+  </script>
+   <nav class="stick-top">
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo" action="index.html" onclick="home()" ><img src="/img/longlogo.png" style="width:100px" ></label>
+    <ul>
+        <li><a action="index.html" onclick="home()">Home</a></li>
+        <li><a action="about.html" onclick="about()">About</a></li>
+        <li><a action="news.html" onclick="news()">News</a></li>
+        <li><a action="document.html" onclick="documentstd()">Document</a></li>
+        <li><a action="calendar.html" onclick="calendar()">Calendar</a></li>
+        <li><a action="contactUs.html" onclick="contactUs()">Contact</a></li>
+    </ul>
+</nav>
 
-
-
-
-    <section class="hero-section">
-        <div class="card-grid">
-            <a class="card" action="about.html" onclick="about()">
-                <div class="card__background"
-                    style="background-image: url(https://image.freepik.com/free-vector/customer-service-with-icons-illustration_53876-66281.jpg)">
-                </div>
-                <div class="card__content">
-
-                    <h3 class="card__heading">About</h3>
-                </div>
-            </a>
-            <a class="card" action="news.html" onclick="news()">
-                <div class="card__background"
-                    style="background-image: url(https://image.freepik.com/free-vector/customer-service-with-icons-illustration_53876-66281.jpg)">
-                </div>
-                <div class="card__content">
-
-                    <h3 class="card__heading">News</h3>
-                </div>
-            </a>
-            <a class="card" action="document.html" onclick="documentstd()">
-                <div class="card__background" style="background-image: url(/img/doc.png);"></div>
-                <div class="card__content">
-
-                    <h3 class="card__heading">Document</h3>
-                </div>
-            </a>
-            <a class="card" action="calendar.html" onclick="calendar()">
-                <div class="card__background" style="background-image: url(/img/calendar.png);"></div>
-                <div class="card__content">
-
-                    <h3 class="card__heading">Calendar</h3>
-                </div>
-                </li>
-                <a class="card" action="contactUs.html" onclick="contactUs()">
-                    <div class="card__background"
-                        style="background-image: url(https://image.freepik.com/free-vector/call-center_24877-49048.jpg)">
-                    </div>
-                    <div class="card__content">
-
-                        <h3 class="card__heading">Contact Us</h3>
-                    </div>
-                </a>
-
+  <br>
+  <center>
+    <img src="\img\ModBanner.png" style="width: 800px;height: auto;"></center>
                 <!-- Placed at the end of the document so the pages load faster -->
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
