@@ -252,18 +252,14 @@
         function passvalue(id) {
           localStorage.setItem('VALUE', id);
           window.location.replace('/studentWeb/viewDocSTD.html');
-          // console.log(id);
-          // console.log("id");
         }
         //+----- view automatic -----+
         database = firebase.database();
         var Ref = database.ref('File');
         Ref.on('value', gotData);
         function gotData(data) {
-          // console.log(data.val());
           var Files = data.val();
           var keys = Object.keys(Files);
-          // console.log(keys);
           for (var i = 0; i < keys.length; i++) {
             var k = keys[i];
             var id = Files[k].Date;
@@ -282,7 +278,6 @@
 			var _li2 = document.createElement('div');
             _li2.innerHTML =
             '<a class="col-xs-10 h5" style="color:white">' + _date.toDateString() + '</a>';  
-            //'<h5 style="color:white">' + _date.toDateString() + '</h5>';
             document.getElementById('list_file2').appendChild(_li2);
           }
         }

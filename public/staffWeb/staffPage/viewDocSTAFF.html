@@ -259,9 +259,6 @@
     function calendarManage() {
       window.location.replace('/staffWeb/staffPage/calendarManage.html');
     }
-    // function msManage() {
-    //   window.location.replace('/staffWeb/staffPage/msManage.html');
-    // }
     function Upload() {
       window.location.replace('/staffWeb/staffPage/uploadNews.html');
     }
@@ -274,7 +271,6 @@
     function uploadDoc() {
       window.location.replace('/staffWeb/staffPage/uploadDoc.html');
     }
-    // J
     function contactDev() {
       window.location.replace('/staffWeb/staffPage/contactDev.html');
     }
@@ -355,9 +351,6 @@
   <div class="content-container f1">
 
     <div class="container-fluid">
-
-      <!-- Main component for a primary marketing message or call to action -->
-      <!--main content view-->
       <div class="cv" f1>
         <div>
           <div class="inbox">
@@ -369,17 +362,8 @@
 
                 <div class="col-md-10">
                   <table class="table table-stripped">
-                    <!-- <tbody>
-                      <tr>
-                        <th id="list_file"></th>
-                      </tr>
-                    </tbody> -->
-
-
                     <ul id='list_file'>
                     </ul>
-
-
                   </table>
                 </div>
               </div>
@@ -443,18 +427,14 @@
       function passvalue(id) {
         localStorage.setItem('VALUE', id);
         window.location.replace('/staffWeb/staffPage/updateDoc.html');
-        // console.log(id);
-        // console.log("id");
       }
       //+----- view automatic -----+
       database = firebase.database();
       var Ref = database.ref('File');
       Ref.on('value', gotData);
       function gotData(data) {
-        // console.log(data.val());
         var Files = data.val();
         var keys = Object.keys(Files);
-        // console.log(keys);
         for (var i = 0; i < keys.length; i++) {
           var k = keys[i];
           var id = Files[k].Date;
@@ -467,10 +447,6 @@
           console.log(topic, description, fileName);
           var _li = document.createElement('li');
           _li.innerHTML =
-            //'<button onclick="del(' + id + ');"> X </button>' + ' ' +
-            //_date.toDateString() + ' ' + '-' + ' ' + topic +
-            //'<form action="/staffWeb/updateDoc.html"><button onclick="passvalue(' + id + ');"> Edit/Update </button></form>';
-
             '<i class="bi bi-trash-fill" onclick="del(' + id + ');" style="color:black;" ></i> '+ '&nbsp' + '&nbsp' + ' ' +
             _date.toDateString() + ' ' + '-' + ' ' + topic +
             '<a class="card-text h5" style="color:blue" onclick="passvalue(' + id + ');"> แก้ไข</a>';
@@ -490,10 +466,7 @@
           }, 1000);
 
           function delAuto() {
-            //firebase.storage().ref('File/' + id).remove();
             firebase.database().ref('File/' + id).remove().then(() => {
-              //console.log('Delete file successfully');
-              //window.alert('Delete file successfully');
               location.reload();
             });
           }
