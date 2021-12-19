@@ -125,42 +125,7 @@
             left: 0;
         }
 }
-
-
- /*     
-.table-fixed{
-  width: 100%;
-  background-color: #efe6cf;
-  tbody{
-    height:200px;
-    overflow-y:auto;
-    width: 100%;
-    }
-    font{
-           font-family: 'Prompt', sans-serif;
-           font-size: 12px;
-           color: white;
-    }
-  thead,tbody,tr,td,th{
-    display:block;
-  }
-  tbody{
-    td{
-      float: left;
-    }
-  }
-  thead {
-    tr{
-      th{
-        float:left;
-       background-color: #f39c12;
-       border-color:#e67e22;
-      }
-    }
-  }
- */
-      
-        
+     
   </style>
 </head>
 
@@ -180,10 +145,10 @@
       window.location.replace('/studentWeb/contactUs.html');
     }
     function documentstd() {
-      window.location.replace('/studentWeb/viewDocSTD.html');
+      window.location.replace('/studentWeb/document.html');
     }
     function news() {
-      window.location.replace('/studentWeb/viewNewsSTD.html');
+      window.location.replace('/studentWeb/news.html');
     }
   </script>
    <nav class="stick-top">
@@ -232,7 +197,6 @@
       firebase.initializeApp(firebaseConfig);
 
       //--------------------------
-      // document.getElementById('result_ID').innerHTML = localStorage.getItem('VALUE');
       console.log(localStorage.getItem('VALUE'));
       //-----------------
 
@@ -258,8 +222,6 @@
           'Link file : <a target = "_blank" href=' + linkFile + '>Click link here.<br></a>';
         document.getElementById('list_file').appendChild(_li);
       }
-      
-      
      
     </script>
 

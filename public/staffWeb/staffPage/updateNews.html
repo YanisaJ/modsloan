@@ -257,9 +257,6 @@
     function calendarManage() {
       window.location.replace('/staffWeb/staffPage/calendarManage.html');
     }
-    // function msManage() {
-    //   window.location.replace('/staffWeb/staffPage/msManage.html');
-    // }
     function Upload() {
       window.location.replace('/staffWeb/staffPage/uploadNews.html');
     }
@@ -272,7 +269,6 @@
     function uploadDoc() {
       window.location.replace('/staffWeb/staffPage/uploadDoc.html');
     }
-    // J
     function contactDev() {
       window.location.replace('/staffWeb/staffPage/contactDev.html');
     }
@@ -435,8 +431,7 @@
       };
       firebase.initializeApp(firebaseConfig);
 
-      //--------------------------
-      // document.getElementById('result_ID').innerHTML = localStorage.getItem('VALUE');
+      //-----------------
       console.log(localStorage.getItem('VALUE'));
       //-----------------
 
@@ -482,7 +477,6 @@
             files = e.target.files;
             reader = new FileReader();
             reader.onload = function () {
-              //document.getElementById('myFile').src = reader.result;
               document.getElementById('fileOldName').innerHTML = '<b>Your file is : </b>' + files[0].name;
             }
             reader.readAsDataURL(files[0]);
@@ -522,9 +516,6 @@
                     LinkFile: fileURL,
                     Description: fileDescription
                   }).then(() => {
-                    //location.reload();
-                    //window.alert("Add file successfully.");
-                    //console.log('Add file successfully');
                     location.replace('/staffWeb/staffPage/homeStaff.html')
                   });
                   window.alert("Add file successfully.");

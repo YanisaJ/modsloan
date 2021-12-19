@@ -256,9 +256,6 @@
     function calendarManage() {
       window.location.replace('/staffWeb/staffPage/calendarManage.html');
     }
-    // function msManage() {
-    //   window.location.replace('/staffWeb/staffPage/msManage.html');
-    // }
     function Upload() {
       window.location.replace('/staffWeb/staffPage/uploadNews.html');
     }
@@ -271,7 +268,6 @@
     function uploadDoc() {
       window.location.replace('/staffWeb/staffPage/uploadDoc.html');
     }
-    // J
     function contactDev() {
       window.location.replace('/staffWeb/staffPage/contactDev.html');
     }
@@ -394,10 +390,7 @@
         </div>
           </form>
         </div>
-    
-    
-       
-    
+
         </div>
 
         <script>
@@ -444,7 +437,6 @@
           files = e.target.files;
           reader = new FileReader();
           reader.onload = function () {
-            //document.getElementById('myFile').src = reader.result;
             document.getElementById('fileOldName').innerHTML = '<b>Your file is : </b>' + files[0].name;
           }
           reader.readAsDataURL(files[0]);
